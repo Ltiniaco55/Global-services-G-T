@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Página no encontrada — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}La página que buscas no existe o fue movida.{% endblock %}
+
+{% block content %}
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">ERROR 404</p>
+      <h1 class="page-hero__title">ESTA PÁGINA NO EXISTE</h1>
+      <p class="page-hero__lead">
+        Puede que el enlace esté roto o que la página se haya movido.
+        Volvamos a aguas conocidas.
+      </p>
+    </div>
+  </section>
+
+  <section class="container section" style="text-align:center;">
+    <a href="{% url 'sitio:home' %}" class="btn-cotizar btn-cotizar--lg">← Volver al inicio</a>
+  </section>
+{% endblock %}

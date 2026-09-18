@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nuestros Servicios — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}Soluciones de ingeniería, logística y mantenimiento para la industria marítima del Lago de Maracaibo: transporte de personal, atracaderos, lanchas y motores.{% endblock %}
+
+{% block content %}
+
+  <!-- Hero corto -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">PÁGINA INTERNA</p>
+      <h1 class="page-hero__title">NUESTROS SERVICIOS</h1>
+      <p class="page-hero__lead">Soluciones de ingeniería, logística y mantenimiento para la industria marítima del Lago de Maracaibo.</p>
+    </div>
+  </section>
+
+  <!-- Listado de servicios -->
+  <section class="container section">
+    <div class="servicios-grid">
+      {% for s in servicios %}
+      <a href="{% if s.tiene_detalle %}{% url 'sitio:servicio_detalle' slug=s.slug %}{% else %}#{{ s.slug }}{% endif %}" {% if not s.tiene_detalle %}id="{{ s.slug }}"{% endif %} class="servicio-card">
+        <i class="ti {{ s.icon }}"></i>
+        <h3>{{ s.titulo }}</h3>
+        <span>Ver detalle →</span>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="section-note center">cada tarjeta enlazará a su propia página de detalle (plantilla en <code>servicio_detalle.html</code>)</p>
+  </section>
+
+  <section class="container">
+    {% include 'includes/cotizacion.html' %}
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/servicios.js' %}" defer></script>
+{% endblock %}

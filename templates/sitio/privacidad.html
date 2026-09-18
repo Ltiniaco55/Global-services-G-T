@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Política de Privacidad — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}Cómo G&T Global Service, C.A. recopila, usa y protege los datos que compartes a través de nuestros formularios de contacto y cotización.{% endblock %}
+
+{% block content %}
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">LEGAL</p>
+      <h1 class="page-hero__title">Política de Privacidad</h1>
+      <p class="page-hero__lead">Última actualización: {% now "j \d\e F \d\e Y" %}</p>
+    </div>
+  </section>
+
+  <section class="container section" style="max-width:760px;">
+    <h2 class="detalle-subtitle">¿Qué datos recopilamos?</h2>
+    <p>Cuando completas alguno de nuestros formularios (contacto o solicitud de cotización) recopilamos los datos que nos proporcionas directamente: nombre, correo electrónico, teléfono, empresa (si aplica), el contenido de tu mensaje o solicitud, y los archivos que decidas adjuntar.</p>
+
+    <h2 class="detalle-subtitle">¿Para qué usamos tus datos?</h2>
+    <p>Usamos esta información únicamente para responder tu solicitud, evaluar el alcance del servicio que necesitas y contactarte con una propuesta o cotización. No usamos tus datos con fines publicitarios ni los compartimos con terceros, salvo cuando sea necesario para ejecutar el servicio que solicitaste (por ejemplo, coordinar con un proveedor o socio del proyecto), y siempre con tu conocimiento.</p>
+
+    <h2 class="detalle-subtitle">¿Cómo protegemos tus datos?</h2>
+    <p>Los datos que envías a través de nuestros formularios llegan directamente al correo corporativo de G&amp;T Global Service, C.A. y son tratados de forma confidencial por nuestro equipo. No almacenamos los archivos adjuntos en ningún servidor más allá del envío del correo.</p>
+
+    <h2 class="detalle-subtitle">¿Cuánto tiempo conservamos tus datos?</h2>
+    <p>Conservamos la información de tu solicitud el tiempo necesario para darle seguimiento comercial. Si quieres que eliminemos tus datos antes de eso, puedes solicitarlo escribiéndonos a {{ empresa.email }}.</p>
+
+    <h2 class="detalle-subtitle">Tus derechos</h2>
+    <p>Puedes solicitarnos en cualquier momento acceder, corregir o eliminar los datos que nos hayas compartido, escribiéndonos a {{ empresa.email }} o por WhatsApp al {{ empresa.telefono }}.</p>
+  </section>
+
+{% endblock %}

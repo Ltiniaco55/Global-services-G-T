@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nuestra Flota — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}Embarcaciones propias de G&T Global Service, registradas y mantenidas para operar de forma segura en el Lago de Maracaibo.{% endblock %}
+
+{% block content %}
+
+  <!-- Hero corto -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">PÁGINA INTERNA</p>
+      <h1 class="page-hero__title">NUESTRA FLOTA</h1>
+      <p class="page-hero__lead">Embarcaciones propias, registradas y mantenidas para operar de forma segura en el Lago de Maracaibo.</p>
+    </div>
+  </section>
+
+  <!-- Grid de embarcaciones -->
+  <section class="container section">
+    <div class="flota-grid">
+      {% for b in embarcaciones %}
+      <div class="flota-card">
+        <div class="flota-card__img {{ b.imagen_clase }}">{{ b.imagen_alt }}</div>
+        <div class="flota-card__body">
+          <h3>{{ b.nombre }}</h3>
+          <p>{{ b.descripcion }}</p>
+          <div class="badge-row">
+            {% for badge in b.badges %}<span class="badge-outline">{{ badge }}</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="flota-card flota-card--placeholder">
+        <i class="ti ti-anchor"></i>
+        <h3>+ embarcaciones bajo solicitud</h3>
+        <p>flota completa a confirmar con el socio</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capacidades adicionales -->
+  <section class="container section section--muted">
+    <p class="section-tag center">CAPACIDADES ADICIONALES</p>
+    <div class="capacidades-grid">
+      {% for c in capacidades %}
+      <div class="flota-card">
+        <div class="flota-card__img {{ c.imagen_clase }}">{{ c.imagen_alt }}</div>
+        <div class="flota-card__body"><h3>{{ c.titulo }}</h3></div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="container">
+    {% include 'includes/cotizacion.html' with pregunta="¿Necesitas transporte u operaciones en el Lago?" %}
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/flota.js' %}" defer></script>
+{% endblock %}

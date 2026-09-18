@@ -1,0 +1,56 @@
+/*
+ * ¡Este archivo es tuyo! Acá vive únicamente el título grande
+ * "¿PROYECTO EN MENTE?" del CTA final de la homepage.
+ *
+ * La clase .cta-titulo-personalizado no se usa en ningún otro lugar del
+ * sitio, así que puedes cambiar cualquier valor de este archivo —tamaño,
+ * color, espaciado entre letras, ancho máximo— sin riesgo de afectar
+ * ninguna otra parte del proyecto. No hace falta tocar main.css.
+ *
+ * Hay tres bloques: el tamaño para pantallas grandes (arriba), y dos
+ * ajustes para pantallas más chicas (tablet y celular), para que el
+ * título no se vea gigante en un teléfono.
+ */
+
+.cta-titulo-personalizado {
+  font-family: var(--f-display);
+  color: var(--c-blanco);
+  font-size: 85px;
+  letter-spacing: 1px;
+  line-height: 1.05;
+  margin: 0;
+  max-width: 780px;
+  /* Estira las letras solo verticalmente (más altas), sin hacer el
+     texto más ancho — el font-size ya no se toca para esto. Subí o
+     bajá el 1.80 para más o menos estiramiento (1 = sin estirar).
+     transform-origin queda en "left center" (no "left top") para que
+     el estiramiento crezca parejo hacia arriba y hacia abajo — así no
+     se come el padding de abajo de la sección y queda simétrico. */
+  transform: scaleY(1.80);
+  transform-origin: left center;
+}
+
+/* Pantallas medianas (900–1050px): tamaño puente para que el título
+   no se parta en dos líneas ni choque con nada en este rango — el
+   salto directo de 85px a 46px era demasiado brusco y rompía el
+   layout justo en este ancho. */
+@media (max-width: 1050px) {
+  .cta-titulo-personalizado {
+    font-size: 58px;
+  }
+}
+
+/* Tablet: pantallas de hasta 900px de ancho */
+@media (max-width: 900px) {
+  .cta-titulo-personalizado {
+    font-size: 46px;
+  }
+}
+
+/* Celular: pantallas de hasta 640px de ancho */
+@media (max-width: 640px) {
+  .cta-titulo-personalizado {
+    font-size: 34px;
+    max-width: 100%;
+  }
+}

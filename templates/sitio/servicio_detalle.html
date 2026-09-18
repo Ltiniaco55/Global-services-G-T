@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ servicio.meta_title|default:servicio.titulo }}{% endblock %}
+{% block meta_description %}{{ servicio.meta_description|default:servicio.intro }}{% endblock %}
+
+{% block content %}
+
+  <section class="detalle-hero">
+    <div class="container">
+      <a href="{% url 'sitio:servicios' %}" class="detalle-back"><i class="ti ti-arrow-left"></i> Volver a Servicios</a>
+      <p class="section-tag section-tag--lima">SERVICIO</p>
+      <div class="detalle-hero__row">
+        <div class="detalle-icon"><i class="ti {{ servicio.icon }}"></i></div>
+        <h1 class="page-hero__title">{{ servicio.titulo_detalle_html|default:servicio.titulo|safe }}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="detalle-intro">{{ servicio.intro }}</p>
+
+    <div class="detalle-img {{ servicio.imagen_clase }}">{{ servicio.imagen_alt }}</div>
+
+    <h2 class="detalle-subtitle">¿Qué incluye?</h2>
+    <div class="detalle-incluye-grid">
+      {% for item in servicio.incluye %}
+      <div class="detalle-incluye-item"><i class="ti ti-square-rounded-check"></i> {{ item }}</div>
+      {% endfor %}
+    </div>
+
+    <h2 class="detalle-subtitle">Servicios relacionados</h2>
+    <div class="relacionados-grid">
+      {% for r in servicio.relacionados %}
+      <a href="{% url 'sitio:servicios' %}#{{ r.slug }}" class="relacionado-card"><i class="ti {{ r.icon }}"></i><span>{{ r.titulo }}</span></a>
+      {% endfor %}
+    </div>
+
+    {% include 'includes/cotizacion.html' with pregunta=servicio.cta_pregunta servicio_slug=servicio.slug %}
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/servicio-detalle.js' %}" defer></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% comment %}
+Card CTA reutilizable. Uso: {% include 'includes/cotizacion.html' with pregunta="¿Tu pregunta?" servicio_slug=servicio.slug %}
+Si no se pasa `pregunta`, usa el texto por defecto (igual que la versión
+estática original, cuyo default era "¿Tu embarcación necesita mantenimiento?").
+Si se pasa `servicio_slug`, el botón preselecciona ese servicio en el
+formulario de /cotizacion/.
+{% endcomment %}
+<div class="cta-cotizacion">
+  <p class="cta-cotizacion__text">{{ pregunta|default:"¿Tu embarcación necesita mantenimiento?" }}</p>
+  <a href="{% url 'sitio:cotizacion' %}{% if servicio_slug %}?servicio={{ servicio_slug }}{% endif %}" class="btn-cotizar btn-cotizar--lg">Cotizar este servicio</a>
+</div>

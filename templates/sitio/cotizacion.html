@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Solicitar Cotización — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}Solicita una cotización formal de ingeniería y servicios marítimos en el Lago de Maracaibo: cuéntanos qué servicios necesitas y te contactamos con una propuesta.{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/css/intlTelInput.min.css">
+{% endblock %}
+
+{% block content %}
+
+  <!-- Hero corto -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">COTIZACIÓN</p>
+      <h1 class="page-hero__title">SOLICITUD DE COTIZACIÓN</h1>
+    </div>
+  </section>
+
+  <!-- "Ticket" de contacto comercial: tarjeta centrada, una sola columna -->
+  <section class="container section section--muted">
+    <div class="cotizacion-card">
+      <h2 class="cotizacion-card__title">Contacto comercial</h2>
+      <p class="cotizacion-card__lead">En G&amp;T Global Service buscamos entender bien tu operación para darte una propuesta precisa. Completa el siguiente formulario con el mayor detalle posible y te contactaremos a la brevedad. ¿Solo tienes una duda general? <a href="{% url 'sitio:contacto' %}">Escríbenos por aquí</a> en vez.</p>
+
+      <form class="contacto-form" id="form-cotizacion" method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+          <p role="alert" style="color:#B3261E;font-weight:600;">{{ form.non_field_errors.0 }}</p>
+        {% endif %}
+
+        <input type="text" name="{{ form.nombre.name }}" placeholder="Nombre y apellido" value="{{ form.nombre.value|default_if_none:'' }}" required>
+        {% if form.nombre.errors %}<p class="form-error">{{ form.nombre.errors.0 }}</p>{% endif %}
+
+        <input type="text" name="{{ form.empresa.name }}" placeholder="Empresa (opcional)" value="{{ form.empresa.value|default_if_none:'' }}">
+
+        <input type="email" name="{{ form.email.name }}" placeholder="Correo" value="{{ form.email.value|default_if_none:'' }}" required>
+        {% if form.email.errors %}<p class="form-error">{{ form.email.errors.0 }}</p>{% endif %}
+
+        <input type="tel" id="id_telefono" name="{{ form.telefono.name }}" placeholder="Teléfono / WhatsApp" value="{{ form.telefono.value|default_if_none:'' }}" required>
+        {% if form.telefono.errors %}<p class="form-error">{{ form.telefono.errors.0 }}</p>{% endif %}
+
+        <input type="text" name="{{ form.asunto.name }}" placeholder="Asunto" value="{{ form.asunto.value|default_if_none:'' }}" required>
+        {% if form.asunto.errors %}<p class="form-error">{{ form.asunto.errors.0 }}</p>{% endif %}
+
+        <fieldset class="form-check-group">
+          <legend>Servicios de interés</legend>
+          <div class="form-check-list">
+            {% for value, label in form.fields.servicios.choices %}
+            <label class="form-check-item">
+              <input type="checkbox" name="{{ form.servicios.name }}" value="{{ value }}" {% if value in form.servicios.value %}checked{% endif %}>
+              <span>{{ label }}</span>
+            </label>
+            {% endfor %}
+          </div>
+          {% if form.servicios.errors %}<p class="form-error">{{ form.servicios.errors.0 }}</p>{% endif %}
+        </fieldset>
+
+        <div>
+          <label class="file-upload" for="id_adjuntos">
+            <i class="ti ti-paperclip"></i> Adjuntar archivos (planos, fotos, especificaciones)
+          </label>
+          <input type="file" id="id_adjuntos" name="adjuntos" multiple>
+        </div>
+
+        <textarea name="{{ form.observaciones.name }}" placeholder="Cuéntanos más: alcance, ubicación, plazos estimados..." rows="5">{{ form.observaciones.value|default_if_none:'' }}</textarea>
+
+        <label class="privacy-check">
+          <input type="checkbox" name="{{ form.acepta_privacidad.name }}" {% if form.acepta_privacidad.value %}checked{% endif %} required>
+          <span>He leído y acepto la <a href="{% url 'sitio:privacidad' %}" target="_blank" rel="noopener">política de privacidad</a>.</span>
+        </label>
+        {% if form.acepta_privacidad.errors %}<p class="form-error">{{ form.acepta_privacidad.errors.0 }}</p>{% endif %}
+
+        {# Honeypot anti-spam: oculto para humanos, visible para bots que autorrellenan todo #}
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;" tabindex="-1">
+          <label for="id_empresa_web_cot">No llenar este campo</label>
+          <input type="text" id="id_empresa_web_cot" name="{{ form.empresa_web.name }}" autocomplete="off" tabindex="-1">
+        </div>
+
+        <button type="submit" class="btn-cotizar btn-cotizar--lg">Enviar solicitud</button>
+      </form>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/js/intlTelInput.min.js"></script>
+<script src="{% static 'js/form-validacion.js' %}"></script>
+<script>
+  initFormValidado(document.getElementById('form-cotizacion'), {
+    telefonoInputId: 'id_telefono',
+    asuntoInputName: 'asunto',
+    asuntoMinPalabras: 3,
+    asuntoMaxPalabras: 12,
+    checkboxGrupoSelector: '.form-check-list',
+    checkboxGrupoErrorMsg: 'Selecciona al menos un servicio.',
+  });
+</script>
+{% endblock %}

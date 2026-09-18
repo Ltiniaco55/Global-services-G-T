@@ -1,0 +1,28 @@
+{% load static %}
+<header class="site-header">
+  <a href="{% url 'sitio:home' %}" class="nav-logo">
+    <img src="{% static 'assets/hero/logo.svg' %}" alt="G&amp;T Global Service" class="nav-logo-img">
+  </a>
+  <nav class="nav-pill">
+    <ul class="nav-links">
+      <li><a href="{% url 'sitio:home' %}#quienes-somos">Quiénes Somos</a></li>
+      <li><a href="{% url 'sitio:servicios' %}">Servicios</a></li>
+      <li><a href="{% url 'sitio:flota' %}">Flota</a></li>
+      <li><a href="{% url 'sitio:proyectos' %}">Proyectos</a></li>
+      <li><a href="{% url 'sitio:contacto' %}">Trabaja con nosotros</a></li>
+    </ul>
+    <button class="burger-toggle" aria-label="Abrir menú">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </nav>
+  <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar">Cotizar</a>
+</header>
+
+<div class="whatsapp-bubble" id="whatsapp-bubble">
+  <button type="button" class="whatsapp-bubble__close" aria-label="Cerrar mensaje">&times;</button>
+  <p class="whatsapp-bubble__text">¡Hola! 👋 Estamos a tu disposición para consultas generales. ¡Escríbenos!</p>
+</div>
+<a href="https://wa.me/{{ empresa.telefono_whatsapp|cut:'+' }}" class="whatsapp-float" target="_blank" rel="noopener"
+  aria-label="Escribir por WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</a>

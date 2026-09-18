@@ -1,0 +1,42 @@
+{
+  "embarcaciones": [
+    {
+      "nombre": "BETTY MARACAIBO",
+      "imagen_clase": "flota-card__img--azul-profundo",
+      "imagen_alt": "Embarcación Betty Maracaibo",
+      "descripcion": "Transporte de personal a áreas operacionales del Lago.",
+      "badges": ["RACDA G-24-2017-3386", "RIF J-404294287"]
+    },
+    {
+      "nombre": "BETTY · M/ARCI",
+      "imagen_clase": "flota-card__img--azul-medio",
+      "imagen_alt": "Embarcación Betty, clase M/Arci",
+      "descripcion": "Cumple con todos los requerimientos de seguridad del INEA.",
+      "badges": ["Cumplimiento INEA"]
+    },
+    {
+      "nombre": "MERCEDES V",
+      "imagen_clase": "flota-card__img--noche",
+      "imagen_alt": "Embarcación Mercedes V",
+      "descripcion": "Embarcación propia en operación activa en el Lago.",
+      "badges": ["specs: pendiente"]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Diseño y construcción de lanchas",
+      "imagen_clase": "flota-card__img--azul-profundo",
+      "imagen_alt": "Lancha en dique seco durante construcción"
+    },
+    {
+      "titulo": "Mantenimiento de motores Hyundai",
+      "imagen_clase": "flota-card__img--azul-medio",
+      "imagen_alt": "Motor Hyundai en mantenimiento"
+    },
+    {
+      "titulo": "Mantenimiento e izaje propio",
+      "imagen_clase": "flota-card__img--noche",
+      "imagen_alt": "Izaje de embarcación con grúa propia"
+    }
+  ]
+}

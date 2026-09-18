@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Proyectos Realizados — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}Operaciones reales de ingeniería y logística ejecutadas por G&T Global Service en el Lago de Maracaibo.{% endblock %}
+
+{% block content %}
+
+  <!-- Hero corto -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">PÁGINA INTERNA</p>
+      <h1 class="page-hero__title">PROYECTOS REALIZADOS</h1>
+      <p class="page-hero__lead">Operaciones reales de ingeniería y logística ejecutadas en el Lago de Maracaibo.</p>
+    </div>
+  </section>
+
+  <!-- Listado de proyectos -->
+  <section class="container section">
+    <div class="proyectos-list">
+      {% for p in proyectos %}
+      <a href="{% url 'sitio:proyecto_detalle' slug=p.slug %}" class="proyecto-row">
+        <div class="proyectos-grid proyectos-grid--row">
+          <div class="proyecto-img proyecto-img--noche">foto real: atracadero deteriorado (antes)</div>
+          <div class="proyecto-img proyecto-img--azul">foto real: fabricación / taller</div>
+          <div class="proyecto-img proyecto-img--lima">foto real: VLM 1071 (después)</div>
+        </div>
+        <p class="proyecto-caption">
+          <strong>{{ p.titulo }}</strong>
+          <span>Ver caso completo →</span>
+        </p>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="section-note center">más casos se irán agregando aquí conforme se documenten</p>
+  </section>
+
+  <section class="container">
+    {% include 'includes/cotizacion.html' %}
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/proyectos.js' %}" defer></script>
+{% endblock %}

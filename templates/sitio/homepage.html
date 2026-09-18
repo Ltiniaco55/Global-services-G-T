@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}G&amp;T Global Service, C.A. — Ingeniería y servicios marítimos en el Lago de Maracaibo{% endblock %}
+{% block meta_description %}Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo:
+transporte de personal, atracaderos, mantenimiento de motores y logística industrial.{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/cta-titulo.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO — transición noche → día con scroll -->
+<section class="hero-static" id="hero">
+  <div class="hero-bg hero-bg--noche" style="background-image:url('{% static 'assets/hero/01-puente-noche.webp' %}')">
+  </div>
+  <div class="hero-bg hero-bg--dia" style="background-image:url('{% static 'assets/hero/02-puente-dia.webp' %}')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>SEGURIDAD QUE NAVEGA CONTIGO</h1>
+    <p>Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo.</p>
+    <div class="hero-cta-row">
+      <a href="{% url 'sitio:contacto' %}" class="btn-pill btn-pill--lima">Contáctanos ahora</a>
+      <a href="#servicios" class="btn-pill btn-pill--outline">Nuestros Servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes-somos" class="container section">
+  <p class="section-tag center">QUIÉNES SOMOS</p>
+  <div class="mv-grid">
+    <div class="mv-card mv-card--lima">
+      <h3>Misión</h3>
+      <p>Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología y asesoramiento técnico de
+        avanzada, cumpliendo normativas de seguridad, higiene y ambiente.</p>
+    </div>
+    <div class="mv-card mv-card--azul">
+      <h3>Visión</h3>
+      <p>Consolidarse como organización líder, competitiva y confiable a nivel nacional e internacional en ingeniería y
+        asesoría industrial.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRO OBJETIVO -->
+<section id="objetivo" class="container section section--muted">
+  <p class="section-tag center">NUESTRO OBJETIVO</p>
+  <p class="section-lead center">Efectuar nuestro trabajo ofreciendo la mayor satisfacción a nuestros clientes, mientras
+    cumplimos con los parámetros de calidad exigidos por las normativas nacionales e internacionales.</p>
+  <div class="pill-grid">
+    <div class="pill-card"><i class="ti ti-shield-check"></i><span>Seguridad</span></div>
+    <div class="pill-card"><i class="ti ti-briefcase"></i><span>Profesionalismo</span></div>
+    <div class="pill-card"><i class="ti ti-cpu"></i><span>Tecnología</span></div>
+  </div>
+</section>
+
+<!-- EMPRESAS QUE CONFIARON EN NOSOTROS -->
+<section id="empresas" class="container section">
+  <p class="section-tag center">EMPRESAS QUE CONFIARON EN NOSOTROS</p>
+  <div class="logos-grid">
+    <div class="logo-slot">logo pendiente</div>
+    <div class="logo-slot">logo pendiente</div>
+    <div class="logo-slot">logo pendiente</div>
+    <div class="logo-slot">logo pendiente</div>
+  </div>
+  <p class="section-note center">a la espera de logos reales con permiso del socio</p>
+</section>
+
+<!-- NUESTROS SERVICIOS -->
+<section id="servicios" class="container section section--muted">
+  <p class="section-tag center">NUESTROS SERVICIOS</p>
+  <div class="servicios-grid">
+    {% for s in servicios %}
+    <a href="{% if s.tiene_detalle %}{% url 'sitio:servicio_detalle' slug=s.slug %}{% else %}{% url 'sitio:servicios' %}#{{ s.slug }}{% endif %}"
+      class="servicio-card">
+      <i class="ti {{ s.icon }}"></i>
+      <h3>{{ s.titulo }}</h3>
+      <span>Ver detalle →</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- SEGURIDAD -->
+<section id="seguridad" class="section section--dark">
+  <div class="container">
+    <p class="section-tag section-tag--lima center">SEGURIDAD</p>
+    <p class="section-lead section-lead--light center">la seguridad se construye mediante la prevención</p>
+    <div class="seguridad-grid">
+      <div class="seguridad-item">Balsa autoinflable (25 pers.)</div>
+      <div class="seguridad-item">Chalecos individuales</div>
+      <div class="seguridad-item"><i class="ti ti-radio"></i><span>EPIRB</span></div>
+      <div class="seguridad-item"><i class="ti ti-broadcast"></i><span>AIS</span></div>
+    </div>
+    <div class="seguridad-badges">
+      <span class="badge-outline">RACDA G-24-2017-3386</span>
+      <span class="badge-outline">Cumplimiento INEA</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS REALIZADOS -->
+{% with proyecto=proyectos.0 %}
+{% if proyecto %}
+<section id="proyectos" class="container section">
+  <h2 class="section-title center">Proyectos Realizados</h2>
+  <p class="section-lead center">Un vistazo a las operaciones reales de ingeniería y logística que hemos ejecutado en el
+    Lago de Maracaibo.</p>
+  <div class="proyectos-grid">
+    <div class="proyecto-img proyecto-img--noche">foto real: atracadero deteriorado (antes)</div>
+    <div class="proyecto-img proyecto-img--azul">foto real: fabricación / taller</div>
+    <div class="proyecto-img proyecto-img--lima">foto real: VLM 1071 (después)</div>
+  </div>
+  <p class="proyecto-caption center">
+    <strong>{{ proyecto.titulo }}</strong>
+    <a href="{% url 'sitio:proyecto_detalle' slug=proyecto.slug %}">Ver caso completo →</a>
+  </p>
+</section>
+{% endif %}
+{% endwith %}
+
+<!-- PREGUNTAS FRECUENTES -->
+<section id="faq" class="container section section--muted">
+  <p class="section-tag center">PREGUNTAS FRECUENTES</p>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>¿En qué zona del Lago operan? <i class="ti ti-chevron-down"></i></summary>
+      <p>Operamos en todo el Lago de Maracaibo, dando servicio a la industria petrolera del Estado Zulia.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Tienen embarcaciones propias? <i class="ti ti-chevron-down"></i></summary>
+      <p>Sí, contamos con flota propia registrada y mantenida para operar de forma segura. Conoce nuestra <a
+          href="{% url 'sitio:flota' %}">flota aquí</a>.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cómo solicito una cotización? <i class="ti ti-chevron-down"></i></summary>
+      <p>Puedes escribirnos por WhatsApp, <a href="{% url 'sitio:cotizacion' %}">solicitar una cotización formal</a>, o
+        <a href="{% url 'sitio:contacto' %}">contactarnos</a> directamente.
+      </p>
+    </details>
+  </div>
+</section>
+
+<!-- TRABAJA CON NOSOTROS -->
+<section id="trabaja-con-nosotros" class="container section">
+  <div class="trabajo-cta">
+    <div class="trabajo-cta__texto">
+      <p class="section-tag section-tag--lima">ÚNETE AL EQUIPO</p>
+      <h2 class="section-title">¿Buscas trabajo con nosotros?</h2>
+      <p class="section-lead" style="margin:0;">Envíanos tu currículum y cuéntanos qué puesto te interesa. Revisamos
+        cada postulación.</p>
+    </div>
+    <a href="{% url 'sitio:contacto' %}#trabaja-con-nosotros" class="btn-pill btn-pill--lima">
+      <i class="ti ti-briefcase"></i> Postúlate aquí
+    </a>
+  </div>
+</section>
+
+<!-- CTA final "¿Proyecto en mente?" (teaser: los formularios reales viven
+       en /contacto/ y /cotizacion/). Exclusivo del home: mismo fondo
+       oscuro que el footer y separado de él solo por una línea fina, para
+       que ambos se lean como una sola pieza al final de la página. Las
+       demás páginas no tienen esta sección, así que en ellas el footer
+       se ve como siempre. -->
+<section id="contacto" class="cta-final">
+  <div class="container cta-final__inner">
+    <h2 class="cta-titulo-personalizado">¿PROYECTO EN MENTE?</h2>
+    <div class="cta-final__accion">
+      <p class="cta-final__texto">Estamos para ayudarte</p>
+      <p class="cta-final__subtexto">Operando en el lago de Maracaibo desde 1990</p>
+      <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">¡Comencemos!</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="{% static 'js/homepage.js' %}"></script>
+{% endblock %}

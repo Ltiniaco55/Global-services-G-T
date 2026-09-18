@@ -1,0 +1,45 @@
+{
+  "proyectos": [
+    {
+      "slug": "mg-01-05-lago-v",
+      "titulo": "M/G 01-05 LAGO V",
+      "categoria": "PROYECTO · INGENIERÍA DE ATRACADEROS",
+      "resumen": "Del diseño a la realidad: ingeniería a medida, fabricación e instalación de atracadero para pozo petrolero del Lago de Maracaibo.",
+      "meta_title": "M/G 01-05 LAGO V — G&T Global Service, C.A.",
+      "meta_description": "Caso real: ingeniería, fabricación e instalación de atracadero M/G 01-05 LAGO V para pozo petrolero en el Lago de Maracaibo, ejecutado por G&T Global Service.",
+      "proceso": [
+        {
+          "paso": "01 · RECIBIMOS UN DESAFÍO",
+          "imagen_clase": "detalle-img--azul-profundo",
+          "imagen_alt": "Atracadero deteriorado antes de la intervención",
+          "texto": "Infraestructura comprometida por el tiempo en un pozo petrolero activo del Lago."
+        },
+        {
+          "paso": "02 · INGENIERÍA A MEDIDA",
+          "imagen_clase": "detalle-img--azul-medio",
+          "imagen_alt": "Taller de fabricación de piezas a medida",
+          "texto": "Diseño y fabricación de piezas adaptadas a las necesidades específicas del pozo."
+        },
+        {
+          "paso": "03 · EJECUCIÓN PRECISA",
+          "imagen_clase": "detalle-img--noche",
+          "imagen_alt": "Instalación del atracadero sobre el Lago de Maracaibo",
+          "texto": "Instalación del atracadero directamente sobre el Lago, con equipo propio."
+        },
+        {
+          "paso": "04 · RESULTADOS ÓPTIMOS",
+          "imagen_clase": "detalle-img--lima",
+          "imagen_alt": "Estructura VLM 1071 terminada y operativa",
+          "texto": "Estructura terminada, operativa y entregada al cliente."
+        }
+      ],
+      "specs": [
+        "Ángulos estructurales: 3\"x3\"x1/4\"",
+        "Lámina: grating G2",
+        "Código de proyecto: M/G 01-05 LAGO V",
+        "Estructura final: VLM 1071"
+      ],
+      "cita": "Logística, fabricación y mantenimiento: un sólo equipo, todas las soluciones."
+    }
+  ]
+}

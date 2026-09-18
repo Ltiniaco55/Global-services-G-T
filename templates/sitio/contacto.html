@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contáctanos — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}Contáctanos: teléfono, correo, WhatsApp y ubicación de G&T Global Service, C.A. en
+Maracaibo. ¿Ya sabes qué servicio necesitas? Solicita una cotización formal.{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/css/intlTelInput.min.css">
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="section-tag section-tag--lima">CONTÁCTANOS</p>
+    <h1 class="page-hero__title">Trabaja con nosotros</h1>
+    <p class="page-hero__lead">¿Buscas trabajo con nosotros? Encuentra el formulario de postulación más abajo.</p>
+  </div>
+</section>
+
+<section id="trabaja-con-nosotros" class="container section section--muted">
+  <div class="cotizacion-card">
+    <p class="section-tag section-tag--lima">TRABAJA CON NOSOTROS</p>
+    <h2 class="cotizacion-card__title">¿Quieres unirte a nuestro equipo?</h2>
+    <p class="cotizacion-card__lead">Si te interesa formar parte de G&amp;T Global Service, cuéntanos un poco sobre ti y
+      adjunta tu currículum. Revisamos cada postulación y te contactamos si hay una oportunidad que encaje contigo.</p>
+
+    <form class="contacto-form" id="form-trabajo" method="post" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      {% if form_trabajo.non_field_errors %}
+      <p role="alert" style="color:#B3261E;font-weight:600;">{{ form_trabajo.non_field_errors.0 }}</p>
+      {% endif %}
+
+      <input type="text" name="{{ form_trabajo.nombre.name }}" placeholder="Nombre y apellido"
+        value="{{ form_trabajo.nombre.value|default_if_none:'' }}" required>
+      {% if form_trabajo.nombre.errors %}<p class="form-error">{{ form_trabajo.nombre.errors.0 }}</p>{% endif %}
+
+      <input type="email" name="{{ form_trabajo.email.name }}" placeholder="Correo"
+        value="{{ form_trabajo.email.value|default_if_none:'' }}" required>
+      {% if form_trabajo.email.errors %}<p class="form-error">{{ form_trabajo.email.errors.0 }}</p>{% endif %}
+
+      <input type="tel" id="id_telefono_trabajo" name="{{ form_trabajo.telefono.name }}" placeholder="Teléfono"
+        value="{{ form_trabajo.telefono.value|default_if_none:'' }}" required>
+      {% if form_trabajo.telefono.errors %}<p class="form-error">{{ form_trabajo.telefono.errors.0 }}</p>{% endif %}
+
+      <input type="text" name="{{ form_trabajo.puesto_interes.name }}" placeholder="Puesto de interés (opcional)"
+        value="{{ form_trabajo.puesto_interes.value|default_if_none:'' }}">
+
+      <div>
+        <label class="file-upload" for="id_cv">
+          <i class="ti ti-paperclip"></i> Adjuntar currículum (PDF o Word)
+        </label>
+        <input type="file" id="id_cv" name="cv" accept=".pdf,.doc,.docx" required>
+      </div>
+
+      <textarea name="{{ form_trabajo.mensaje.name }}" placeholder="Cuéntanos brevemente tu experiencia (opcional)"
+        rows="4">{{ form_trabajo.mensaje.value|default_if_none:'' }}</textarea>
+
+      {# Honeypot anti-spam: oculto para humanos, visible para bots que autorrellenan todo #}
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;" tabindex="-1">
+        <label for="id_empresa_web_trabajo">No llenar este campo</label>
+        <input type="text" id="id_empresa_web_trabajo" name="{{ form_trabajo.empresa_web.name }}" autocomplete="off"
+          tabindex="-1">
+      </div>
+
+      <button type="submit" class="btn-cotizar btn-cotizar--lg">Enviar postulación</button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/js/intlTelInput.min.js"></script>
+<script src="{% static 'js/form-validacion.js' %}"></script>
+<script>
+  initFormValidado(document.getElementById('form-trabajo'), {
+    telefonoInputId: 'id_telefono_trabajo',
+    archivoRequeridoId: 'id_cv',
+    archivoRequeridoMsg: 'Adjunta tu currículum para continuar.',
+  });
+</script>
+{% endblock %}

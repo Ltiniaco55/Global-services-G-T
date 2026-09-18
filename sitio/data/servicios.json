@@ -1,0 +1,148 @@
+{
+  "servicios": [
+    {
+      "slug": "transporte-de-personal",
+      "icon": "ti-users",
+      "titulo": "Transporte de personal",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "TRANSPORTE DE<br>PERSONAL",
+      "meta_title": "Transporte de Personal — G&T Global Service, C.A.",
+      "meta_description": "Transporte marítimo seguro de personal para operaciones petroleras en el Lago de Maracaibo, con embarcaciones propias y tripulación calificada.",
+      "intro": "Transporte marítimo de personal hacia pozos y plataformas del Lago de Maracaibo, con embarcaciones propias, tripulación calificada y protocolos de seguridad pensados para la operación petrolera.",
+      "imagen_clase": "detalle-img--azul-medio",
+      "imagen_alt": "Embarcación de transporte de personal en el Lago de Maracaibo",
+      "incluye": [
+        "Embarcaciones propias y certificadas",
+        "Tripulación calificada y protocolos de seguridad",
+        "Rutas y horarios programados según la operación",
+        "Coordinación logística directa con el cliente"
+      ],
+      "relacionados": [
+        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Diseño y construcción de lanchas"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"},
+        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Logística industrial"}
+      ],
+      "cta_pregunta": "¿Necesitas transporte de personal al Lago?"
+    },
+    {
+      "slug": "ingenieria-a-medida",
+      "icon": "ti-ruler-2",
+      "titulo": "Ingeniería a medida",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "INGENIERÍA<br>A MEDIDA",
+      "meta_title": "Ingeniería a Medida — G&T Global Service, C.A.",
+      "meta_description": "Diseño y fabricación de soluciones de ingeniería a medida para infraestructura petrolera y marítima en el Lago de Maracaibo.",
+      "intro": "Diseño y fabricación de soluciones de ingeniería adaptadas a cada proyecto: estructuras, piezas y sistemas a medida para infraestructura petrolera y marítima del Lago de Maracaibo.",
+      "imagen_clase": "detalle-img--noche",
+      "imagen_alt": "Taller de ingeniería y fabricación a medida",
+      "incluye": [
+        "Diseño técnico adaptado a cada proyecto",
+        "Fabricación de piezas y estructuras a medida",
+        "Asesoría técnica especializada",
+        "Ejecución con equipo y taller propio"
+      ],
+      "relacionados": [
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"},
+        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Mantenimiento de motores marinos"},
+        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Diseño y construcción de lanchas"}
+      ],
+      "cta_pregunta": "¿Tenés un proyecto que necesita ingeniería a medida?"
+    },
+    {
+      "slug": "instalacion-de-atracaderos",
+      "icon": "ti-anchor",
+      "titulo": "Instalación de atracaderos",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "INSTALACIÓN DE<br>ATRACADEROS",
+      "meta_title": "Instalación de Atracaderos — G&T Global Service, C.A.",
+      "meta_description": "Diseño, fabricación e instalación de atracaderos para pozos petroleros e infraestructura del Lago de Maracaibo.",
+      "intro": "Diseño, fabricación e instalación de atracaderos para pozos petroleros e infraestructura del Lago de Maracaibo, con ingeniería propia de principio a fin.",
+      "imagen_clase": "detalle-img--azul-profundo",
+      "imagen_alt": "Instalación de atracadero sobre el Lago de Maracaibo",
+      "incluye": [
+        "Diseño de ingeniería a medida",
+        "Fabricación de estructuras en taller propio",
+        "Instalación con equipo propio",
+        "Mantenimiento posterior a la instalación"
+      ],
+      "relacionados": [
+        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Ingeniería a medida"},
+        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Mantenimiento de motores marinos"},
+        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Logística industrial"}
+      ],
+      "cta_pregunta": "¿Necesitas instalar o reparar un atracadero?"
+    },
+    {
+      "slug": "diseno-y-construccion-de-lanchas",
+      "icon": "ti-sailboat",
+      "titulo": "Diseño y construcción de lanchas",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "DISEÑO Y CONSTRUCCIÓN<br>DE LANCHAS",
+      "meta_title": "Diseño y Construcción de Lanchas — G&T Global Service, C.A.",
+      "meta_description": "Diseño y construcción de lanchas para operaciones en el Lago de Maracaibo, adaptadas a las necesidades de cada cliente.",
+      "intro": "Diseño y construcción de lanchas adaptadas a las necesidades operativas de cada cliente, pensadas para el trabajo diario en el Lago de Maracaibo.",
+      "imagen_clase": "detalle-img--lima",
+      "imagen_alt": "Construcción de lancha en taller",
+      "incluye": [
+        "Diseño según la necesidad operativa",
+        "Construcción con materiales certificados",
+        "Pruebas de navegación antes de la entrega",
+        "Mantenimiento y soporte posterior"
+      ],
+      "relacionados": [
+        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Mantenimiento de motores marinos"},
+        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Transporte de personal"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"}
+      ],
+      "cta_pregunta": "¿Necesitas una lancha diseñada para tu operación?"
+    },
+    {
+      "slug": "mantenimiento-motores-hyundai",
+      "icon": "ti-engine",
+      "titulo": "Mantenimiento de motores marinos",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "MANTENIMIENTO DE<br>MOTORES HYUNDAI",
+      "meta_title": "Mantenimiento de Motores Hyundai — G&T Global Service, C.A.",
+      "meta_description": "Mantenimiento de motores marinos diésel Hyundai en Maracaibo: diagnóstico técnico, procura de repuestos originales, reparación y mantenimiento preventivo programado.",
+      "intro": "Especialistas en mantenimiento de motores marinos diésel Hyundai: diagnóstico, reparación, repuestos y procura, para mantener cada embarcación operando con seguridad y sin tiempos de parada inesperados.",
+      "imagen_clase": "detalle-img--azul-profundo",
+      "imagen_alt": "Motor marino Hyundai en mantenimiento",
+      "incluye": [
+        "Diagnóstico técnico especializado",
+        "Procura de repuestos originales",
+        "Reparación y reemplazo de piezas",
+        "Mantenimiento preventivo programado"
+      ],
+      "relacionados": [
+        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Diseño y construcción de lanchas"},
+        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Transporte de personal"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"}
+      ],
+      "cta_pregunta": "¿Tu embarcación necesita mantenimiento?"
+    },
+    {
+      "slug": "logistica-industrial",
+      "icon": "ti-truck",
+      "titulo": "Logística industrial",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "LOGÍSTICA<br>INDUSTRIAL",
+      "meta_title": "Logística Industrial — G&T Global Service, C.A.",
+      "meta_description": "Logística industrial y coordinación de operaciones para la industria petrolera y marítima del Lago de Maracaibo.",
+      "intro": "Coordinación logística de personal, equipos y materiales para operaciones petroleras y marítimas en el Lago de Maracaibo, de punta a punta.",
+      "imagen_clase": "detalle-img--azul-medio",
+      "imagen_alt": "Coordinación logística industrial en el Lago de Maracaibo",
+      "incluye": [
+        "Coordinación de personal y equipos",
+        "Transporte de materiales",
+        "Planificación logística por operación",
+        "Seguimiento y reportes al cliente"
+      ],
+      "relacionados": [
+        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Transporte de personal"},
+        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Ingeniería a medida"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"}
+      ],
+      "cta_pregunta": "¿Necesitas coordinar logística para tu operación?"
+    }
+  ]
+}

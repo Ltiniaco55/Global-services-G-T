@@ -1,0 +1,26 @@
+{% load static %}
+<div class="burger-panel">
+  <div class="burger-panel-top">
+    <a href="{% url 'sitio:home' %}" class="nav-logo nav-logo--light">
+      <img src="{% static 'assets/hero/logo.png' %}" alt="G&amp;T Global Service" class="nav-logo-img">
+    </a>
+    <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar">Cotizar</a>
+    <button class="burger-close" aria-label="Cerrar menú">
+      <i class="ti ti-x"></i>
+    </button>
+  </div>
+  <ul class="burger-links">
+    <li><a href="{% url 'sitio:home' %}#quienes-somos">Quiénes Somos <i class="ti ti-chevron-right"></i></a></li>
+    <li><a href="{% url 'sitio:servicios' %}">Servicios <i class="ti ti-chevron-right"></i></a></li>
+    <li><a href="{% url 'sitio:flota' %}">Flota <i class="ti ti-chevron-right"></i></a></li>
+    <li><a href="{% url 'sitio:proyectos' %}">Proyectos <i class="ti ti-chevron-right"></i></a></li>
+    <li><a href="{% url 'sitio:contacto' %}">Contacto <i class="ti ti-chevron-right"></i></a></li>
+  </ul>
+  <div class="burger-panel-bottom">
+    <p><i class="ti ti-phone"></i> {{ empresa.telefono }}</p>
+    <a href="https://wa.me/{{ empresa.telefono_whatsapp|cut:'+' }}" target="_blank" rel="noopener"><i
+        class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp</a>
+    <a href="{{ empresa.instagram }}" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> {{
+      empresa.instagram_handle }}</a>
+  </div>
+</div>
