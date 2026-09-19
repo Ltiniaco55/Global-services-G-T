@@ -94,8 +94,8 @@ class CotizacionForm(TelefonoValidadoMixin, forms.Form):
     categorías/servicios por checkboxes, adjuntos de apoyo, observaciones
     y aceptación de la política de privacidad.
 
-    Campos obligatorios: nombre, correo, teléfono, asunto, al menos un
-    servicio y la aceptación de privacidad. El resto (empresa, adjuntos,
+    Campos obligatorios: nombre, empresa, correo, teléfono, asunto, al menos
+    un servicio y la aceptación de privacidad. El resto (adjuntos,
     observaciones) es opcional.
 
     Nota: el campo de archivos adjuntos NO se declara aquí como
@@ -115,8 +115,7 @@ class CotizacionForm(TelefonoValidadoMixin, forms.Form):
     )
     empresa = forms.CharField(
         max_length=120,
-        required=False,
-        widget=forms.TextInput(attrs={'placeholder': 'Empresa (opcional)'}),
+        widget=forms.TextInput(attrs={'placeholder': 'Empresa'}),
     )
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'placeholder': 'Correo'}),

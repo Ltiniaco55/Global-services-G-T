@@ -33,7 +33,8 @@
         <input type="text" name="{{ form.nombre.name }}" placeholder="Nombre y apellido" value="{{ form.nombre.value|default_if_none:'' }}" required>
         {% if form.nombre.errors %}<p class="form-error">{{ form.nombre.errors.0 }}</p>{% endif %}
 
-        <input type="text" name="{{ form.empresa.name }}" placeholder="Empresa (opcional)" value="{{ form.empresa.value|default_if_none:'' }}">
+        <input type="text" name="{{ form.empresa.name }}" placeholder="Empresa" value="{{ form.empresa.value|default_if_none:'' }}" required>
+        {% if form.empresa.errors %}<p class="form-error">{{ form.empresa.errors.0 }}</p>{% endif %}
 
         <input type="email" name="{{ form.email.name }}" placeholder="Correo" value="{{ form.email.value|default_if_none:'' }}" required>
         {% if form.email.errors %}<p class="form-error">{{ form.email.errors.0 }}</p>{% endif %}

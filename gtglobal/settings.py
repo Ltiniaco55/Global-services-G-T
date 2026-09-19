@@ -20,6 +20,10 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = config('DJANGO_DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='127.0.0.1,localhost', cast=Csv())
 
+# Dominios (con esquema https://) desde los que se aceptan POST — necesario
+# para que el formulario de cotizacion/contacto funcione detras de Vercel.
+CSRF_TRUSTED_ORIGINS = config('DJANGO_CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
+
 # --- Apps ---------------------------------------------------------------
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,6 +38,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -88,26 +93,37 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # destino de collectstatic en producción
 
+# WhiteNoise sirve los estaticos directamente desde la app WSGI (necesario
+# en Vercel, que no tiene un servidor de archivos estaticos aparte).
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# --- Email (formulario de cotización) --------------------------------------
-# SMTP de Gmail / Google Workspace. Credenciales SIEMPRE por variable de
-# entorno — nunca hardcodeadas ni en git. Para Gmail necesitas una
-# "contraseña de aplicación", no la contraseña normal de la cuenta.
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
-EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# --- Resend (envío de notificaciones de formularios) -----------------------
+# API key de Resend (resend.com) y remitente verificado ahí. Nunca
+# hardcodees la API key ni la subas a git.
+RESEND_API_KEY = config('RESEND_API_KEY', default='')
+RESEND_FROM_EMAIL = config('RESEND_FROM_EMAIL', default='onboarding@resend.dev')
 
-# A dónde llegan los leads del formulario de cotización.
+# A dónde llegan los leads de los formularios (cotización y postulaciones).
 CONTACTO_EMAIL_DESTINO = config('CONTACTO_EMAIL_DESTINO', default='gtglobalservice2014@gmail.com')
 
 # --- Ajustes de seguridad para producción -----------------------------------
 # Se activan solos cuando DEBUG=False (o sea, en producción). En local con
 # DEBUG=True no molestan (HTTPS no existe en localhost).
+# Vercel (como cualquier proxy) termina el HTTPS y reenvia por HTTP interno,
+# indicando el protocolo original en este header. Sin esto, Django no se
+# entera de que la conexion ya es HTTPS y SECURE_SSL_REDIRECT entra en un
+# loop infinito de redirects.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 if not DEBUG:
     SECURE_SSL_REDIRECT = config('DJANGO_SECURE_SSL_REDIRECT', default=True, cast=bool)
     SESSION_COOKIE_SECURE = True

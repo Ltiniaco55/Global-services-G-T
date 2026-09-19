@@ -1,8 +1,10 @@
+import base64
+import html
 import logging
 import os
 
+import requests
 from django.conf import settings
-from django.core.mail import EmailMessage
 from django.http import Http404
 from django.shortcuts import redirect, render
 
@@ -26,24 +28,59 @@ CV_EXTENSIONES_PERMITIDAS = {'.pdf', '.doc', '.docx'}
 CV_TAMANO_MAXIMO = 8 * 1024 * 1024  # 8 MB
 
 
-def _enviar_notificacion(asunto, cuerpo, adjuntos=None):
-    """Envía el correo de notificación de un lead (contacto o cotización),
-    adjuntando los archivos que haya (si los hay).
+RESEND_API_URL = 'https://api.resend.com/emails'
+
+_EMAIL_ESTILO_BASE = 'font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #1a1a1a; line-height: 1.6;'
+
+
+def _email_p(label, valor):
+    """Un parrafo "Label: valor" en HTML, con el label en negrita y el
+    valor escapado (para que texto que el usuario escribio en el
+    formulario, como < o >, nunca se interprete como HTML)."""
+    return f'<p style="margin:0 0 10px;"><strong>{html.escape(label)}:</strong> {html.escape(valor)}</p>'
+
+
+def _enviar_notificacion(asunto, cuerpo, adjuntos=None, cuerpo_html=None):
+    """Envía el correo de notificación de un lead (contacto o cotización)
+    usando la API de Resend, adjuntando los archivos que haya (si los hay).
+
+    "cuerpo" es la version en texto plano (fallback para clientes de correo
+    que no rendericen HTML); "cuerpo_html" es opcional y, si se pasa, es la
+    version con formato (negritas, listas) que ven la mayoria de los
+    clientes de correo modernos.
 
     Devuelve True si se envió bien, False si falló (y deja el error
     logueado) — así cada vista solo decide qué hacer con el resultado, sin
     repetir el try/except del envío.
     """
     try:
-        email = EmailMessage(
-            subject=asunto,
-            body=cuerpo,
-            from_email=None,  # usa DEFAULT_FROM_EMAIL
-            to=[settings.CONTACTO_EMAIL_DESTINO],
-        )
+        payload = {
+            'from': settings.RESEND_FROM_EMAIL,
+            'to': [settings.CONTACTO_EMAIL_DESTINO],
+            'subject': asunto,
+            'text': cuerpo,
+        }
+        if cuerpo_html:
+            payload['html'] = cuerpo_html
+        adjuntos_payload = []
         for archivo in (adjuntos or []):
-            email.attach(archivo.name, archivo.read(), archivo.content_type)
-        email.send(fail_silently=False)
+            adjuntos_payload.append({
+                'filename': archivo.name,
+                'content': base64.b64encode(archivo.read()).decode('ascii'),
+            })
+        if adjuntos_payload:
+            payload['attachments'] = adjuntos_payload
+
+        respuesta = requests.post(
+            RESEND_API_URL,
+            headers={
+                'Authorization': f'Bearer {settings.RESEND_API_KEY}',
+                'Content-Type': 'application/json',
+            },
+            json=payload,
+            timeout=15,
+        )
+        respuesta.raise_for_status()
         return True
     except Exception:
         logger.exception('Fallo al enviar el correo de notificación')
@@ -130,14 +167,28 @@ def contacto(request):
                 return redirect('sitio:cotizacion_gracias')
 
             cd = form_trabajo.cleaned_data
+            puesto = cd['puesto_interes'] or '(no indicado)'
+            mensaje = cd['mensaje'] or '(sin mensaje)'
+
             cuerpo = (
                 f"Nombre: {cd['nombre']}\n"
                 f"Correo: {cd['email']}\n"
                 f"Teléfono: {cd['telefono']}\n"
-                f"Puesto de interés: {cd['puesto_interes'] or '(no indicado)'}\n\n"
-                f"Mensaje:\n{cd['mensaje'] or '(sin mensaje)'}"
+                f"Puesto de interés: {puesto}\n\n"
+                f"Mensaje:\n{mensaje}"
             )
-            if _enviar_notificacion(f"Nueva postulación de empleo — {cd['nombre']}", cuerpo, cv):
+            cuerpo_html = (
+                f'<div style="{_EMAIL_ESTILO_BASE}">'
+                + _email_p('Nombre', cd['nombre'])
+                + _email_p('Correo', cd['email'])
+                + _email_p('Teléfono', cd['telefono'])
+                + _email_p('Puesto de interés', puesto)
+                + '<div style="height:8px;"></div>'
+                + '<p style="margin:0 0 4px;"><strong>Mensaje:</strong></p>'
+                + f'<p style="margin:0; white-space:pre-line;">{html.escape(mensaje)}</p>'
+                + '</div>'
+            )
+            if _enviar_notificacion(f"Nueva postulación de empleo — {cd['nombre']}", cuerpo, cv, cuerpo_html=cuerpo_html):
                 return redirect('sitio:cotizacion_gracias')
             form_trabajo.add_error(
                 None,
@@ -172,17 +223,56 @@ def cotizacion(request):
 
             cd = form.cleaned_data
             servicios_map = dict(form.fields['servicios'].choices)
-            servicios_titulo = ', '.join(servicios_map.get(s, s) for s in cd['servicios'])
-            cuerpo = (
-                f"Nombre: {cd['nombre']}\n"
-                f"Empresa: {cd['empresa'] or '(no indicada)'}\n"
-                f"Correo: {cd['email']}\n"
-                f"Teléfono: {cd['telefono'] or '(no indicado)'}\n"
-                f"Asunto: {cd['asunto']}\n"
-                f"Servicios de interés: {servicios_titulo}\n\n"
-                f"Observaciones:\n{cd['observaciones'] or '(sin observaciones)'}"
-            )
-            if _enviar_notificacion(f"Nueva solicitud de cotización — {cd['nombre']}", cuerpo, adjuntos):
+            lista_servicios = [servicios_map.get(s, s) for s in cd['servicios']]
+            servicios_titulo = ', '.join(lista_servicios)
+            observaciones = cd['observaciones'] or '(sin observaciones)'
+            nombres_adjuntos = ', '.join(a.name for a in adjuntos) if adjuntos else None
+
+            # --- Version en texto plano (fallback) --------------------------
+            partes_cuerpo = [
+                f"Nombre: {cd['nombre']}",
+                f"Empresa: {cd['empresa']}",
+                "",
+                f"Asunto: {cd['asunto']}",
+                "",
+                "Servicios de interés:",
+                *(f"- {s}" for s in lista_servicios),
+                "",
+                f"Número de teléfono: {cd['telefono']}",
+                f"Correo electrónico: {cd['email']}",
+                "",
+                "Descripción:",
+                observaciones,
+            ]
+            if nombres_adjuntos:
+                partes_cuerpo += ["", f"Archivos adjuntos: {nombres_adjuntos}"]
+            cuerpo = '\n'.join(partes_cuerpo)
+
+            # --- Version en HTML (negritas + lista con viñetas) -------------
+            lista_servicios_html = ''.join(f'<li>{html.escape(s)}</li>' for s in lista_servicios)
+            partes_html = [
+                f'<div style="{_EMAIL_ESTILO_BASE}">',
+                _email_p('Nombre', cd['nombre']),
+                _email_p('Empresa', cd['empresa']),
+                '<div style="height:8px;"></div>',
+                _email_p('Asunto', cd['asunto']),
+                '<div style="height:8px;"></div>',
+                '<p style="margin:0 0 4px;"><strong>Servicios de interés:</strong></p>',
+                f'<ul style="margin:0 0 10px; padding-left:20px;">{lista_servicios_html}</ul>',
+                '<div style="height:8px;"></div>',
+                _email_p('Número de teléfono', cd['telefono']),
+                _email_p('Correo electrónico', cd['email']),
+                '<div style="height:8px;"></div>',
+                '<p style="margin:0 0 4px;"><strong>Descripción:</strong></p>',
+                f'<p style="margin:0 0 10px; white-space:pre-line;">{html.escape(observaciones)}</p>',
+            ]
+            if nombres_adjuntos:
+                partes_html.append(_email_p('Archivos adjuntos', nombres_adjuntos))
+            partes_html.append('</div>')
+            cuerpo_html = ''.join(partes_html)
+
+            asunto_correo = f"{cd['nombre']} — {cd['empresa']}"
+            if _enviar_notificacion(asunto_correo, cuerpo, adjuntos, cuerpo_html=cuerpo_html):
                 return redirect('sitio:cotizacion_gracias')
             form.add_error(
                 None,
