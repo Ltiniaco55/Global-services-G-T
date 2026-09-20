@@ -91,7 +91,7 @@ USE_TZ = True
 # --- Archivos estáticos ----------------------------------------------------
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # destino de collectstatic en producción
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'static'  # nested para que coincida con la ruta /static/ de vercel.json
 
 # WhiteNoise sirve los estaticos directamente desde la app WSGI (necesario
 # en Vercel, que no tiene un servidor de archivos estaticos aparte).
@@ -138,7 +138,7 @@ if not DEBUG:
 EMPRESA = {
     'nombre': 'G&T Global Service, C.A.',
     'telefono': '0261-4189710',
-    'telefono_whatsapp': '+34695883948',
+    'telefono_whatsapp': '+34637054468',
     'email': 'tiniacoluciano05@gmail.com',
     'direccion': 'Av. 4 Bella Vista, Edificio Ferley, Piso PB, Local 1',
     'ciudad': 'Maracaibo',
