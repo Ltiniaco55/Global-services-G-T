@@ -167,9 +167,20 @@ img {
     display: flex;
   }
 
+  /* Logo a la izquierda; burger + Cotizar juntos a la derecha */
+  .site-header {
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav-logo {
+    margin-right: auto;
+  }
+
   .nav-pill {
-    gap: 12px;
-    padding: 8px 10px 8px 18px;
+    gap: 0;
+    padding: 0;
+    background: transparent;
   }
 
   .btn-cotizar {
@@ -185,7 +196,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 1100;
-  background: var(--c-azul-profundo);
+  background: var(--c-blanco);
   display: none;
   flex-direction: column;
   padding: 24px;
@@ -204,13 +215,13 @@ img {
 }
 
 .nav-logo--light {
-  color: var(--c-blanco);
+  color: var(--c-texto);
 }
 
 .burger-close {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
   border: none;
-  color: var(--c-blanco);
+  color: var(--c-texto);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -223,7 +234,7 @@ img {
 }
 
 .burger-links li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .burger-links a {
@@ -231,7 +242,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 18px 4px;
-  color: var(--c-blanco);
+  color: var(--c-texto);
   font-family: var(--f-heading);
   font-size: 18px;
   font-weight: 600;
@@ -242,18 +253,19 @@ img {
 }
 
 .burger-panel-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.burger-panel-bottom p {
+.burger-panel-bottom p,
+.burger-panel-bottom a {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--c-texto-suave);
   font-size: 14px;
   margin: 0;
 }
