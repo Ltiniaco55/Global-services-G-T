@@ -114,8 +114,25 @@ function initWhatsappBubble() {
   });
 }
 
+// Selector de idioma (<details> en el header): abre y cierra solo con el
+// clic en el botón; esto añade cerrarlo al hacer clic fuera o con Escape.
+function initSelectorIdioma() {
+  const selector = document.querySelector('.selector-idioma');
+  if (!selector) return;
+  document.addEventListener('click', (event) => {
+    if (selector.open && !selector.contains(event.target)) selector.open = false;
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && selector.open) {
+      selector.open = false;
+      selector.querySelector('summary')?.focus();
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScrollBehavior();
+  initSelectorIdioma();
   initBurgerMenu();
   initWhatsappFloatBehavior();
   initWhatsappBubble();

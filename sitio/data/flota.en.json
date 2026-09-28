@@ -1,0 +1,42 @@
+{
+  "embarcaciones": [
+    {
+      "nombre": "BETTY MARACAIBO",
+      "imagen_clase": "flota-card__img--azul-profundo",
+      "imagen_alt": "Betty Maracaibo vessel",
+      "descripcion": "Crew transport to operational areas on the Lake.",
+      "badges": ["RACDA G-24-2017-3386", "RIF J-404294287"]
+    },
+    {
+      "nombre": "BETTY · M/ARCI",
+      "imagen_clase": "flota-card__img--azul-medio",
+      "imagen_alt": "Betty vessel, M/Arci class",
+      "descripcion": "Meets all INEA safety requirements.",
+      "badges": ["INEA compliant"]
+    },
+    {
+      "nombre": "MERCEDES V",
+      "imagen_clase": "flota-card__img--noche",
+      "imagen_alt": "Mercedes V vessel",
+      "descripcion": "Company-owned vessel in active operation on the Lake.",
+      "badges": ["specs: pending"]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Boat design and construction",
+      "imagen_clase": "flota-card__img--azul-profundo",
+      "imagen_alt": "Boat in dry dock during construction"
+    },
+    {
+      "titulo": "Hyundai engine maintenance",
+      "imagen_clase": "flota-card__img--azul-medio",
+      "imagen_alt": "Hyundai engine undergoing maintenance"
+    },
+    {
+      "titulo": "In-house maintenance and lifting",
+      "imagen_clase": "flota-card__img--noche",
+      "imagen_alt": "Vessel being lifted with our own crane"
+    }
+  ]
+}

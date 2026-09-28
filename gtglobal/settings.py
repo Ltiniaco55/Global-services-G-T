@@ -40,6 +40,9 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # Detecta el idioma por la URL (/en/...) — tiene que ir después de
+    # SessionMiddleware y antes de CommonMiddleware.
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -58,9 +61,11 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'sitio.context_processors.empresa',
+                'sitio.context_processors.idiomas',
             ],
         },
     },
@@ -83,7 +88,17 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 # --- Internacionalización ------------------------------------------------
+# Español es el idioma por defecto y sus URLs no llevan prefijo (/servicios/);
+# el inglés vive bajo /en/ (/en/services/). Ver gtglobal/urls.py.
+# Los textos de las plantillas se traducen con los archivos de locale/
+# (.po/.mo) y el contenido de servicios/proyectos/flota con los JSON
+# *.en.json de sitio/data/ (ver sitio/data_loader.py).
 LANGUAGE_CODE = 'es'
+LANGUAGES = [
+    ('es', 'Español'),
+    ('en', 'English'),
+]
+LOCALE_PATHS = [BASE_DIR / 'locale']
 TIME_ZONE = 'America/Caracas'
 USE_I18N = True
 USE_TZ = True

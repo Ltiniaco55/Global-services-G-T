@@ -15,6 +15,8 @@ verificación, fuera del alcance de este sitio.
 import re
 
 from django import forms
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 
 from .data_loader import load_servicios
 
@@ -29,10 +31,10 @@ TELEFONO_REGEX = re.compile(r'^\+?[\d\s\-()]{7,20}$')
 def validar_telefono(valor):
     valor = (valor or '').strip()
     if not TELEFONO_REGEX.match(valor):
-        raise forms.ValidationError('Ingresa un número de teléfono válido.')
+        raise forms.ValidationError(_('Ingresa un número de teléfono válido.'))
     solo_digitos = re.sub(r'\D', '', valor)
     if len(solo_digitos) < 7 or len(solo_digitos) > 15:
-        raise forms.ValidationError('Ingresa un número de teléfono válido.')
+        raise forms.ValidationError(_('Ingresa un número de teléfono válido.'))
     return valor
 
 
@@ -57,24 +59,24 @@ class TrabajaConNosotrosForm(TelefonoValidadoMixin, forms.Form):
 
     nombre = forms.CharField(
         max_length=120,
-        widget=forms.TextInput(attrs={'placeholder': 'Nombre y apellido'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Nombre y apellido')}),
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'placeholder': 'Correo'}),
+        widget=forms.EmailInput(attrs={'placeholder': _('Correo')}),
     )
     telefono = forms.CharField(
         max_length=40,
-        widget=forms.TextInput(attrs={'placeholder': 'Teléfono', 'type': 'tel'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Teléfono'), 'type': 'tel'}),
     )
     puesto_interes = forms.CharField(
         max_length=120,
         required=False,
-        widget=forms.TextInput(attrs={'placeholder': 'Puesto de interés (opcional)'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Puesto de interés (opcional)')}),
     )
     mensaje = forms.CharField(
         required=False,
         widget=forms.Textarea(attrs={
-            'placeholder': 'Cuéntanos brevemente tu experiencia (opcional)',
+            'placeholder': _('Cuéntanos brevemente tu experiencia (opcional)'),
             'rows': 4,
         }),
     )
@@ -111,38 +113,38 @@ class CotizacionForm(TelefonoValidadoMixin, forms.Form):
 
     nombre = forms.CharField(
         max_length=120,
-        widget=forms.TextInput(attrs={'placeholder': 'Nombre y apellido'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Nombre y apellido')}),
     )
     empresa = forms.CharField(
         max_length=120,
-        widget=forms.TextInput(attrs={'placeholder': 'Empresa'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Empresa')}),
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'placeholder': 'Correo'}),
+        widget=forms.EmailInput(attrs={'placeholder': _('Correo')}),
     )
     telefono = forms.CharField(
         max_length=40,
-        widget=forms.TextInput(attrs={'placeholder': 'Teléfono / WhatsApp', 'type': 'tel'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Teléfono / WhatsApp'), 'type': 'tel'}),
     )
     asunto = forms.CharField(
         max_length=150,
-        widget=forms.TextInput(attrs={'placeholder': 'Asunto'}),
+        widget=forms.TextInput(attrs={'placeholder': _('Asunto')}),
     )
     servicios = forms.MultipleChoiceField(
-        label='Servicios de interés',
+        label=_('Servicios de interés'),
         widget=forms.CheckboxSelectMultiple,
-        error_messages={'required': 'Selecciona al menos un servicio.'},
+        error_messages={'required': _('Selecciona al menos un servicio.')},
     )
     observaciones = forms.CharField(
         required=False,
         widget=forms.Textarea(attrs={
-            'placeholder': 'Cuéntanos más: alcance, ubicación, plazos estimados...',
+            'placeholder': _('Cuéntanos más: alcance, ubicación, plazos estimados...'),
             'rows': 5,
         }),
     )
     acepta_privacidad = forms.BooleanField(
-        label='He leído y acepto la política de privacidad',
-        error_messages={'required': 'Debes aceptar la política de privacidad para continuar.'},
+        label=_('He leído y acepto la política de privacidad'),
+        error_messages={'required': _('Debes aceptar la política de privacidad para continuar.')},
     )
 
     # --- Honeypot anti-spam ---------------------------------------------
@@ -154,7 +156,7 @@ class CotizacionForm(TelefonoValidadoMixin, forms.Form):
         # (no a nivel de clase) para que siempre reflejen el contenido
         # actual de servicios.json sin necesitar un restart del server.
         choices = [(s['slug'], s['titulo']) for s in load_servicios()]
-        choices.append((self.OTRO, 'Otro / no estoy seguro'))
+        choices.append((self.OTRO, gettext('Otro / no estoy seguro')))
         self.fields['servicios'].choices = choices
 
     def clean_asunto(self):
@@ -165,8 +167,10 @@ class CotizacionForm(TelefonoValidadoMixin, forms.Form):
         palabras = len(valor.split())
         if palabras < self.ASUNTO_MIN_PALABRAS or palabras > self.ASUNTO_MAX_PALABRAS:
             raise forms.ValidationError(
-                f'El asunto debe tener entre {self.ASUNTO_MIN_PALABRAS} y '
-                f'{self.ASUNTO_MAX_PALABRAS} palabras.'
+                gettext('El asunto debe tener entre %(min)d y %(max)d palabras.') % {
+                    'min': self.ASUNTO_MIN_PALABRAS,
+                    'max': self.ASUNTO_MAX_PALABRAS,
+                }
             )
         return valor
 

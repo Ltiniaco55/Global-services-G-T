@@ -1,20 +1,24 @@
-{% load static %}<!DOCTYPE html>
-<html lang="es">
+{% load static i18n %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}G&amp;T Global Service, C.A. — Ingeniería y servicios marítimos en el Lago de Maracaibo{% endblock %}</title>
-<meta name="description" content="{% block meta_description %}Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y logística industrial.{% endblock %}">
+<title>{% block title %}G&amp;T Global Service, C.A. — {% translate "Ingeniería y servicios marítimos en el Lago de Maracaibo" %}{% endblock %}</title>
+<meta name="description" content="{% block meta_description %}{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y logística industrial." %}{% endblock %}">
 
 <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+{# Versiones de esta misma página en cada idioma (SEO multilingüe) #}
+{% for idioma in idiomas_pagina %}<link rel="alternate" hreflang="{{ idioma.codigo }}" href="{{ idioma.url_absoluta }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ url_x_default }}">
 <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
 <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
 
 <!-- Open Graph / redes sociales -->
 <meta property="og:site_name" content="G&amp;T Global Service, C.A.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{% block og_title %}{{ empresa.nombre }} — Ingeniería y servicios marítimos{% endblock %}">
-<meta property="og:description" content="{% block og_description %}Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo.{% endblock %}">
+<meta property="og:locale" content="{% if LANGUAGE_CODE == 'en' %}en_US{% else %}es_VE{% endif %}">
+<meta property="og:title" content="{% block og_title %}{{ empresa.nombre }} — {% translate "Ingeniería y servicios marítimos" %}{% endblock %}">
+<meta property="og:description" content="{% block og_description %}{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo." %}{% endblock %}">
 <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-image.png' %}">
 <meta name="twitter:card" content="summary_large_image">

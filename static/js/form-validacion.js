@@ -5,12 +5,25 @@
  * vía `opciones`, qué campos aplican (por ejemplo /contacto/ no tiene
  * "asunto" ni checkboxes de servicios).
  *
- * Esto es una capa de comodidad para el usuario (mensajes en español, en
+ * Los mensajes de error llegan traducidos desde la plantilla (opción
+ * `mensajes`, ver templates/includes/mensajes_validacion.html); si no se
+ * pasan, se usan los textos en español de MENSAJES_POR_DEFECTO.
+ *
+ * Esto es una capa de comodidad para el usuario (mensajes en su idioma, en
  * el estilo del sitio, sin recargar la página). La validación real e
  * inquebrantable vive en sitio/forms.py — si JavaScript falla o está
  * desactivado, el formulario igual no se puede enviar incompleto porque
  * Django lo vuelve a validar del lado del servidor.
  */
+var MENSAJES_POR_DEFECTO = {
+  nombre: 'Ingresa tu nombre y apellido.',
+  email: 'Ingresa un correo válido.',
+  telefono: 'Ingresa un número de teléfono válido.',
+  asuntoVacio: 'Escribe el asunto de tu solicitud.',
+  asuntoPalabras: 'El asunto debe tener entre {min} y {max} palabras.',
+  privacidad: 'Debes aceptar la política de privacidad para continuar.',
+};
+
 function initFormValidado(form, opciones) {
   if (!form) return;
 
@@ -25,6 +38,7 @@ function initFormValidado(form, opciones) {
     archivoRequeridoId: null,
     archivoRequeridoMsg: 'Adjunta un archivo.',
   }, opciones || {});
+  var msg = Object.assign({}, MENSAJES_POR_DEFECTO, cfg.mensajes || {});
 
   var iti = null;
   var telInput = cfg.telefonoInputId ? document.getElementById(cfg.telefonoInputId) : null;
@@ -72,7 +86,7 @@ function initFormValidado(form, opciones) {
     if (nombre) {
       limpiarError('nombre');
       if (!nombre.value.trim()) {
-        marcarInvalido(nombre, 'nombre', 'Ingresa tu nombre y apellido.');
+        marcarInvalido(nombre, 'nombre', msg.nombre);
       }
     }
 
@@ -82,7 +96,7 @@ function initFormValidado(form, opciones) {
       limpiarError('email');
       var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!email.value.trim() || !regexEmail.test(email.value.trim())) {
-        marcarInvalido(email, 'email', 'Ingresa un correo válido.');
+        marcarInvalido(email, 'email', msg.email);
       }
     }
 
@@ -94,7 +108,7 @@ function initFormValidado(form, opciones) {
       var telVacio = !telInput.value.trim();
       var telValido = iti ? iti.isValidNumber() : telInput.value.trim().length >= 7;
       if (telVacio || !telValido) {
-        marcarInvalido(telInput, 'telefono', 'Ingresa un número de teléfono válido.', contenedorTel);
+        marcarInvalido(telInput, 'telefono', msg.telefono, contenedorTel);
       } else if (iti) {
         telInput.value = iti.getNumber();
       }
@@ -107,14 +121,16 @@ function initFormValidado(form, opciones) {
         limpiarError('asunto');
         var valorAsunto = asunto.value.trim();
         if (!valorAsunto) {
-          marcarInvalido(asunto, 'asunto', 'Escribe el asunto de tu solicitud.');
+          marcarInvalido(asunto, 'asunto', msg.asuntoVacio);
         } else {
           var palabras = contarPalabras(valorAsunto);
           if (palabras < cfg.asuntoMinPalabras || palabras > cfg.asuntoMaxPalabras) {
             marcarInvalido(
               asunto,
               'asunto',
-              'El asunto debe tener entre ' + cfg.asuntoMinPalabras + ' y ' + cfg.asuntoMaxPalabras + ' palabras.'
+              msg.asuntoPalabras
+                .replace('{min}', cfg.asuntoMinPalabras)
+                .replace('{max}', cfg.asuntoMaxPalabras)
             );
           }
         }
@@ -161,7 +177,7 @@ function initFormValidado(form, opciones) {
         marcarInvalido(
           privacidad,
           'acepta_privacidad',
-          'Debes aceptar la política de privacidad para continuar.',
+          msg.privacidad,
           etiquetaPrivacidad
         );
       }

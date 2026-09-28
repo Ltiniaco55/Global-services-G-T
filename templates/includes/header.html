@@ -1,28 +1,29 @@
-{% load static %}
+{% load static i18n %}
 <header class="site-header">
   <a href="{% url 'sitio:home' %}" class="nav-logo">
     <img src="{% static 'assets/hero/logo.svg' %}" alt="G&amp;T Global Service" class="nav-logo-img">
   </a>
   <nav class="nav-pill">
     <ul class="nav-links">
-      <li><a href="{% url 'sitio:home' %}#quienes-somos">Quiénes Somos</a></li>
-      <li><a href="{% url 'sitio:servicios' %}">Servicios</a></li>
-      <li><a href="{% url 'sitio:flota' %}">Flota</a></li>
-      <li><a href="{% url 'sitio:proyectos' %}">Proyectos</a></li>
-      <li><a href="{% url 'sitio:contacto' %}">Trabaja con nosotros</a></li>
+      <li><a href="{% url 'sitio:home' %}#quienes-somos">{% translate "Quiénes Somos" %}</a></li>
+      <li><a href="{% url 'sitio:servicios' %}">{% translate "Servicios" %}</a></li>
+      <li><a href="{% url 'sitio:flota' %}">{% translate "Flota" %}</a></li>
+      <li><a href="{% url 'sitio:proyectos' %}">{% translate "Proyectos" %}</a></li>
+      <li><a href="{% url 'sitio:contacto' %}">{% translate "Trabaja con nosotros" %}</a></li>
     </ul>
-    <button class="burger-toggle" aria-label="Abrir menú">
+    <button class="burger-toggle" aria-label="{% translate 'Abrir menú' %}">
       <i class="ti ti-menu-2"></i>
     </button>
   </nav>
-  <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar">Cotizar</a>
+  <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar">{% translate "Cotizar" %}</a>
+  {% include 'includes/selector_idioma.html' %}
 </header>
 
 <div class="whatsapp-bubble" id="whatsapp-bubble">
-  <button type="button" class="whatsapp-bubble__close" aria-label="Cerrar mensaje">&times;</button>
-  <p class="whatsapp-bubble__text">¡Hola! 👋 Estamos a tu disposición para consultas generales. ¡Escríbenos!</p>
+  <button type="button" class="whatsapp-bubble__close" aria-label="{% translate 'Cerrar mensaje' %}">&times;</button>
+  <p class="whatsapp-bubble__text">{% translate "¡Hola! 👋 Estamos a tu disposición para consultas generales. ¡Escríbenos!" %}</p>
 </div>
 <a href="https://wa.me/{{ empresa.telefono_whatsapp|cut:'+' }}" class="whatsapp-float" target="_blank" rel="noopener"
-  aria-label="Escribir por WhatsApp">
+  aria-label="{% translate 'Escribir por WhatsApp' %}">
   <i class="ti ti-brand-whatsapp"></i>
 </a>

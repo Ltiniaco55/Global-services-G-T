@@ -1,0 +1,148 @@
+{
+  "servicios": [
+    {
+      "slug": "transporte-de-personal",
+      "icon": "ti-users",
+      "titulo": "Crew transport",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "CREW<br>TRANSPORT",
+      "meta_title": "Crew Transport — G&T Global Service, C.A.",
+      "meta_description": "Safe marine crew transport for oil operations on Lake Maracaibo, with our own vessels and qualified crews.",
+      "intro": "Marine crew transport to wells and platforms on Lake Maracaibo, with our own vessels, qualified crews and safety protocols designed for oil operations.",
+      "imagen_clase": "detalle-img--azul-medio",
+      "imagen_alt": "Crew transport vessel on Lake Maracaibo",
+      "incluye": [
+        "Our own certified vessels",
+        "Qualified crews and safety protocols",
+        "Routes and schedules planned around your operation",
+        "Direct logistics coordination with the client"
+      ],
+      "relacionados": [
+        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Boat design and construction"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"},
+        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Industrial logistics"}
+      ],
+      "cta_pregunta": "Need crew transport on the Lake?"
+    },
+    {
+      "slug": "ingenieria-a-medida",
+      "icon": "ti-ruler-2",
+      "titulo": "Custom engineering",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "CUSTOM<br>ENGINEERING",
+      "meta_title": "Custom Engineering — G&T Global Service, C.A.",
+      "meta_description": "Design and fabrication of custom engineering solutions for oil and marine infrastructure on Lake Maracaibo.",
+      "intro": "Design and fabrication of engineering solutions tailored to each project: custom structures, parts and systems for oil and marine infrastructure on Lake Maracaibo.",
+      "imagen_clase": "detalle-img--noche",
+      "imagen_alt": "Custom engineering and fabrication workshop",
+      "incluye": [
+        "Technical design tailored to each project",
+        "Fabrication of custom parts and structures",
+        "Specialized technical consulting",
+        "Execution with our own team and workshop"
+      ],
+      "relacionados": [
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"},
+        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Marine engine maintenance"},
+        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Boat design and construction"}
+      ],
+      "cta_pregunta": "Do you have a project that needs custom engineering?"
+    },
+    {
+      "slug": "instalacion-de-atracaderos",
+      "icon": "ti-anchor",
+      "titulo": "Dock installation",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "DOCK<br>INSTALLATION",
+      "meta_title": "Dock Installation — G&T Global Service, C.A.",
+      "meta_description": "Design, fabrication and installation of docks for oil wells and infrastructure on Lake Maracaibo.",
+      "intro": "Design, fabrication and installation of docks for oil wells and infrastructure on Lake Maracaibo, with in-house engineering from start to finish.",
+      "imagen_clase": "detalle-img--azul-profundo",
+      "imagen_alt": "Dock installation on Lake Maracaibo",
+      "incluye": [
+        "Custom engineering design",
+        "Structure fabrication in our own workshop",
+        "Installation with our own equipment",
+        "Post-installation maintenance"
+      ],
+      "relacionados": [
+        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Custom engineering"},
+        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Marine engine maintenance"},
+        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Industrial logistics"}
+      ],
+      "cta_pregunta": "Need to install or repair a dock?"
+    },
+    {
+      "slug": "diseno-y-construccion-de-lanchas",
+      "icon": "ti-sailboat",
+      "titulo": "Boat design and construction",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "BOAT DESIGN<br>AND CONSTRUCTION",
+      "meta_title": "Boat Design and Construction — G&T Global Service, C.A.",
+      "meta_description": "Design and construction of boats for operations on Lake Maracaibo, built around each client's needs.",
+      "intro": "Design and construction of boats built around each client's operational needs, made for day-to-day work on Lake Maracaibo.",
+      "imagen_clase": "detalle-img--lima",
+      "imagen_alt": "Boat under construction in the workshop",
+      "incluye": [
+        "Design based on your operational needs",
+        "Construction with certified materials",
+        "Sea trials before delivery",
+        "Ongoing maintenance and support"
+      ],
+      "relacionados": [
+        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Marine engine maintenance"},
+        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Crew transport"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"}
+      ],
+      "cta_pregunta": "Need a boat designed for your operation?"
+    },
+    {
+      "slug": "mantenimiento-motores-hyundai",
+      "icon": "ti-engine",
+      "titulo": "Marine engine maintenance",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "HYUNDAI ENGINE<br>MAINTENANCE",
+      "meta_title": "Hyundai Engine Maintenance — G&T Global Service, C.A.",
+      "meta_description": "Maintenance of Hyundai marine diesel engines in Maracaibo: technical diagnostics, sourcing of genuine spare parts, repairs and scheduled preventive maintenance.",
+      "intro": "Specialists in Hyundai marine diesel engine maintenance: diagnostics, repairs, spare parts and procurement, to keep every vessel running safely and without unexpected downtime.",
+      "imagen_clase": "detalle-img--azul-profundo",
+      "imagen_alt": "Hyundai marine engine undergoing maintenance",
+      "incluye": [
+        "Specialized technical diagnostics",
+        "Sourcing of genuine spare parts",
+        "Repair and replacement of parts",
+        "Scheduled preventive maintenance"
+      ],
+      "relacionados": [
+        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Boat design and construction"},
+        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Crew transport"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"}
+      ],
+      "cta_pregunta": "Does your vessel need maintenance?"
+    },
+    {
+      "slug": "logistica-industrial",
+      "icon": "ti-truck",
+      "titulo": "Industrial logistics",
+      "tiene_detalle": true,
+      "titulo_detalle_html": "INDUSTRIAL<br>LOGISTICS",
+      "meta_title": "Industrial Logistics — G&T Global Service, C.A.",
+      "meta_description": "Industrial logistics and operations coordination for the oil and maritime industry on Lake Maracaibo.",
+      "intro": "End-to-end logistics coordination of personnel, equipment and materials for oil and marine operations on Lake Maracaibo.",
+      "imagen_clase": "detalle-img--azul-medio",
+      "imagen_alt": "Industrial logistics coordination on Lake Maracaibo",
+      "incluye": [
+        "Coordination of personnel and equipment",
+        "Materials transport",
+        "Logistics planning for each operation",
+        "Tracking and reporting to the client"
+      ],
+      "relacionados": [
+        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Crew transport"},
+        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Custom engineering"},
+        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"}
+      ],
+      "cta_pregunta": "Need to coordinate logistics for your operation?"
+    }
+  ]
+}

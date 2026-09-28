@@ -7,6 +7,9 @@ import requests
 from django.conf import settings
 from django.http import Http404
 from django.shortcuts import redirect, render
+from django.utils import translation
+from django.utils.translation import get_language, get_language_info
+from django.utils.translation import gettext as _
 
 from .data_loader import get_proyecto, get_servicio, load_flota, load_proyectos, load_servicios
 from .forms import CotizacionForm, TrabajaConNosotrosForm
@@ -31,6 +34,15 @@ CV_TAMANO_MAXIMO = 8 * 1024 * 1024  # 8 MB
 RESEND_API_URL = 'https://api.resend.com/emails'
 
 _EMAIL_ESTILO_BASE = 'font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #1a1a1a; line-height: 1.6;'
+
+
+def _idioma_formulario():
+    """Nombre (en español) del idioma en que el visitante llenó el
+    formulario, para que el equipo sepa en qué idioma responderle. Los
+    correos de notificación se escriben siempre en español porque los lee
+    el equipo de G&T, no el cliente."""
+    codigo = (get_language() or 'es').split('-')[0]
+    return {'es': 'Español', 'en': 'Inglés'}.get(codigo, get_language_info(codigo)['name'])
 
 
 def _email_p(label, valor):
@@ -100,13 +112,13 @@ def _validar_adjuntos(archivos):
     for archivo in archivos:
         ext = os.path.splitext(archivo.name)[1].lower()
         if ext not in ADJUNTOS_EXTENSIONES_PERMITIDAS:
-            return (
-                f'El archivo "{archivo.name}" tiene un formato no permitido. '
+            return _(
+                'El archivo "%(nombre)s" tiene un formato no permitido. '
                 'Formatos aceptados: PDF, imágenes (JPG/PNG), Word, Excel y planos (DWG/DXF).'
-            )
+            ) % {'nombre': archivo.name}
         tamano_total += archivo.size
     if tamano_total > ADJUNTOS_TAMANO_MAXIMO:
-        return 'Los archivos adjuntos superan el tamaño máximo permitido (15 MB en total).'
+        return _('Los archivos adjuntos superan el tamaño máximo permitido (15 MB en total).')
     return None
 
 
@@ -119,18 +131,18 @@ def _validar_cv(archivos):
     algo no cumple, o None si todo está bien.
     """
     if not archivos:
-        return 'Adjunta tu currículum para poder enviar tu postulación.'
+        return _('Adjunta tu currículum para poder enviar tu postulación.')
     if len(archivos) > 1:
-        return 'Adjunta un solo archivo con tu currículum.'
+        return _('Adjunta un solo archivo con tu currículum.')
     archivo = archivos[0]
     ext = os.path.splitext(archivo.name)[1].lower()
     if ext not in CV_EXTENSIONES_PERMITIDAS:
-        return (
-            f'El archivo "{archivo.name}" tiene un formato no permitido. '
+        return _(
+            'El archivo "%(nombre)s" tiene un formato no permitido. '
             'Formatos aceptados para el currículum: PDF o Word (.doc, .docx).'
-        )
+        ) % {'nombre': archivo.name}
     if archivo.size > CV_TAMANO_MAXIMO:
-        return 'El currículum supera el tamaño máximo permitido (8 MB).'
+        return _('El currículum supera el tamaño máximo permitido (8 MB).')
     return None
 
 
@@ -174,7 +186,8 @@ def contacto(request):
                 f"Nombre: {cd['nombre']}\n"
                 f"Correo: {cd['email']}\n"
                 f"Teléfono: {cd['telefono']}\n"
-                f"Puesto de interés: {puesto}\n\n"
+                f"Puesto de interés: {puesto}\n"
+                f"Idioma del formulario: {_idioma_formulario()}\n\n"
                 f"Mensaje:\n{mensaje}"
             )
             cuerpo_html = (
@@ -183,6 +196,7 @@ def contacto(request):
                 + _email_p('Correo', cd['email'])
                 + _email_p('Teléfono', cd['telefono'])
                 + _email_p('Puesto de interés', puesto)
+                + _email_p('Idioma del formulario', _idioma_formulario())
                 + '<div style="height:8px;"></div>'
                 + '<p style="margin:0 0 4px;"><strong>Mensaje:</strong></p>'
                 + f'<p style="margin:0; white-space:pre-line;">{html.escape(mensaje)}</p>'
@@ -192,8 +206,10 @@ def contacto(request):
                 return redirect('sitio:cotizacion_gracias')
             form_trabajo.add_error(
                 None,
-                'No se pudo enviar tu postulación en este momento. '
-                'Intenta de nuevo o escríbenos directamente por WhatsApp.',
+                _(
+                    'No se pudo enviar tu postulación en este momento. '
+                    'Intenta de nuevo o escríbenos directamente por WhatsApp.'
+                ),
             )
 
     return render(request, 'sitio/contacto.html', {'form_trabajo': form_trabajo})
@@ -222,7 +238,11 @@ def cotizacion(request):
                 return redirect('sitio:cotizacion_gracias')
 
             cd = form.cleaned_data
-            servicios_map = dict(form.fields['servicios'].choices)
+            # Los nombres de los servicios van en español en el correo (lo
+            # lee el equipo), aunque el cliente haya llenado el formulario
+            # en inglés.
+            with translation.override('es'):
+                servicios_map = dict(CotizacionForm().fields['servicios'].choices)
             lista_servicios = [servicios_map.get(s, s) for s in cd['servicios']]
             servicios_titulo = ', '.join(lista_servicios)
             observaciones = cd['observaciones'] or '(sin observaciones)'
@@ -240,6 +260,7 @@ def cotizacion(request):
                 "",
                 f"Número de teléfono: {cd['telefono']}",
                 f"Correo electrónico: {cd['email']}",
+                f"Idioma del formulario: {_idioma_formulario()}",
                 "",
                 "Descripción:",
                 observaciones,
@@ -262,6 +283,7 @@ def cotizacion(request):
                 '<div style="height:8px;"></div>',
                 _email_p('Número de teléfono', cd['telefono']),
                 _email_p('Correo electrónico', cd['email']),
+                _email_p('Idioma del formulario', _idioma_formulario()),
                 '<div style="height:8px;"></div>',
                 '<p style="margin:0 0 4px;"><strong>Descripción:</strong></p>',
                 f'<p style="margin:0 0 10px; white-space:pre-line;">{html.escape(observaciones)}</p>',
@@ -276,8 +298,10 @@ def cotizacion(request):
                 return redirect('sitio:cotizacion_gracias')
             form.add_error(
                 None,
-                'No se pudo enviar tu solicitud en este momento. '
-                'Intenta de nuevo o escríbenos directamente por WhatsApp.',
+                _(
+                    'No se pudo enviar tu solicitud en este momento. '
+                    'Intenta de nuevo o escríbenos directamente por WhatsApp.'
+                ),
             )
     else:
         slug_preseleccionado = request.GET.get('servicio')
@@ -310,7 +334,7 @@ def servicios(request):
 def servicio_detalle(request, slug):
     servicio = get_servicio(slug)
     if servicio is None:
-        raise Http404('Servicio no encontrado')
+        raise Http404(_('Servicio no encontrado'))
     return render(request, 'sitio/servicio_detalle.html', {'servicio': servicio})
 
 
@@ -323,7 +347,7 @@ def proyectos(request):
 def proyecto_detalle(request, slug):
     proyecto = get_proyecto(slug)
     if proyecto is None:
-        raise Http404('Proyecto no encontrado')
+        raise Http404(_('Proyecto no encontrado'))
     return render(request, 'sitio/proyecto_detalle.html', {'proyecto': proyecto})
 
 

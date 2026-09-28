@@ -1,9 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}G&amp;T Global Service, C.A. — Ingeniería y servicios marítimos en el Lago de Maracaibo{% endblock %}
-{% block meta_description %}Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo:
-transporte de personal, atracaderos, mantenimiento de motores y logística industrial.{% endblock %}
+{% block title %}G&amp;T Global Service, C.A. — {% translate "Ingeniería y servicios marítimos en el Lago de Maracaibo" %}{% endblock %}
+{% block meta_description %}{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y logística industrial." %}{% endblock %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/cta-titulo.css' %}">
@@ -18,66 +17,66 @@ transporte de personal, atracaderos, mantenimiento de motores y logística indus
   <div class="hero-bg hero-bg--dia" style="background-image:url('{% static 'assets/hero/02-puente-dia.webp' %}')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-text">
-    <h1>SEGURIDAD QUE NAVEGA CONTIGO</h1>
-    <p>Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo.</p>
+    <h1>{% translate "SEGURIDAD QUE NAVEGA CONTIGO" %}</h1>
+    <p>{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo." %}</p>
     <div class="hero-cta-row">
-      <a href="{% url 'sitio:cotizacion' %}" class="btn-pill btn-pill--lima">¡Contáctanos ahora!</a>
-      <a href="#servicios" class="btn-pill btn-pill--outline">Nuestros Servicios</a>
+      <a href="{% url 'sitio:cotizacion' %}" class="btn-pill btn-pill--lima">{% translate "¡Contáctanos ahora!" %}</a>
+      <a href="#servicios" class="btn-pill btn-pill--outline">{% translate "Nuestros Servicios" %}</a>
     </div>
   </div>
 </section>
 
 <!-- QUIÉNES SOMOS -->
 <section id="quienes-somos" class="container section">
-  <p class="section-tag center">QUIÉNES SOMOS</p>
+  <p class="section-tag center">{% translate "QUIÉNES SOMOS" %}</p>
   <div class="mv-grid">
     <div class="mv-card mv-card--lima">
-      <h3>Misión</h3>
-      <p>Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología y asesoramiento técnico de
-        avanzada, cumpliendo normativas de seguridad, higiene y ambiente.</p>
+      <h3>{% translate "Misión" %}</h3>
+      <p>{% blocktranslate trimmed %}Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología y asesoramiento técnico de
+        avanzada, cumpliendo normativas de seguridad, higiene y ambiente.{% endblocktranslate %}</p>
     </div>
     <div class="mv-card mv-card--azul">
-      <h3>Visión</h3>
-      <p>Consolidarse como organización líder, competitiva y confiable a nivel nacional e internacional en ingeniería y
-        asesoría industrial.</p>
+      <h3>{% translate "Visión" %}</h3>
+      <p>{% blocktranslate trimmed %}Consolidarse como organización líder, competitiva y confiable a nivel nacional e internacional en ingeniería y
+        asesoría industrial.{% endblocktranslate %}</p>
     </div>
   </div>
 </section>
 
 <!-- NUESTRO OBJETIVO -->
 <section id="objetivo" class="container section section--muted">
-  <p class="section-tag center">NUESTRO OBJETIVO</p>
-  <p class="section-lead center">Efectuar nuestro trabajo ofreciendo la mayor satisfacción a nuestros clientes, mientras
-    cumplimos con los parámetros de calidad exigidos por las normativas nacionales e internacionales.</p>
+  <p class="section-tag center">{% translate "NUESTRO OBJETIVO" %}</p>
+  <p class="section-lead center">{% blocktranslate trimmed %}Efectuar nuestro trabajo ofreciendo la mayor satisfacción a nuestros clientes, mientras
+    cumplimos con los parámetros de calidad exigidos por las normativas nacionales e internacionales.{% endblocktranslate %}</p>
   <div class="pill-grid">
-    <div class="pill-card"><i class="ti ti-shield-check"></i><span>Seguridad</span></div>
-    <div class="pill-card"><i class="ti ti-briefcase"></i><span>Profesionalismo</span></div>
-    <div class="pill-card"><i class="ti ti-cpu"></i><span>Tecnología</span></div>
+    <div class="pill-card"><i class="ti ti-shield-check"></i><span>{% translate "Seguridad" %}</span></div>
+    <div class="pill-card"><i class="ti ti-briefcase"></i><span>{% translate "Profesionalismo" %}</span></div>
+    <div class="pill-card"><i class="ti ti-cpu"></i><span>{% translate "Tecnología" %}</span></div>
   </div>
 </section>
 
 <!-- EMPRESAS QUE CONFIARON EN NOSOTROS -->
 <section id="empresas" class="container section">
-  <p class="section-tag center">EMPRESAS QUE CONFIARON EN NOSOTROS</p>
+  <p class="section-tag center">{% translate "EMPRESAS QUE CONFIARON EN NOSOTROS" %}</p>
   <div class="logos-grid">
-    <div class="logo-slot">logo pendiente</div>
-    <div class="logo-slot">logo pendiente</div>
-    <div class="logo-slot">logo pendiente</div>
-    <div class="logo-slot">logo pendiente</div>
+    <div class="logo-slot">{% translate "logo pendiente" %}</div>
+    <div class="logo-slot">{% translate "logo pendiente" %}</div>
+    <div class="logo-slot">{% translate "logo pendiente" %}</div>
+    <div class="logo-slot">{% translate "logo pendiente" %}</div>
   </div>
-  <p class="section-note center">a la espera de logos reales con permiso del socio</p>
+  <p class="section-note center">{% translate "a la espera de logos reales con permiso del socio" %}</p>
 </section>
 
 <!-- NUESTROS SERVICIOS -->
 <section id="servicios" class="container section section--muted">
-  <p class="section-tag center">NUESTROS SERVICIOS</p>
+  <p class="section-tag center">{% translate "NUESTROS SERVICIOS" %}</p>
   <div class="servicios-grid">
     {% for s in servicios %}
     <a href="{% if s.tiene_detalle %}{% url 'sitio:servicio_detalle' slug=s.slug %}{% else %}{% url 'sitio:servicios' %}#{{ s.slug }}{% endif %}"
       class="servicio-card">
       <i class="ti {{ s.icon }}"></i>
       <h3>{{ s.titulo }}</h3>
-      <span>Ver detalle →</span>
+      <span>{% translate "Ver detalle →" %}</span>
     </a>
     {% endfor %}
   </div>
@@ -86,17 +85,17 @@ transporte de personal, atracaderos, mantenimiento de motores y logística indus
 <!-- SEGURIDAD -->
 <section id="seguridad" class="section section--dark">
   <div class="container">
-    <p class="section-tag section-tag--lima center">SEGURIDAD</p>
-    <p class="section-lead section-lead--light center">la seguridad se construye mediante la prevención</p>
+    <p class="section-tag section-tag--lima center">{% translate "SEGURIDAD" %}</p>
+    <p class="section-lead section-lead--light center">{% translate "la seguridad se construye mediante la prevención" %}</p>
     <div class="seguridad-grid">
-      <div class="seguridad-item">Balsa autoinflable (25 pers.)</div>
-      <div class="seguridad-item">Chalecos individuales</div>
+      <div class="seguridad-item">{% translate "Balsa autoinflable (25 pers.)" %}</div>
+      <div class="seguridad-item">{% translate "Chalecos individuales" %}</div>
       <div class="seguridad-item"><i class="ti ti-radio"></i><span>EPIRB</span></div>
       <div class="seguridad-item"><i class="ti ti-broadcast"></i><span>AIS</span></div>
     </div>
     <div class="seguridad-badges">
       <span class="badge-outline">RACDA G-24-2017-3386</span>
-      <span class="badge-outline">Cumplimiento INEA</span>
+      <span class="badge-outline">{% translate "Cumplimiento INEA" %}</span>
     </div>
   </div>
 </section>
@@ -105,17 +104,17 @@ transporte de personal, atracaderos, mantenimiento de motores y logística indus
 {% with proyecto=proyectos.0 %}
 {% if proyecto %}
 <section id="proyectos" class="container section">
-  <h2 class="section-title center">Proyectos Realizados</h2>
-  <p class="section-lead center">Un vistazo a las operaciones reales de ingeniería y logística que hemos ejecutado en el
-    Lago de Maracaibo.</p>
+  <h2 class="section-title center">{% translate "Proyectos Realizados" %}</h2>
+  <p class="section-lead center">{% blocktranslate trimmed %}Un vistazo a las operaciones reales de ingeniería y logística que hemos ejecutado en el
+    Lago de Maracaibo.{% endblocktranslate %}</p>
   <div class="proyectos-grid">
-    <div class="proyecto-img proyecto-img--noche">foto real: atracadero deteriorado (antes)</div>
-    <div class="proyecto-img proyecto-img--azul">foto real: fabricación / taller</div>
-    <div class="proyecto-img proyecto-img--lima">foto real: VLM 1071 (después)</div>
+    <div class="proyecto-img proyecto-img--noche">{% translate "foto real: atracadero deteriorado (antes)" %}</div>
+    <div class="proyecto-img proyecto-img--azul">{% translate "foto real: fabricación / taller" %}</div>
+    <div class="proyecto-img proyecto-img--lima">{% translate "foto real: VLM 1071 (después)" %}</div>
   </div>
   <p class="proyecto-caption center">
     <strong>{{ proyecto.titulo }}</strong>
-    <a href="{% url 'sitio:proyecto_detalle' slug=proyecto.slug %}">Ver caso completo →</a>
+    <a href="{% url 'sitio:proyecto_detalle' slug=proyecto.slug %}">{% translate "Ver caso completo →" %}</a>
   </p>
 </section>
 {% endif %}
@@ -123,21 +122,23 @@ transporte de personal, atracaderos, mantenimiento de motores y logística indus
 
 <!-- PREGUNTAS FRECUENTES -->
 <section id="faq" class="container section section--muted">
-  <p class="section-tag center">PREGUNTAS FRECUENTES</p>
+  <p class="section-tag center">{% translate "PREGUNTAS FRECUENTES" %}</p>
   <div class="faq-list">
     <details class="faq-item">
-      <summary>¿En qué zona del Lago operan? <i class="ti ti-chevron-down"></i></summary>
-      <p>Operamos en todo el Lago de Maracaibo, dando servicio a la industria petrolera del Estado Zulia.</p>
+      <summary>{% translate "¿En qué zona del Lago operan?" %} <i class="ti ti-chevron-down"></i></summary>
+      <p>{% translate "Operamos en todo el Lago de Maracaibo, dando servicio a la industria petrolera del Estado Zulia." %}</p>
     </details>
     <details class="faq-item">
-      <summary>¿Tienen embarcaciones propias? <i class="ti ti-chevron-down"></i></summary>
-      <p>Sí, contamos con flota propia registrada y mantenida para operar de forma segura. Conoce nuestra <a
-          href="{% url 'sitio:flota' %}">flota aquí</a>.</p>
+      <summary>{% translate "¿Tienen embarcaciones propias?" %} <i class="ti ti-chevron-down"></i></summary>
+      {% url 'sitio:flota' as url_flota %}
+      <p>{% blocktranslate trimmed %}Sí, contamos con flota propia registrada y mantenida para operar de forma segura. Conoce nuestra <a
+          href="{{ url_flota }}">flota aquí</a>.{% endblocktranslate %}</p>
     </details>
     <details class="faq-item">
-      <summary>¿Cómo solicito una cotización? <i class="ti ti-chevron-down"></i></summary>
-      <p>Puedes escribirnos por WhatsApp, <a href="{% url 'sitio:cotizacion' %}">solicitar una cotización formal</a>, o
-        <a href="{% url 'sitio:contacto' %}">contactarnos</a> directamente.
+      <summary>{% translate "¿Cómo solicito una cotización?" %} <i class="ti ti-chevron-down"></i></summary>
+      {% url 'sitio:cotizacion' as url_cotizacion %}{% url 'sitio:contacto' as url_contacto %}
+      <p>{% blocktranslate trimmed %}Puedes escribirnos por WhatsApp, <a href="{{ url_cotizacion }}">solicitar una cotización formal</a>, o
+        <a href="{{ url_contacto }}">contactarnos</a> directamente.{% endblocktranslate %}
       </p>
     </details>
   </div>
@@ -147,13 +148,13 @@ transporte de personal, atracaderos, mantenimiento de motores y logística indus
 <section id="trabaja-con-nosotros" class="container section">
   <div class="trabajo-cta">
     <div class="trabajo-cta__texto">
-      <p class="section-tag section-tag--lima">ÚNETE AL EQUIPO</p>
-      <h2 class="section-title">¿Buscas trabajo con nosotros?</h2>
-      <p class="section-lead" style="margin:0;">Envíanos tu currículum y cuéntanos qué puesto te interesa. Revisamos
-        cada postulación.</p>
+      <p class="section-tag section-tag--lima">{% translate "ÚNETE AL EQUIPO" %}</p>
+      <h2 class="section-title">{% translate "¿Buscas trabajo con nosotros?" %}</h2>
+      <p class="section-lead" style="margin:0;">{% blocktranslate trimmed %}Envíanos tu currículum y cuéntanos qué puesto te interesa. Revisamos
+        cada postulación.{% endblocktranslate %}</p>
     </div>
     <a href="{% url 'sitio:contacto' %}#trabaja-con-nosotros" class="btn-pill btn-pill--lima">
-      <i class="ti ti-briefcase"></i> Postúlate aquí
+      <i class="ti ti-briefcase"></i> {% translate "Postúlate aquí" %}
     </a>
   </div>
 </section>
@@ -166,11 +167,11 @@ transporte de personal, atracaderos, mantenimiento de motores y logística indus
        se ve como siempre. -->
 <section id="contacto" class="cta-final">
   <div class="container cta-final__inner">
-    <h2 class="cta-titulo-personalizado">¿PROYECTO EN MENTE?</h2>
+    <h2 class="cta-titulo-personalizado">{% translate "¿PROYECTO EN MENTE?" %}</h2>
     <div class="cta-final__accion">
-      <p class="cta-final__texto">Estamos para ayudarte</p>
-      <p class="cta-final__subtexto">Operando en el lago de Maracaibo desde 1990</p>
-      <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">¡Comencemos!</a>
+      <p class="cta-final__texto">{% translate "Estamos para ayudarte" %}</p>
+      <p class="cta-final__subtexto">{% translate "Operando en el lago de Maracaibo desde 1990" %}</p>
+      <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">{% translate "¡Comencemos!" %}</a>
     </div>
   </div>
 </section>

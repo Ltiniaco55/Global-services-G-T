@@ -1,0 +1,45 @@
+{
+  "proyectos": [
+    {
+      "slug": "mg-01-05-lago-v",
+      "titulo": "M/G 01-05 LAGO V",
+      "categoria": "PROJECT · DOCK ENGINEERING",
+      "resumen": "From design to reality: custom engineering, fabrication and installation of a dock for an oil well on Lake Maracaibo.",
+      "meta_title": "M/G 01-05 LAGO V — G&T Global Service, C.A.",
+      "meta_description": "Case study: engineering, fabrication and installation of the M/G 01-05 LAGO V dock for an oil well on Lake Maracaibo, delivered by G&T Global Service.",
+      "proceso": [
+        {
+          "paso": "01 · THE CHALLENGE",
+          "imagen_clase": "detalle-img--azul-profundo",
+          "imagen_alt": "Deteriorated dock before the intervention",
+          "texto": "Infrastructure worn down by time on an active oil well on the Lake."
+        },
+        {
+          "paso": "02 · CUSTOM ENGINEERING",
+          "imagen_clase": "detalle-img--azul-medio",
+          "imagen_alt": "Workshop fabricating custom parts",
+          "texto": "Design and fabrication of parts tailored to the specific needs of the well."
+        },
+        {
+          "paso": "03 · PRECISE EXECUTION",
+          "imagen_clase": "detalle-img--noche",
+          "imagen_alt": "Dock installation on Lake Maracaibo",
+          "texto": "Dock installed directly on the Lake, using our own equipment."
+        },
+        {
+          "paso": "04 · OPTIMAL RESULTS",
+          "imagen_clase": "detalle-img--lima",
+          "imagen_alt": "Finished and operational VLM 1071 structure",
+          "texto": "Structure completed, operational and handed over to the client."
+        }
+      ],
+      "specs": [
+        "Structural angles: 3\"x3\"x1/4\"",
+        "Decking: G2 grating",
+        "Project code: M/G 01-05 LAGO V",
+        "Final structure: VLM 1071"
+      ],
+      "cita": "Logistics, fabrication and maintenance: one team, every solution."
+    }
+  ]
+}

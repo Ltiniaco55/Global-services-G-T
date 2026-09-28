@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}{{ proyecto.meta_title|default:proyecto.titulo }}{% endblock %}
 {% block meta_description %}{{ proyecto.meta_description|default:proyecto.resumen }}{% endblock %}
@@ -8,7 +8,7 @@
 
   <section class="detalle-hero">
     <div class="container">
-      <a href="{% url 'sitio:proyectos' %}" class="detalle-back"><i class="ti ti-arrow-left"></i> Volver a Proyectos</a>
+      <a href="{% url 'sitio:proyectos' %}" class="detalle-back"><i class="ti ti-arrow-left"></i> {% translate "Volver a Proyectos" %}</a>
       <p class="section-tag section-tag--lima">{{ proyecto.categoria }}</p>
       <h1 class="page-hero__title">{{ proyecto.titulo }}</h1>
       <p class="page-hero__lead">{{ proyecto.resumen }}</p>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="specs-box">
-      <h2 class="detalle-subtitle"><i class="ti ti-clipboard-list"></i> Especificaciones técnicas</h2>
+      <h2 class="detalle-subtitle"><i class="ti ti-clipboard-list"></i> {% translate "Especificaciones técnicas" %}</h2>
       <div class="specs-grid">
         {% for spec in proyecto.specs %}<p>{{ spec }}</p>{% endfor %}
       </div>
@@ -35,7 +35,7 @@
 
     <div class="quote-cta">
       <p>&quot;{{ proyecto.cita }}&quot;</p>
-      <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">Cotizar un proyecto similar</a>
+      <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">{% translate "Cotizar un proyecto similar" %}</a>
     </div>
   </section>
 {% endblock %}

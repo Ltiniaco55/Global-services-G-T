@@ -1,0 +1,917 @@
+# Traducciones al inglés del sitio de G&T Global Service, C.A.
+# Para regenerar: python manage.py makemessages -l en  (luego traducir los msgstr vacíos)
+# y compilar: python manage.py compilemessages  (el .mo SÍ se sube a git: Vercel no tiene gettext).
+msgid ""
+msgstr ""
+"Project-Id-Version: G&T Global Service\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-25 05:12-0400\n"
+"PO-Revision-Date: 2026-09-25 12:00+0200\n"
+"Last-Translator: Luciano Tiniaco\n"
+"Language-Team: G&T Global Service\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: sitio/forms.py:34 sitio/forms.py:37
+#: templates/includes/mensajes_validacion.html:4
+msgid "Ingresa un número de teléfono válido."
+msgstr "Enter a valid phone number."
+
+#: sitio/forms.py:62 sitio/forms.py:116 templates/sitio/contacto.html:34
+#: templates/sitio/cotizacion.html:34
+msgid "Nombre y apellido"
+msgstr "Full name"
+
+#: sitio/forms.py:65 sitio/forms.py:123 templates/sitio/contacto.html:38
+#: templates/sitio/cotizacion.html:40
+msgid "Correo"
+msgstr "Email"
+
+#: sitio/forms.py:69 templates/sitio/contacto.html:42
+msgid "Teléfono"
+msgstr "Phone"
+
+#: sitio/forms.py:74 templates/sitio/contacto.html:46
+msgid "Puesto de interés (opcional)"
+msgstr "Position of interest (optional)"
+
+#: sitio/forms.py:79 templates/sitio/contacto.html:56
+msgid "Cuéntanos brevemente tu experiencia (opcional)"
+msgstr "Briefly tell us about your experience (optional)"
+
+#: sitio/forms.py:120 templates/sitio/cotizacion.html:37
+msgid "Empresa"
+msgstr "Company"
+
+#: sitio/forms.py:127 templates/sitio/cotizacion.html:43
+msgid "Teléfono / WhatsApp"
+msgstr "Phone / WhatsApp"
+
+#: sitio/forms.py:131 templates/sitio/cotizacion.html:46
+msgid "Asunto"
+msgstr "Subject"
+
+#: sitio/forms.py:134 templates/sitio/cotizacion.html:50
+msgid "Servicios de interés"
+msgstr "Services of interest"
+
+#: sitio/forms.py:136 templates/sitio/cotizacion.html:101
+msgid "Selecciona al menos un servicio."
+msgstr "Select at least one service."
+
+#: sitio/forms.py:141 templates/sitio/cotizacion.html:69
+msgid "Cuéntanos más: alcance, ubicación, plazos estimados..."
+msgstr "Tell us more: scope, location, estimated timeline..."
+
+#: sitio/forms.py:146
+msgid "He leído y acepto la política de privacidad"
+msgstr "I have read and accept the privacy policy"
+
+#: sitio/forms.py:147 templates/includes/mensajes_validacion.html:8
+msgid "Debes aceptar la política de privacidad para continuar."
+msgstr "You must accept the privacy policy to continue."
+
+#: sitio/forms.py:159
+msgid "Otro / no estoy seguro"
+msgstr "Other / not sure"
+
+#: sitio/forms.py:170
+#, python-format
+msgid "El asunto debe tener entre %(min)d y %(max)d palabras."
+msgstr "The subject must be between %(min)d and %(max)d words."
+
+#: sitio/urls.py:14
+msgid "flota/"
+msgstr "fleet/"
+
+#: sitio/urls.py:15
+msgid "servicios/"
+msgstr "services/"
+
+#: sitio/urls.py:16
+msgid "servicios/<slug:slug>/"
+msgstr "services/<slug:slug>/"
+
+#: sitio/urls.py:17
+msgid "proyectos/"
+msgstr "projects/"
+
+#: sitio/urls.py:18
+msgid "proyectos/<slug:slug>/"
+msgstr "projects/<slug:slug>/"
+
+#: sitio/urls.py:19
+msgid "contacto/"
+msgstr "contact/"
+
+#: sitio/urls.py:20
+msgid "cotizacion/"
+msgstr "quote/"
+
+#: sitio/urls.py:21
+msgid "cotizacion/gracias/"
+msgstr "quote/thank-you/"
+
+#: sitio/urls.py:22
+msgid "privacidad/"
+msgstr "privacy/"
+
+#: sitio/views.py:116
+#, python-format
+msgid ""
+"El archivo \"%(nombre)s\" tiene un formato no permitido. Formatos aceptados:"
+" PDF, imágenes (JPG/PNG), Word, Excel y planos (DWG/DXF)."
+msgstr ""
+"The file \"%(nombre)s\" has a format that is not allowed. Accepted formats: "
+"PDF, images (JPG/PNG), Word, Excel and drawings (DWG/DXF)."
+
+#: sitio/views.py:121
+msgid ""
+"Los archivos adjuntos superan el tamaño máximo permitido (15 MB en total)."
+msgstr "The attached files exceed the maximum allowed size (15 MB in total)."
+
+#: sitio/views.py:134
+msgid "Adjunta tu currículum para poder enviar tu postulación."
+msgstr "Attach your résumé to submit your application."
+
+#: sitio/views.py:136
+msgid "Adjunta un solo archivo con tu currículum."
+msgstr "Attach a single file with your résumé."
+
+#: sitio/views.py:141
+#, python-format
+msgid ""
+"El archivo \"%(nombre)s\" tiene un formato no permitido. Formatos aceptados "
+"para el currículum: PDF o Word (.doc, .docx)."
+msgstr ""
+"The file \"%(nombre)s\" has a format that is not allowed. Accepted résumé "
+"formats: PDF or Word (.doc, .docx)."
+
+#: sitio/views.py:145
+msgid "El currículum supera el tamaño máximo permitido (8 MB)."
+msgstr "The résumé exceeds the maximum allowed size (8 MB)."
+
+#: sitio/views.py:210
+msgid ""
+"No se pudo enviar tu postulación en este momento. Intenta de nuevo o "
+"escríbenos directamente por WhatsApp."
+msgstr ""
+"We couldn't send your application right now. Please try again or message us "
+"directly on WhatsApp."
+
+#: sitio/views.py:302
+msgid ""
+"No se pudo enviar tu solicitud en este momento. Intenta de nuevo o "
+"escríbenos directamente por WhatsApp."
+msgstr ""
+"We couldn't send your request right now. Please try again or message us "
+"directly on WhatsApp."
+
+#: sitio/views.py:337
+msgid "Servicio no encontrado"
+msgstr "Service not found"
+
+#: sitio/views.py:350
+msgid "Proyecto no encontrado"
+msgstr "Project not found"
+
+#: templates/404.html:4
+msgid "Página no encontrada"
+msgstr "Page not found"
+
+#: templates/404.html:5
+msgid "La página que buscas no existe o fue movida."
+msgstr "The page you are looking for does not exist or has been moved."
+
+#: templates/404.html:11
+msgid "ESTA PÁGINA NO EXISTE"
+msgstr "THIS PAGE DOES NOT EXIST"
+
+#: templates/404.html:13
+msgid ""
+"Puede que el enlace esté roto o que la página se haya movido. Volvamos a "
+"aguas conocidas."
+msgstr ""
+"The link may be broken or the page may have moved. Let's head back to "
+"familiar waters."
+
+#: templates/404.html:20 templates/sitio/cotizacion_gracias.html:28
+msgid "← Volver al inicio"
+msgstr "← Back to home"
+
+#: templates/base.html:6 templates/sitio/homepage.html:4
+msgid "Ingeniería y servicios marítimos en el Lago de Maracaibo"
+msgstr "Engineering and marine services on Lake Maracaibo"
+
+#: templates/base.html:7 templates/sitio/homepage.html:5
+msgid ""
+"Ingeniería y servicios marítimos para la industria petrolera del Lago de "
+"Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y "
+"logística industrial."
+msgstr ""
+"Engineering and marine services for the Lake Maracaibo oil industry: crew "
+"transport, docks, engine maintenance and industrial logistics."
+
+#: templates/base.html:20
+msgid "Ingeniería y servicios marítimos"
+msgstr "Engineering and marine services"
+
+#: templates/base.html:21 templates/includes/footer.html:7
+#: templates/sitio/homepage.html:21
+msgid ""
+"Ingeniería y servicios marítimos para la industria petrolera del Lago de "
+"Maracaibo."
+msgstr "Engineering and marine services for the Lake Maracaibo oil industry."
+
+#: templates/includes/cotizacion.html:8
+msgid "¿Tu embarcación necesita mantenimiento?"
+msgstr "Does your vessel need maintenance?"
+
+#: templates/includes/cotizacion.html:11
+msgid "Cotizar este servicio"
+msgstr "Get a quote for this service"
+
+#: templates/includes/footer.html:13
+msgid "Enlaces rápidos"
+msgstr "Quick links"
+
+#: templates/includes/footer.html:14 templates/includes/header.html:8
+#: templates/includes/menu_burger.html:13
+msgid "Quiénes Somos"
+msgstr "About Us"
+
+#: templates/includes/footer.html:15 templates/includes/header.html:9
+#: templates/includes/menu_burger.html:14
+msgid "Servicios"
+msgstr "Services"
+
+#: templates/includes/footer.html:16 templates/includes/header.html:10
+#: templates/includes/menu_burger.html:15
+msgid "Flota"
+msgstr "Fleet"
+
+#: templates/includes/footer.html:17 templates/includes/header.html:11
+#: templates/includes/menu_burger.html:16
+msgid "Proyectos"
+msgstr "Projects"
+
+#: templates/includes/footer.html:18 templates/includes/footer.html:22
+#: templates/includes/menu_burger.html:17
+msgid "Contacto"
+msgstr "Contact"
+
+#: templates/includes/footer.html:19
+msgid "Trabaja con Nosotros"
+msgstr "Careers"
+
+#: templates/includes/footer.html:25
+msgid "Edo."
+msgstr "State of"
+
+#: templates/includes/footer.html:28
+msgid "Ubicación de G&amp;T Global Service en Maracaibo"
+msgstr "G&amp;T Global Service location in Maracaibo"
+
+#: templates/includes/footer.html:36
+msgid "Todos los derechos reservados."
+msgstr "All rights reserved."
+
+#: templates/includes/footer.html:36 templates/sitio/privacidad.html:4
+#: templates/sitio/privacidad.html:12
+msgid "Política de Privacidad"
+msgstr "Privacy Policy"
+
+#: templates/includes/header.html:12 templates/sitio/contacto.html:16
+msgid "Trabaja con nosotros"
+msgstr "Careers"
+
+#: templates/includes/header.html:15
+msgid "Abrir menú"
+msgstr "Open menu"
+
+#: templates/includes/header.html:19 templates/includes/menu_burger.html:7
+msgid "Cotizar"
+msgstr "Get a quote"
+
+#: templates/includes/header.html:23
+msgid "Cerrar mensaje"
+msgstr "Close message"
+
+#: templates/includes/header.html:24
+msgid ""
+"¡Hola! 👋 Estamos a tu disposición para consultas generales. ¡Escríbenos!"
+msgstr "Hi! 👋 We're here to help with any general questions. Message us!"
+
+#: templates/includes/header.html:27 templates/includes/menu_burger.html:25
+#: templates/sitio/cotizacion_gracias.html:25
+msgid "Escribir por WhatsApp"
+msgstr "Message us on WhatsApp"
+
+#: templates/includes/mensajes_validacion.html:2
+msgid "Ingresa tu nombre y apellido."
+msgstr "Enter your full name."
+
+#: templates/includes/mensajes_validacion.html:3
+msgid "Ingresa un correo válido."
+msgstr "Enter a valid email address."
+
+#: templates/includes/mensajes_validacion.html:5
+msgid "Escribe el asunto de tu solicitud."
+msgstr "Enter the subject of your request."
+
+#: templates/includes/mensajes_validacion.html:7
+#, python-brace-format
+msgid "El asunto debe tener entre {min} y {max} palabras."
+msgstr "The subject must be between {min} and {max} words."
+
+#: templates/includes/menu_burger.html:8
+msgid "Cerrar menú"
+msgstr "Close menu"
+
+#: templates/sitio/contacto.html:4
+msgid "Contáctanos"
+msgstr "Contact us"
+
+#: templates/sitio/contacto.html:5
+msgid ""
+"Contáctanos: teléfono, correo, WhatsApp y ubicación de G&T Global Service, "
+"C.A. en Maracaibo. ¿Ya sabes qué servicio necesitas? Solicita una cotización"
+" formal."
+msgstr ""
+"Contact us: phone, email, WhatsApp and location of G&T Global Service, C.A. "
+"in Maracaibo. Already know which service you need? Request a formal quote."
+
+#: templates/sitio/contacto.html:15
+msgid "CONTÁCTANOS"
+msgstr "CONTACT US"
+
+#: templates/sitio/contacto.html:17
+msgid ""
+"¿Buscas trabajo con nosotros? Encuentra el formulario de postulación más "
+"abajo."
+msgstr "Looking to work with us? You'll find the application form below."
+
+#: templates/sitio/contacto.html:23
+msgid "TRABAJA CON NOSOTROS"
+msgstr "CAREERS"
+
+#: templates/sitio/contacto.html:24
+msgid "¿Quieres unirte a nuestro equipo?"
+msgstr "Want to join our team?"
+
+#: templates/sitio/contacto.html:25
+msgid ""
+"Si te interesa formar parte de G&amp;T Global Service, cuéntanos un poco "
+"sobre ti y adjunta tu currículum. Revisamos cada postulación y te "
+"contactamos si hay una oportunidad que encaje contigo."
+msgstr ""
+"If you're interested in joining G&amp;T Global Service, tell us a little "
+"about yourself and attach your résumé. We review every application and will "
+"get in touch if there's an opportunity that fits you."
+
+#: templates/sitio/contacto.html:51
+msgid "Adjuntar currículum (PDF o Word)"
+msgstr "Attach résumé (PDF or Word)"
+
+#: templates/sitio/contacto.html:61 templates/sitio/cotizacion.html:80
+msgid "No llenar este campo"
+msgstr "Do not fill in this field"
+
+#: templates/sitio/contacto.html:66
+msgid "Enviar postulación"
+msgstr "Submit application"
+
+#: templates/sitio/contacto.html:80
+msgid "Adjunta tu currículum para continuar."
+msgstr "Attach your résumé to continue."
+
+#: templates/sitio/cotizacion.html:4
+msgid "Solicitar Cotización"
+msgstr "Request a Quote"
+
+#: templates/sitio/cotizacion.html:5
+msgid ""
+"Solicita una cotización formal de ingeniería y servicios marítimos en el "
+"Lago de Maracaibo: cuéntanos qué servicios necesitas y te contactamos con "
+"una propuesta."
+msgstr ""
+"Request a formal quote for engineering and marine services on Lake "
+"Maracaibo: tell us which services you need and we'll get back to you with a "
+"proposal."
+
+#: templates/sitio/cotizacion.html:16
+msgid "COTIZACIÓN"
+msgstr "QUOTE"
+
+#: templates/sitio/cotizacion.html:17
+msgid "SOLICITUD DE COTIZACIÓN"
+msgstr "QUOTE REQUEST"
+
+#: templates/sitio/cotizacion.html:24
+msgid "Contacto comercial"
+msgstr "Sales inquiry"
+
+#: templates/sitio/cotizacion.html:26
+#, python-format
+msgid ""
+"En G&amp;T Global Service buscamos entender bien tu operación para darte una"
+" propuesta precisa. Completa el siguiente formulario con el mayor detalle "
+"posible y te contactaremos a la brevedad. ¿Solo tienes una duda general? <a "
+"href=\"%(url_contacto)s\">Escríbenos por aquí</a> en vez."
+msgstr ""
+"At G&amp;T Global Service we take the time to understand your operation so "
+"we can give you an accurate proposal. Fill out the form below in as much "
+"detail as possible and we'll get back to you shortly. Just have a general "
+"question? <a href=\"%(url_contacto)s\">Reach us here</a> instead."
+
+#: templates/sitio/cotizacion.html:64
+msgid "Adjuntar archivos (planos, fotos, especificaciones)"
+msgstr "Attach files (drawings, photos, specifications)"
+
+#: templates/sitio/cotizacion.html:74
+#, python-format
+msgid ""
+"He leído y acepto la <a href=\"%(url_privacidad)s\" target=\"_blank\" "
+"rel=\"noopener\">política de privacidad</a>."
+msgstr ""
+"I have read and accept the <a href=\"%(url_privacidad)s\" target=\"_blank\" "
+"rel=\"noopener\">privacy policy</a>."
+
+#: templates/sitio/cotizacion.html:84
+msgid "Enviar solicitud"
+msgstr "Send request"
+
+#: templates/sitio/cotizacion_gracias.html:4
+msgid "¡Gracias!"
+msgstr "Thank you!"
+
+#: templates/sitio/cotizacion_gracias.html:5
+msgid ""
+"Recibimos tu solicitud. El equipo de G&T Global Service se pondrá en "
+"contacto contigo a la brevedad."
+msgstr ""
+"We received your request. The G&T Global Service team will get in touch with"
+" you shortly."
+
+#: templates/sitio/cotizacion_gracias.html:10
+msgid "MENSAJE ENVIADO"
+msgstr "MESSAGE SENT"
+
+#: templates/sitio/cotizacion_gracias.html:11
+msgid "¡GRACIAS POR ESCRIBIRNOS!"
+msgstr "THANK YOU FOR REACHING OUT!"
+
+#: templates/sitio/cotizacion_gracias.html:13
+msgid ""
+"Recibimos tu solicitud correctamente. Nuestro equipo la revisará y se pondrá"
+" en contacto contigo a la brevedad al correo o teléfono que indicaste."
+msgstr ""
+"We have received your request. Our team will review it and get back to you "
+"shortly at the email or phone number you provided."
+
+#: templates/sitio/cotizacion_gracias.html:22
+msgid ""
+"Si tu consulta es urgente, también puedes escribirnos directamente por "
+"WhatsApp."
+msgstr ""
+"If your inquiry is urgent, you can also message us directly on WhatsApp."
+
+#: templates/sitio/flota.html:4
+msgid "Nuestra Flota"
+msgstr "Our Fleet"
+
+#: templates/sitio/flota.html:5
+msgid ""
+"Embarcaciones propias de G&T Global Service, registradas y mantenidas para "
+"operar de forma segura en el Lago de Maracaibo."
+msgstr ""
+"G&T Global Service's own vessels, registered and maintained to operate "
+"safely on Lake Maracaibo."
+
+#: templates/sitio/flota.html:12 templates/sitio/proyectos.html:12
+#: templates/sitio/servicios.html:12
+msgid "PÁGINA INTERNA"
+msgstr "OVERVIEW"
+
+#: templates/sitio/flota.html:13
+msgid "NUESTRA FLOTA"
+msgstr "OUR FLEET"
+
+#: templates/sitio/flota.html:14
+msgid ""
+"Embarcaciones propias, registradas y mantenidas para operar de forma segura "
+"en el Lago de Maracaibo."
+msgstr ""
+"Our own vessels, registered and maintained to operate safely on Lake "
+"Maracaibo."
+
+#: templates/sitio/flota.html:35
+msgid "+ embarcaciones bajo solicitud"
+msgstr "+ more vessels on request"
+
+#: templates/sitio/flota.html:36
+msgid "flota completa a confirmar con el socio"
+msgstr "full fleet to be confirmed with the partner"
+
+#: templates/sitio/flota.html:43
+msgid "CAPACIDADES ADICIONALES"
+msgstr "ADDITIONAL CAPABILITIES"
+
+#: templates/sitio/flota.html:55
+msgid "¿Necesitas transporte u operaciones en el Lago?"
+msgstr "Need transport or operations on the Lake?"
+
+#: templates/sitio/homepage.html:20
+msgid "SEGURIDAD QUE NAVEGA CONTIGO"
+msgstr "SAFETY THAT SAILS WITH YOU"
+
+#: templates/sitio/homepage.html:23
+msgid "¡Contáctanos ahora!"
+msgstr "Contact us now!"
+
+#: templates/sitio/homepage.html:24 templates/sitio/servicios.html:4
+msgid "Nuestros Servicios"
+msgstr "Our Services"
+
+#: templates/sitio/homepage.html:31
+msgid "QUIÉNES SOMOS"
+msgstr "ABOUT US"
+
+#: templates/sitio/homepage.html:34
+msgid "Misión"
+msgstr "Mission"
+
+#: templates/sitio/homepage.html:35
+msgid ""
+"Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología "
+"y asesoramiento técnico de avanzada, cumpliendo normativas de seguridad, "
+"higiene y ambiente."
+msgstr ""
+"To deliver and execute engineering projects with high-tech services and "
+"advanced technical consulting, in compliance with health, safety and "
+"environmental regulations."
+
+#: templates/sitio/homepage.html:39
+msgid "Visión"
+msgstr "Vision"
+
+#: templates/sitio/homepage.html:40
+msgid ""
+"Consolidarse como organización líder, competitiva y confiable a nivel "
+"nacional e internacional en ingeniería y asesoría industrial."
+msgstr ""
+"To establish ourselves as a leading, competitive and trusted organization in"
+" engineering and industrial consulting, both nationally and internationally."
+
+#: templates/sitio/homepage.html:48
+msgid "NUESTRO OBJETIVO"
+msgstr "OUR GOAL"
+
+#: templates/sitio/homepage.html:49
+msgid ""
+"Efectuar nuestro trabajo ofreciendo la mayor satisfacción a nuestros "
+"clientes, mientras cumplimos con los parámetros de calidad exigidos por las "
+"normativas nacionales e internacionales."
+msgstr ""
+"To carry out our work with the highest level of customer satisfaction, while"
+" meeting the quality standards required by national and international "
+"regulations."
+
+#: templates/sitio/homepage.html:52
+msgid "Seguridad"
+msgstr "Safety"
+
+#: templates/sitio/homepage.html:53
+msgid "Profesionalismo"
+msgstr "Professionalism"
+
+#: templates/sitio/homepage.html:54
+msgid "Tecnología"
+msgstr "Technology"
+
+#: templates/sitio/homepage.html:60
+msgid "EMPRESAS QUE CONFIARON EN NOSOTROS"
+msgstr "COMPANIES THAT HAVE TRUSTED US"
+
+#: templates/sitio/homepage.html:62 templates/sitio/homepage.html:63
+#: templates/sitio/homepage.html:64 templates/sitio/homepage.html:65
+msgid "logo pendiente"
+msgstr "logo pending"
+
+#: templates/sitio/homepage.html:67
+msgid "a la espera de logos reales con permiso del socio"
+msgstr "awaiting real logos with the partner's permission"
+
+#: templates/sitio/homepage.html:72 templates/sitio/servicios.html:13
+msgid "NUESTROS SERVICIOS"
+msgstr "OUR SERVICES"
+
+#: templates/sitio/homepage.html:79 templates/sitio/servicios.html:25
+msgid "Ver detalle →"
+msgstr "View details →"
+
+#: templates/sitio/homepage.html:88
+msgid "SEGURIDAD"
+msgstr "SAFETY"
+
+#: templates/sitio/homepage.html:89
+msgid "la seguridad se construye mediante la prevención"
+msgstr "safety is built through prevention"
+
+#: templates/sitio/homepage.html:91
+msgid "Balsa autoinflable (25 pers.)"
+msgstr "Self-inflating life raft (25 people)"
+
+#: templates/sitio/homepage.html:92
+msgid "Chalecos individuales"
+msgstr "Individual life jackets"
+
+#: templates/sitio/homepage.html:98
+msgid "Cumplimiento INEA"
+msgstr "INEA compliant"
+
+#: templates/sitio/homepage.html:107 templates/sitio/proyectos.html:4
+msgid "Proyectos Realizados"
+msgstr "Completed Projects"
+
+#: templates/sitio/homepage.html:108
+msgid ""
+"Un vistazo a las operaciones reales de ingeniería y logística que hemos "
+"ejecutado en el Lago de Maracaibo."
+msgstr ""
+"A look at the real engineering and logistics operations we have carried out "
+"on Lake Maracaibo."
+
+#: templates/sitio/homepage.html:111 templates/sitio/proyectos.html:24
+msgid "foto real: atracadero deteriorado (antes)"
+msgstr "real photo: deteriorated dock (before)"
+
+#: templates/sitio/homepage.html:112 templates/sitio/proyectos.html:25
+msgid "foto real: fabricación / taller"
+msgstr "real photo: fabrication / workshop"
+
+#: templates/sitio/homepage.html:113 templates/sitio/proyectos.html:26
+msgid "foto real: VLM 1071 (después)"
+msgstr "real photo: VLM 1071 (after)"
+
+#: templates/sitio/homepage.html:117 templates/sitio/proyectos.html:30
+msgid "Ver caso completo →"
+msgstr "View full case →"
+
+#: templates/sitio/homepage.html:125
+msgid "PREGUNTAS FRECUENTES"
+msgstr "FREQUENTLY ASKED QUESTIONS"
+
+#: templates/sitio/homepage.html:128
+msgid "¿En qué zona del Lago operan?"
+msgstr "Which area of the Lake do you operate in?"
+
+#: templates/sitio/homepage.html:129
+msgid ""
+"Operamos en todo el Lago de Maracaibo, dando servicio a la industria "
+"petrolera del Estado Zulia."
+msgstr ""
+"We operate across all of Lake Maracaibo, serving the oil industry in Zulia "
+"State."
+
+#: templates/sitio/homepage.html:132
+msgid "¿Tienen embarcaciones propias?"
+msgstr "Do you have your own vessels?"
+
+#: templates/sitio/homepage.html:134
+#, python-format
+msgid ""
+"Sí, contamos con flota propia registrada y mantenida para operar de forma "
+"segura. Conoce nuestra <a href=\"%(url_flota)s\">flota aquí</a>."
+msgstr ""
+"Yes, we have our own registered fleet, maintained to operate safely. See our"
+" <a href=\"%(url_flota)s\">fleet here</a>."
+
+#: templates/sitio/homepage.html:138
+msgid "¿Cómo solicito una cotización?"
+msgstr "How do I request a quote?"
+
+#: templates/sitio/homepage.html:140
+#, python-format
+msgid ""
+"Puedes escribirnos por WhatsApp, <a href=\"%(url_cotizacion)s\">solicitar "
+"una cotización formal</a>, o <a href=\"%(url_contacto)s\">contactarnos</a> "
+"directamente."
+msgstr ""
+"You can message us on WhatsApp, <a href=\"%(url_cotizacion)s\">request a "
+"formal quote</a>, or <a href=\"%(url_contacto)s\">contact us</a> directly."
+
+#: templates/sitio/homepage.html:151
+msgid "ÚNETE AL EQUIPO"
+msgstr "JOIN THE TEAM"
+
+#: templates/sitio/homepage.html:152
+msgid "¿Buscas trabajo con nosotros?"
+msgstr "Looking to work with us?"
+
+#: templates/sitio/homepage.html:153
+msgid ""
+"Envíanos tu currículum y cuéntanos qué puesto te interesa. Revisamos cada "
+"postulación."
+msgstr ""
+"Send us your résumé and tell us which position interests you. We review "
+"every application."
+
+#: templates/sitio/homepage.html:157
+msgid "Postúlate aquí"
+msgstr "Apply here"
+
+#: templates/sitio/homepage.html:170
+msgid "¿PROYECTO EN MENTE?"
+msgstr "PROJECT IN MIND?"
+
+#: templates/sitio/homepage.html:172
+msgid "Estamos para ayudarte"
+msgstr "We're here to help"
+
+#: templates/sitio/homepage.html:173
+msgid "Operando en el lago de Maracaibo desde 1990"
+msgstr "Operating on Lake Maracaibo since 1990"
+
+#: templates/sitio/homepage.html:174
+msgid "¡Comencemos!"
+msgstr "Let's get started!"
+
+#: templates/sitio/privacidad.html:5
+msgid ""
+"Cómo G&T Global Service, C.A. recopila, usa y protege los datos que "
+"compartes a través de nuestros formularios de contacto y cotización."
+msgstr ""
+"How G&T Global Service, C.A. collects, uses and protects the data you share "
+"through our contact and quote forms."
+
+#: templates/sitio/privacidad.html:11
+msgid "LEGAL"
+msgstr "LEGAL"
+
+#: templates/sitio/privacidad.html:14
+msgid "Última actualización:"
+msgstr "Last updated:"
+
+#: templates/sitio/privacidad.html:19
+msgid "¿Qué datos recopilamos?"
+msgstr "What data do we collect?"
+
+#: templates/sitio/privacidad.html:20
+msgid ""
+"Cuando completas alguno de nuestros formularios (contacto o solicitud de "
+"cotización) recopilamos los datos que nos proporcionas directamente: nombre,"
+" correo electrónico, teléfono, empresa (si aplica), el contenido de tu "
+"mensaje o solicitud, y los archivos que decidas adjuntar."
+msgstr ""
+"When you fill out one of our forms (contact or quote request), we collect "
+"the data you provide directly: name, email address, phone number, company "
+"(if applicable), the content of your message or request, and any files you "
+"choose to attach."
+
+#: templates/sitio/privacidad.html:22
+msgid "¿Para qué usamos tus datos?"
+msgstr "How do we use your data?"
+
+#: templates/sitio/privacidad.html:23
+msgid ""
+"Usamos esta información únicamente para responder tu solicitud, evaluar el "
+"alcance del servicio que necesitas y contactarte con una propuesta o "
+"cotización. No usamos tus datos con fines publicitarios ni los compartimos "
+"con terceros, salvo cuando sea necesario para ejecutar el servicio que "
+"solicitaste (por ejemplo, coordinar con un proveedor o socio del proyecto), "
+"y siempre con tu conocimiento."
+msgstr ""
+"We use this information solely to respond to your request, assess the scope "
+"of the service you need and contact you with a proposal or quote. We do not "
+"use your data for advertising purposes or share it with third parties, "
+"except when necessary to deliver the service you requested (for example, "
+"coordinating with a supplier or project partner), and always with your "
+"knowledge."
+
+#: templates/sitio/privacidad.html:25
+msgid "¿Cómo protegemos tus datos?"
+msgstr "How do we protect your data?"
+
+#: templates/sitio/privacidad.html:26
+msgid ""
+"Los datos que envías a través de nuestros formularios llegan directamente al"
+" correo corporativo de G&amp;T Global Service, C.A. y son tratados de forma "
+"confidencial por nuestro equipo. No almacenamos los archivos adjuntos en "
+"ningún servidor más allá del envío del correo."
+msgstr ""
+"The data you send through our forms goes directly to the corporate email of "
+"G&amp;T Global Service, C.A. and is handled confidentially by our team. We "
+"do not store attachments on any server beyond sending the email."
+
+#: templates/sitio/privacidad.html:28
+msgid "¿Cuánto tiempo conservamos tus datos?"
+msgstr "How long do we keep your data?"
+
+#: templates/sitio/privacidad.html:29
+#, python-format
+msgid ""
+"Conservamos la información de tu solicitud el tiempo necesario para darle "
+"seguimiento comercial. Si quieres que eliminemos tus datos antes de eso, "
+"puedes solicitarlo escribiéndonos a %(email)s."
+msgstr ""
+"We keep the information from your request for as long as needed for "
+"commercial follow-up. If you would like us to delete your data before then, "
+"you can request it by writing to %(email)s."
+
+#: templates/sitio/privacidad.html:31
+msgid "Tus derechos"
+msgstr "Your rights"
+
+#: templates/sitio/privacidad.html:32
+#, python-format
+msgid ""
+"Puedes solicitarnos en cualquier momento acceder, corregir o eliminar los "
+"datos que nos hayas compartido, escribiéndonos a %(email)s o por WhatsApp al"
+" %(telefono)s."
+msgstr ""
+"You may ask us at any time to access, correct or delete the data you have "
+"shared with us by writing to %(email)s or via WhatsApp at %(telefono)s."
+
+#: templates/sitio/proyecto_detalle.html:11
+msgid "Volver a Proyectos"
+msgstr "Back to Projects"
+
+#: templates/sitio/proyecto_detalle.html:30
+msgid "Especificaciones técnicas"
+msgstr "Technical specifications"
+
+#: templates/sitio/proyecto_detalle.html:38
+msgid "Cotizar un proyecto similar"
+msgstr "Get a quote for a similar project"
+
+#: templates/sitio/proyectos.html:5
+msgid ""
+"Operaciones reales de ingeniería y logística ejecutadas por G&T Global "
+"Service en el Lago de Maracaibo."
+msgstr ""
+"Real engineering and logistics operations carried out by G&T Global Service "
+"on Lake Maracaibo."
+
+#: templates/sitio/proyectos.html:13
+msgid "PROYECTOS REALIZADOS"
+msgstr "COMPLETED PROJECTS"
+
+#: templates/sitio/proyectos.html:14
+msgid ""
+"Operaciones reales de ingeniería y logística ejecutadas en el Lago de "
+"Maracaibo."
+msgstr ""
+"Real engineering and logistics operations carried out on Lake Maracaibo."
+
+#: templates/sitio/proyectos.html:35
+msgid "más casos se irán agregando aquí conforme se documenten"
+msgstr "more cases will be added here as they are documented"
+
+#: templates/sitio/servicio_detalle.html:11
+msgid "Volver a Servicios"
+msgstr "Back to Services"
+
+#: templates/sitio/servicio_detalle.html:12
+msgid "SERVICIO"
+msgstr "SERVICE"
+
+#: templates/sitio/servicio_detalle.html:25
+msgid "¿Qué incluye?"
+msgstr "What's included?"
+
+#: templates/sitio/servicio_detalle.html:32
+msgid "Servicios relacionados"
+msgstr "Related services"
+
+#: templates/sitio/servicios.html:5
+msgid ""
+"Soluciones de ingeniería, logística y mantenimiento para la industria "
+"marítima del Lago de Maracaibo: transporte de personal, atracaderos, lanchas"
+" y motores."
+msgstr ""
+"Engineering, logistics and maintenance solutions for the Lake Maracaibo "
+"maritime industry: crew transport, docks, boats and engines."
+
+#: templates/sitio/servicios.html:14
+msgid ""
+"Soluciones de ingeniería, logística y mantenimiento para la industria "
+"marítima del Lago de Maracaibo."
+msgstr ""
+"Engineering, logistics and maintenance solutions for the Lake Maracaibo "
+"maritime industry."
+
+#: templates/sitio/servicios.html:29
+msgid ""
+"cada tarjeta enlazará a su propia página de detalle (plantilla en "
+"<code>servicio_detalle.html</code>)"
+msgstr ""
+"each card will link to its own detail page (template in "
+"<code>servicio_detalle.html</code>)"
+
+#: templates/includes/selector_idioma.html:14
+msgid "Cambiar idioma"
+msgstr "Change language"

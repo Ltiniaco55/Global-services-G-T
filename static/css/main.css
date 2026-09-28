@@ -177,6 +177,19 @@ img {
     margin-right: auto;
   }
 
+  /* Orden en móvil: logo · burger · idioma · Cotizar (Cotizar en la esquina) */
+  .nav-pill {
+    order: 1;
+  }
+
+  .selector-idioma {
+    order: 2;
+  }
+
+  .site-header .btn-cotizar {
+    order: 3;
+  }
+
   .nav-pill {
     gap: 0;
     padding: 0;
@@ -186,6 +199,103 @@ img {
   .btn-cotizar {
     padding: 10px 16px;
     font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SELECTOR DE IDIOMA (templates/includes/selector_idioma.html)
+   Botón blanco con la bandera del idioma actual, en la esquina derecha
+   del header (fuera del nav). Al abrirlo muestra una tarjeta con las
+   banderas y los nombres de los idiomas, con un check en el activo.
+   ========================================================= */
+.selector-idioma {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.selector-idioma__boton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 14px;
+  background: var(--c-blanco);
+  color: var(--c-noche);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.selector-idioma__boton::-webkit-details-marker {
+  display: none;
+}
+
+.selector-idioma__flecha {
+  font-size: 12px;
+  color: var(--c-azul-profundo, var(--c-noche));
+  transition: transform 0.2s ease;
+}
+
+.selector-idioma[open] .selector-idioma__flecha {
+  transform: rotate(180deg);
+}
+
+.bandera {
+  display: block;
+  width: 22px;
+  height: 15px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.selector-idioma__menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 190px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: var(--c-blanco);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.selector-idioma__opcion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--c-noche);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.selector-idioma__opcion:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.selector-idioma__check {
+  margin-left: auto;
+  color: #2e8b57;
+  font-size: 18px;
+}
+
+/* Pantallas medianas: el menú centrado ocupa casi todo el ancho y el
+   botón en la esquina lo taparía, así que ahí va justo después de Cotizar. */
+@media (max-width: 1200px) {
+  .selector-idioma {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
   }
 }
 
@@ -1517,15 +1627,22 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.2fr;
+  /* Tres columnas iguales: así el ancho de cada bloque no depende de lo
+     largo que sea el texto en cada idioma. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
+  align-items: start;
 }
 
 .footer-logo-img {
   display: block;
   height: 150px;
   width: auto;
-  margin-bottom: 14px;
+  /* El PNG dentro de logo_grande.svg trae ~22px de margen transparente
+     arriba y ~25px a la izquierda (a 150px de alto). Se compensa para que
+     el logo quede alineado con los títulos "Enlaces rápidos" / "Contacto"
+     y con el texto de abajo. */
+  margin: -22px 0 14px -25px;
 }
 
 .footer-logo {
@@ -1543,6 +1660,12 @@ img {
   margin-top: 12px;
   color: var(--c-lima);
   font-size: 14px;
+}
+
+/* El bloque de enlaces se centra dentro de su columna (el texto sigue
+   alineado a la izquierda); en móvil vuelve a la izquierda, ver abajo. */
+.footer-links {
+  justify-self: center;
 }
 
 .footer-heading {
@@ -1583,5 +1706,9 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .footer-links {
+    justify-self: start;
   }
 }

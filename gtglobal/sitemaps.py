@@ -10,7 +10,15 @@ from django.urls import reverse
 from sitio.data_loader import load_proyectos, load_servicios
 
 
-class PaginasEstaticasSitemap(Sitemap):
+class SitemapBilingue(Sitemap):
+    """Cada URL sale en español y en inglés, con sus alternates hreflang
+    (y x-default apuntando a la versión en español)."""
+    i18n = True
+    alternates = True
+    x_default = True
+
+
+class PaginasEstaticasSitemap(SitemapBilingue):
     changefreq = 'monthly'
     priority = 0.8
 
@@ -29,7 +37,7 @@ class PaginasEstaticasSitemap(Sitemap):
         return 1.0 if item == 'sitio:home' else 0.8
 
 
-class ServiciosDetalleSitemap(Sitemap):
+class ServiciosDetalleSitemap(SitemapBilingue):
     changefreq = 'monthly'
     priority = 0.6
 
@@ -40,7 +48,7 @@ class ServiciosDetalleSitemap(Sitemap):
         return reverse('sitio:servicio_detalle', kwargs={'slug': item['slug']})
 
 
-class ProyectosDetalleSitemap(Sitemap):
+class ProyectosDetalleSitemap(SitemapBilingue):
     changefreq = 'monthly'
     priority = 0.6
 

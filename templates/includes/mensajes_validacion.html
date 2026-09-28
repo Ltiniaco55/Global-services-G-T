@@ -1,0 +1,9 @@
+{% load i18n %}{
+      nombre: '{% filter escapejs %}{% translate "Ingresa tu nombre y apellido." %}{% endfilter %}',
+      email: '{% filter escapejs %}{% translate "Ingresa un correo válido." %}{% endfilter %}',
+      telefono: '{% filter escapejs %}{% translate "Ingresa un número de teléfono válido." %}{% endfilter %}',
+      asuntoVacio: '{% filter escapejs %}{% translate "Escribe el asunto de tu solicitud." %}{% endfilter %}',
+      {# {min} y {max} los reemplaza form-validacion.js por los números reales #}
+      asuntoPalabras: '{% filter escapejs %}{% translate "El asunto debe tener entre {min} y {max} palabras." %}{% endfilter %}',
+      privacidad: '{% filter escapejs %}{% translate "Debes aceptar la política de privacidad para continuar." %}{% endfilter %}'
+    }

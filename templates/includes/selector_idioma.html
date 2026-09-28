@@ -1,0 +1,30 @@
+{% load i18n %}{% comment %}
+Selector de idioma: botón con la bandera del idioma actual que despliega la
+lista de idiomas (bandera + nombre, con un check en el activo). Va en la
+esquina del header, fuera del menú (ver header.html y .selector-idioma en
+main.css).
+
+Usa <details>/<summary>, así abre y cierra aunque no cargue JavaScript;
+layout.js solo añade cerrar al hacer clic fuera o con Escape. Las URLs de
+cada idioma (la MISMA página en el otro idioma) las arma el context
+processor sitio.context_processors.idiomas.
+{% endcomment %}
+<details class="selector-idioma">
+  <summary class="selector-idioma__boton" aria-label="{% translate 'Cambiar idioma' %}">
+    {% include 'includes/bandera.html' with codigo=LANGUAGE_CODE %}
+    <i class="ti ti-caret-down-filled selector-idioma__flecha" aria-hidden="true"></i>
+  </summary>
+  <ul class="selector-idioma__menu">
+    {% for idioma in idiomas_pagina %}
+    <li>
+      <a href="{{ idioma.url }}" hreflang="{{ idioma.codigo }}" lang="{{ idioma.codigo }}"
+        class="selector-idioma__opcion{% if idioma.codigo == LANGUAGE_CODE %} selector-idioma__opcion--activa{% endif %}"
+        {% if idioma.codigo == LANGUAGE_CODE %}aria-current="true"{% endif %}>
+        {% include 'includes/bandera.html' with codigo=idioma.codigo %}
+        <span>{{ idioma.nombre|upper }}</span>
+        {% if idioma.codigo == LANGUAGE_CODE %}<i class="ti ti-check selector-idioma__check" aria-hidden="true"></i>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</details>
