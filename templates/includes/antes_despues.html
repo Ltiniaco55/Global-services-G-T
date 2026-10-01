@@ -1,0 +1,16 @@
+{% load static i18n %}{% comment %}
+Comparador antes / después: se arrastra la barra para descubrir la foto de
+"después" encima de la de "antes". Uso:
+{% include 'includes/antes_despues.html' with par=par %}  (par.antes / par.despues)
+Sin JavaScript se ven las dos fotos con el corte al 50%.
+{% endcomment %}
+<figure class="antes-despues" data-antes-despues>
+  <img src="{% static par.antes.src %}" alt="{{ par.antes.alt }}" loading="lazy" class="antes-despues__img">
+  <div class="antes-despues__despues">
+    <img src="{% static par.despues.src %}" alt="{{ par.despues.alt }}" loading="lazy" class="antes-despues__img">
+  </div>
+  <span class="antes-despues__rotulo antes-despues__rotulo--antes">{% translate "Antes" %}</span>
+  <span class="antes-despues__rotulo antes-despues__rotulo--despues">{% translate "Después" %}</span>
+  <span class="antes-despues__linea" aria-hidden="true"><i class="ti ti-arrows-horizontal"></i></span>
+  <input type="range" min="0" max="100" value="50" class="antes-despues__control" aria-label="{% translate 'Comparar antes y después' %}">
+</figure>

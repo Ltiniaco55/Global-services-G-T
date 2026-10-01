@@ -14,19 +14,26 @@
    igual que en el original.
    ========================================================= */
 
+// Header siempre visible (sticky). Al salir del hero se compacta
+// (header--scrolled) y mientras bajas se atenúa (header--dim) para no
+// tapar el contenido; al subir o al pasar el ratón por encima vuelve a
+// verse al 100%.
 function initHeaderScrollBehavior() {
   const header = document.querySelector('.site-header');
   if (!header) return;
   let lastY = window.scrollY;
   window.addEventListener('scroll', () => {
     const currentY = window.scrollY;
-    if (currentY > lastY && currentY > 80) {
-      header.classList.add('header--dim');
-    } else {
-      header.classList.remove('header--dim');
-    }
+    const delta = currentY - lastY;
+    if (Math.abs(delta) < 6) return; // ignora micro-movimientos
+    const selectorAbierto = header.querySelector('.selector-idioma[open]');
+    const atenuar = delta > 0 && currentY > 120 && !selectorAbierto;
+    header.classList.toggle('header--dim', atenuar);
+    // fuera del hero, el logo + nombre lleva fondo oscuro (si no, el
+    // nombre en blanco no se lee sobre las secciones claras)
+    header.classList.toggle('header--scrolled', currentY > 80);
     lastY = currentY;
-  });
+  }, { passive: true });
 }
 
 function initBurgerMenu() {
@@ -39,6 +46,8 @@ function initBurgerMenu() {
     panel.classList.toggle('burger-panel--open', isOpen);
     const icon = toggle.querySelector('i');
     if (icon) icon.className = isOpen ? 'ti ti-x' : 'ti ti-menu-2';
+    // con el menú abierto, que la página de fondo no se desplace
+    if (window.lenis) isOpen ? window.lenis.stop() : window.lenis.start();
   }
 
   toggle.addEventListener('click', () => {

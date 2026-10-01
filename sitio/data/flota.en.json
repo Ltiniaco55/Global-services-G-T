@@ -1,42 +1,139 @@
 {
+  "unidades": [
+    {
+      "foto": {
+        "src": "assets/fotos/flota/remolcador.webp",
+        "alt": "Tugboat"
+      },
+      "nombre": "Tugboats"
+    },
+    {
+      "foto": {
+        "src": "assets/fotos/flota/gabarra-grua.webp",
+        "alt": "Crane barge"
+      },
+      "nombre": "Crane barges"
+    },
+    {
+      "foto": {
+        "src": "assets/fotos/flota/lanchas-muelle.webp",
+        "alt": "Crew boats"
+      },
+      "nombre": "Crew boats"
+    },
+    {
+      "foto": {
+        "src": "assets/fotos/flota/remolcador-grua.webp",
+        "alt": "Tug and barge"
+      },
+      "nombre": "Operations support"
+    }
+  ],
   "embarcaciones": [
     {
       "nombre": "BETTY MARACAIBO",
-      "imagen_clase": "flota-card__img--azul-profundo",
-      "imagen_alt": "Betty Maracaibo vessel",
-      "descripcion": "Crew transport to operational areas on the Lake.",
-      "badges": ["RACDA G-24-2017-3386", "RIF J-404294287"]
+      "descripcion": "Crew transport to operating areas on the Lake.",
+      "badges": [
+        "RACDA G-24-2017-3386"
+      ]
     },
     {
       "nombre": "BETTY · M/ARCI",
-      "imagen_clase": "flota-card__img--azul-medio",
-      "imagen_alt": "Betty vessel, M/Arci class",
       "descripcion": "Meets all INEA safety requirements.",
-      "badges": ["INEA compliant"]
+      "badges": [
+        "INEA compliant"
+      ]
     },
     {
       "nombre": "MERCEDES V",
-      "imagen_clase": "flota-card__img--noche",
-      "imagen_alt": "Mercedes V vessel",
-      "descripcion": "Company-owned vessel in active operation on the Lake.",
-      "badges": ["specs: pending"]
+      "descripcion": "Vessel in active operation on the Lake.",
+      "badges": []
     }
   ],
-  "capacidades": [
+  "bases": [
     {
-      "titulo": "Boat design and construction",
-      "imagen_clase": "flota-card__img--azul-profundo",
-      "imagen_alt": "Boat in dry dock during construction"
+      "icon": "ti-anchor",
+      "titulo": "Lake operations base",
+      "lugar": "Pedro Lucas Urribarri Pier (CAMINPEG), Ciudad Ojeda",
+      "texto": "Eastern shore of the Lake. All our lake operations across Lake Maracaibo start here.",
+      "foto": {
+        "src": "assets/fotos/bases/base-lacustre.webp",
+        "alt": "Operations base at the pier"
+      },
+      "foto2": {
+        "src": "assets/fotos/bases/muelle-caminpeg.webp",
+        "alt": "Aerial view of CAMINPEG pier"
+      }
     },
     {
-      "titulo": "Hyundai engine maintenance",
-      "imagen_clase": "flota-card__img--azul-medio",
-      "imagen_alt": "Hyundai engine undergoing maintenance"
+      "icon": "ti-building-factory-2",
+      "titulo": "Fabrication yard",
+      "lugar": "Calle 18B, San Francisco, Zulia State",
+      "texto": "Western shore. About 3,000 m² to fabricate structures, next to the Rafael Urdaneta Bridge.",
+      "foto": {
+        "src": "assets/fotos/bases/patio-san-francisco.webp",
+        "alt": "Aerial view of the San Francisco yard"
+      },
+      "foto2": null,
+      "metrica": "3.000 m²"
     },
     {
-      "titulo": "In-house maintenance and lifting",
-      "imagen_clase": "flota-card__img--noche",
-      "imagen_alt": "Vessel being lifted with our own crane"
+      "icon": "ti-building",
+      "titulo": "Head office",
+      "lugar": "Av. 04 Bella Vista, Ferley Bldg., Ground floor, Maracaibo",
+      "texto": "Planning, administration and customer service.",
+      "foto": {
+        "src": "assets/fotos/bases/mapa-lago.webp",
+        "alt": "Map of Lake Maracaibo"
+      },
+      "foto2": null
+    }
+  ],
+  "aliados": [
+    {
+      "nombre": "Hyundai En-Tech",
+      "logo": "assets/fotos/aliados/hyundai-en-tech.webp"
+    },
+    {
+      "nombre": "Hyundai Infracore",
+      "logo": "assets/fotos/aliados/hyundai-infracore.webp"
+    },
+    {
+      "nombre": "Doosan",
+      "logo": null
+    },
+    {
+      "nombre": "SNV",
+      "logo": "assets/fotos/aliados/snv.webp"
+    },
+    {
+      "nombre": "TECNESP",
+      "logo": "assets/fotos/aliados/tecnesp.webp"
+    }
+  ],
+  "clientes": [
+    "PDVSA",
+    "PDVSA Gas",
+    "E.M. Petrozamora",
+    "Termozulia",
+    "Ana María Campos Complex"
+  ],
+  "certificaciones": [
+    {
+      "titulo": "Certified Shipping Company",
+      "codigo": "INEA-CNSL-0081"
+    },
+    {
+      "titulo": "Naval Production Center",
+      "codigo": "INEA-AF-CPPN-261-140319-0"
+    },
+    {
+      "titulo": "National Contractors Registry",
+      "codigo": "RNC 2026090222602000210"
+    },
+    {
+      "titulo": "Tax ID (RIF)",
+      "codigo": "J-40429428-7"
     }
   ]
 }

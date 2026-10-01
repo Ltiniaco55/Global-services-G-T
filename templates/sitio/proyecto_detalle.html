@@ -6,37 +6,53 @@
 
 {% block content %}
 
-  <section class="detalle-hero">
+  <section class="detalle-hero{% if proyecto.portada and not proyecto.contain %} detalle-hero--foto" style="--hero-foto:url('{% static proyecto.portada.src %}'){% endif %}">
     <div class="container">
       <a href="{% url 'sitio:proyectos' %}" class="detalle-back"><i class="ti ti-arrow-left"></i> {% translate "Volver a Proyectos" %}</a>
       <p class="section-tag section-tag--lima">{{ proyecto.categoria }}</p>
       <h1 class="page-hero__title">{{ proyecto.titulo }}</h1>
       <p class="page-hero__lead">{{ proyecto.resumen }}</p>
+      {% if proyecto.cliente and empresa.mostrar_clientes %}<p class="detalle-cliente"><i class="ti ti-building" aria-hidden="true"></i> {{ proyecto.cliente }}</p>{% endif %}
     </div>
   </section>
 
   <section class="container section">
-    <div class="proceso-grid">
-      {% for paso in proyecto.proceso %}
-      <div class="proceso-card">
-        <p class="proceso-step">{{ paso.paso }}</p>
-        <div class="detalle-img {{ paso.imagen_clase }}">{{ paso.imagen_alt }}</div>
-        <p>{{ paso.texto }}</p>
-      </div>
-      {% endfor %}
+    {% if proyecto.antes_despues %}
+    <h2 class="detalle-subtitle">{% translate "Antes y después" %}</h2>
+    <p class="detalle-ayuda">{% translate "Desliza la barra para comparar." %}</p>
+    <div class="antes-despues-grid">
+      {% for par in proyecto.antes_despues %}{% include 'includes/antes_despues.html' with par=par %}{% endfor %}
     </div>
+    {% endif %}
 
+    {% if proyecto.galeria %}
+    {% include 'includes/galeria.html' with fotos=proyecto.galeria grupo=proyecto.slug contain=proyecto.contain %}
+    {% elif proyecto.portada and not proyecto.antes_despues %}
+    <a href="{% static proyecto.portada.src %}" class="foto-unica" data-visor="{{ proyecto.slug }}" data-titulo="{{ proyecto.portada.alt }}">
+      <img src="{% static proyecto.portada.src %}" alt="{{ proyecto.portada.alt }}">
+    </a>
+    {% endif %}
+
+    {% if proyecto.specs %}
     <div class="specs-box">
       <h2 class="detalle-subtitle"><i class="ti ti-clipboard-list"></i> {% translate "Especificaciones técnicas" %}</h2>
       <div class="specs-grid">
         {% for spec in proyecto.specs %}<p>{{ spec }}</p>{% endfor %}
       </div>
     </div>
+    {% endif %}
 
     <div class="quote-cta">
-      <p>&quot;{{ proyecto.cita }}&quot;</p>
-      <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">{% translate "Cotizar un proyecto similar" %}</a>
+      <p>{% translate "¿Tienes un proyecto parecido?" %}</p>
+      <a href="{% url 'sitio:cotizacion' %}?servicio={{ proyecto.servicio }}" class="btn-cotizar btn-cotizar--lg">{% translate "Cotizar un proyecto similar" %}</a>
     </div>
+
+    {% if otros %}
+    <h2 class="detalle-subtitle">{% translate "Más proyectos" %}</h2>
+    <div class="foto-grid foto-grid--proyectos">
+      {% for p in otros %}{% include 'includes/proyecto_card.html' with p=p %}{% endfor %}
+    </div>
+    {% endif %}
   </section>
 {% endblock %}
 

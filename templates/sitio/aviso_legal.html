@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% translate "Aviso legal" %} — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}{% translate "Datos identificativos de G&T Global Service, C.A. y condiciones de uso de este sitio web." %}{% endblock %}
+
+{% block content %}
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-tag section-tag--lima">{% translate "LEGAL" %}</p>
+      <h1 class="page-hero__title">{% translate "Aviso legal" %}</h1>
+      <p class="page-hero__lead">{% translate "Última actualización: 1 de octubre de 2026" %}</p>
+    </div>
+  </section>
+
+  <section class="container section texto-legal">
+    <h2 class="detalle-subtitle">{% translate "1. Datos de la empresa" %}</h2>
+    <div class="tabla-legal">
+      <table>
+        <tbody>
+          <tr><th>{% translate "Razón social" %}</th><td>{{ empresa.nombre }}</td></tr>
+          <tr><th>RIF</th><td>{{ empresa.rif }}</td></tr>
+          <tr><th>{% translate "Registro Nacional de Contratistas" %}</th><td>{{ empresa.rnc }}</td></tr>
+          <tr><th>{% translate "Domicilio" %}</th><td>{{ empresa.direccion }}, {{ empresa.ciudad }}, {% translate "estado" %} {{ empresa.estado }}, Venezuela</td></tr>
+          <tr><th>{% translate "Correo" %}</th><td><a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></td></tr>
+          <tr><th>{% translate "Teléfonos" %}</th><td>{{ empresa.telefono }} · {{ empresa.telefono_2 }}</td></tr>
+          <tr><th>{% translate "Sitio web" %}</th><td>gytglobalservice.com</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="detalle-subtitle">{% translate "2. Objeto de la web" %}</h2>
+    <p>{% translate "Esta web informa sobre los servicios de G&T Global Service, C.A. y permite solicitar cotizaciones y enviar candidaturas. La información publicada no constituye una oferta vinculante: el alcance, los plazos y los precios de cada servicio se fijan en la cotización correspondiente." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "3. Condiciones de uso" %}</h2>
+    <p>{% translate "Al navegar por esta web te comprometes a usarla de forma lícita y a no realizar acciones que puedan dañarla, sobrecargarla o impedir su uso normal, ni enviar a través de los formularios contenido falso, ilícito o malicioso." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "4. Propiedad intelectual" %}</h2>
+    <p>{% translate "Los textos, fotografías, diseño y logotipo de esta web pertenecen a G&T Global Service, C.A. o se usan con autorización de sus titulares. No está permitido reproducirlos, distribuirlos ni modificarlos sin permiso por escrito." %}</p>
+    <p>{% translate "Los nombres y marcas de otras empresas (clientes, fabricantes y aliados) pertenecen a sus respectivos titulares. Se mencionan solo para describir trabajos realizados o alianzas comerciales, y su mención no implica que esas empresas respalden esta web." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "5. Responsabilidad" %}</h2>
+    <p>{% translate "Procuramos que la información de la web sea correcta y esté actualizada, pero las descripciones, cifras e imágenes tienen carácter orientativo. No respondemos de interrupciones temporales del servicio ni del contenido de sitios externos enlazados desde esta web." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "6. Privacidad y cookies" %}</h2>
+    {% url 'sitio:privacidad' as url_privacidad %}
+    <p>{% blocktranslate trimmed %}El tratamiento de los datos personales y el uso de cookies se explican en la <a href="{{ url_privacidad }}">Política de Privacidad</a>.{% endblocktranslate %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "7. Ley aplicable" %}</h2>
+    <p>{% translate "Este aviso legal se rige por las leyes de la República Bolivariana de Venezuela. Cualquier controversia se someterá a los tribunales competentes de la ciudad de Maracaibo, estado Zulia." %}</p>
+  </section>
+
+{% endblock %}

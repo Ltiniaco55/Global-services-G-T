@@ -1,0 +1,24 @@
+{% load static i18n %}{# Clientes, aliados y certificaciones (datos en sitio/data/flota*.json) #}
+<div class="confianza">
+  {% if empresa.mostrar_clientes %}
+  <div class="confianza__bloque">
+    <p class="confianza__rotulo">{% translate "Han confiado en nosotros" %}</p>
+    <ul class="confianza__clientes">
+      {% for c in datos.clientes %}<li>{{ c }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <div class="confianza__bloque">
+    <p class="confianza__rotulo">{% translate "Aliados y fabricantes" %}</p>
+    <ul class="confianza__aliados">
+      {% for a in datos.aliados %}
+      <li>{% if a.logo %}<img src="{% static a.logo %}" alt="{{ a.nombre }}" loading="lazy">{% else %}<span>{{ a.nombre|upper }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <ul class="confianza__certs">
+    {% for c in datos.certificaciones %}
+    <li><i class="ti ti-certificate" aria-hidden="true"></i><span><strong>{{ c.titulo }}</strong>{{ c.codigo }}</span></li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,7 +1,8 @@
 {% load static i18n %}
 <header class="site-header">
   <a href="{% url 'sitio:home' %}" class="nav-logo">
-    <img src="{% static 'assets/hero/logo.svg' %}" alt="G&amp;T Global Service" class="nav-logo-img">
+    <img src="{% static 'assets/hero/logo-192.webp' %}" alt="" width="192" height="192" class="nav-logo-img">
+    <span class="nav-logo-texto">G&amp;T Global Service</span>
   </a>
   <nav class="nav-pill">
     <ul class="nav-links">
@@ -15,8 +16,12 @@
       <i class="ti ti-menu-2"></i>
     </button>
   </nav>
-  <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar">{% translate "Cotizar" %}</a>
-  {% include 'includes/selector_idioma.html' %}
+  {% comment %}Cotizar + idioma juntos en la esquina derecha. En móvil el orden se
+     invierte con CSS (idioma · Cotizar) para que Cotizar quede en la esquina.{% endcomment %}
+  <div class="header-acciones">
+    {% include 'includes/selector_idioma.html' %}
+    <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar">{% translate "Cotizar" %}</a>
+  </div>
 </header>
 
 <div class="whatsapp-bubble" id="whatsapp-bubble">

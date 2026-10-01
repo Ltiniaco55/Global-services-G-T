@@ -24,6 +24,11 @@ var MENSAJES_POR_DEFECTO = {
   privacidad: 'Debes aceptar la política de privacidad para continuar.',
 };
 
+function rutaUtilsTelefono() {
+  var tag = document.querySelector('script[src*="intlTelInput.min.js"]');
+  return tag ? tag.src.replace('intlTelInput.min.js', 'utils.js') : '';
+}
+
 function initFormValidado(form, opciones) {
   if (!form) return;
 
@@ -48,7 +53,8 @@ function initFormValidado(form, opciones) {
       initialCountry: cfg.paisInicial,
       preferredCountries: ['ve', 'co', 'us', 'es'],
       separateDialCode: true,
-      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/js/utils.js',
+      // utils.js vive junto a intlTelInput.min.js en static/vendor/ (sin CDN)
+      utilsScript: cfg.utilsScript || rutaUtilsTelefono(),
     });
   }
 

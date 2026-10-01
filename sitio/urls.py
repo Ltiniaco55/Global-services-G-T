@@ -20,4 +20,5 @@ urlpatterns = [
     path(_('cotizacion/'), views.cotizacion, name='cotizacion'),
     path(_('cotizacion/gracias/'), views.cotizacion_gracias, name='cotizacion_gracias'),
     path(_('privacidad/'), views.privacidad, name='privacidad'),
+    path(_('aviso-legal/'), views.aviso_legal, name='aviso_legal'),
 ]

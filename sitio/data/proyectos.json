@@ -1,45 +1,431 @@
 {
   "proyectos": [
     {
-      "slug": "mg-01-05-lago-v",
-      "titulo": "M/G 01-05 LAGO V",
-      "categoria": "PROYECTO · INGENIERÍA DE ATRACADEROS",
-      "resumen": "Del diseño a la realidad: ingeniería a medida, fabricación e instalación de atracadero para pozo petrolero del Lago de Maracaibo.",
-      "meta_title": "M/G 01-05 LAGO V — G&T Global Service, C.A.",
-      "meta_description": "Caso real: ingeniería, fabricación e instalación de atracadero M/G 01-05 LAGO V para pozo petrolero en el Lago de Maracaibo, ejecutado por G&T Global Service.",
-      "proceso": [
+      "slug": "recuperacion-flota-petrozamora",
+      "servicio": "diseno-y-construccion-de-lanchas",
+      "destacado": true,
+      "titulo": "Recuperación de la flota lacustre",
+      "cliente": "E.M. Petrozamora",
+      "resumen": "Recuperación, reparación y mantenimiento de una flota completa de unidades lacustres.",
+      "portada": {
+        "src": "assets/fotos/petrozamora/pz011-despues.webp",
+        "alt": "Lancha PZ 011 recuperada"
+      },
+      "antes_despues": [
         {
-          "paso": "01 · RECIBIMOS UN DESAFÍO",
-          "imagen_clase": "detalle-img--azul-profundo",
-          "imagen_alt": "Atracadero deteriorado antes de la intervención",
-          "texto": "Infraestructura comprometida por el tiempo en un pozo petrolero activo del Lago."
+          "antes": {
+            "src": "assets/fotos/petrozamora/antes-1.webp",
+            "alt": "Casco deteriorado antes de la recuperación"
+          },
+          "despues": {
+            "src": "assets/fotos/petrozamora/pz011-despues.webp",
+            "alt": "Lancha PZ 011 después de la recuperación"
+          }
         },
         {
-          "paso": "02 · INGENIERÍA A MEDIDA",
-          "imagen_clase": "detalle-img--azul-medio",
-          "imagen_alt": "Taller de fabricación de piezas a medida",
-          "texto": "Diseño y fabricación de piezas adaptadas a las necesidades específicas del pozo."
-        },
-        {
-          "paso": "03 · EJECUCIÓN PRECISA",
-          "imagen_clase": "detalle-img--noche",
-          "imagen_alt": "Instalación del atracadero sobre el Lago de Maracaibo",
-          "texto": "Instalación del atracadero directamente sobre el Lago, con equipo propio."
-        },
-        {
-          "paso": "04 · RESULTADOS ÓPTIMOS",
-          "imagen_clase": "detalle-img--lima",
-          "imagen_alt": "Estructura VLM 1071 terminada y operativa",
-          "texto": "Estructura terminada, operativa y entregada al cliente."
+          "antes": {
+            "src": "assets/fotos/petrozamora/antes-2.webp",
+            "alt": "Casco en dique antes de la recuperación"
+          },
+          "despues": {
+            "src": "assets/fotos/petrozamora/pz008-despues.webp",
+            "alt": "Lancha PZ 008 después de la recuperación"
+          }
         }
       ],
+      "galeria": [],
+      "categoria": "Construcción y reparación naval",
+      "servicio_icon": "ti-sailboat",
+      "meta_title": "Recuperación de la flota lacustre — G&T Global Service, C.A.",
+      "meta_description": "Recuperación, reparación y mantenimiento de una flota completa de unidades lacustres.",
+      "specs": [],
+      "contain": false
+    },
+    {
+      "slug": "diseno-unidades-petrozamora",
+      "servicio": "diseno-y-construccion-de-lanchas",
+      "titulo": "Diseño de unidades lacustres",
+      "cliente": "E.M. Petrozamora",
+      "resumen": "Diseño e ingeniería para modificar unidades lacustres: ambulancia, buceo, conexiones y gerencia y rescate.",
+      "portada": {
+        "src": "assets/fotos/diseno/ambulancia.webp",
+        "alt": "Diseño de lancha ambulancia"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/diseno/ambulancia.webp",
+          "alt": "Lancha ambulancia"
+        },
+        {
+          "src": "assets/fotos/diseno/buceo.webp",
+          "alt": "Lancha de buceo"
+        },
+        {
+          "src": "assets/fotos/diseno/conexiones.webp",
+          "alt": "Lancha de conexiones"
+        },
+        {
+          "src": "assets/fotos/diseno/rescate.webp",
+          "alt": "Lancha de gerencia y rescate"
+        }
+      ],
+      "contain": true,
+      "categoria": "Construcción y reparación naval",
+      "servicio_icon": "ti-sailboat",
+      "meta_title": "Diseño de unidades lacustres — G&T Global Service, C.A.",
+      "meta_description": "Diseño e ingeniería para modificar unidades lacustres: ambulancia, buceo, conexiones y gerencia y rescate.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false
+    },
+    {
+      "slug": "cable-submarino",
+      "servicio": "electricidad-e-instrumentacion",
+      "destacado": true,
+      "titulo": "Cable submarino",
+      "cliente": null,
+      "resumen": "Tendido, reparación y recuperación de cable submarino en el Lago de Maracaibo.",
+      "portada": {
+        "src": "assets/fotos/cable/tendido.webp",
+        "alt": "Cuadrilla tendiendo cable submarino"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/cable/cuadrilla-muelle.webp",
+          "alt": "Cuadrilla en el muelle"
+        },
+        {
+          "src": "assets/fotos/cable/empalme.webp",
+          "alt": "Empalme de cable"
+        },
+        {
+          "src": "assets/fotos/cable/carrete.webp",
+          "alt": "Cable submarino preparado"
+        },
+        {
+          "src": "assets/fotos/cable/tendido.webp",
+          "alt": "Tendido de cable"
+        }
+      ],
+      "categoria": "Electricidad e instrumentación",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Cable submarino — G&T Global Service, C.A.",
+      "meta_description": "Tendido, reparación y recuperación de cable submarino en el Lago de Maracaibo.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "atracaderos-pdvsa",
+      "servicio": "instalacion-de-atracaderos",
+      "destacado": true,
+      "titulo": "Atracaderos y áreas de combustible",
+      "cliente": "PDVSA",
+      "resumen": "Reparación de atracaderos en muelles, áreas de combustible y mejoras en plataformas.",
+      "portada": {
+        "src": "assets/fotos/atracaderos/soldadura.webp",
+        "alt": "Soldadura en atracadero"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/atracaderos/soldadura.webp",
+          "alt": "Soldadura en atracadero"
+        },
+        {
+          "src": "assets/fotos/atracaderos/barandas.webp",
+          "alt": "Barandas nuevas en muelle"
+        },
+        {
+          "src": "assets/fotos/atracaderos/area-combustible.webp",
+          "alt": "Área de combustible"
+        },
+        {
+          "src": "assets/fotos/atracaderos/tuberias.webp",
+          "alt": "Tuberías de la plataforma"
+        }
+      ],
+      "categoria": "Atracaderos y plataformas",
+      "servicio_icon": "ti-anchor",
+      "meta_title": "Atracaderos y áreas de combustible — G&T Global Service, C.A.",
+      "meta_description": "Reparación de atracaderos en muelles, áreas de combustible y mejoras en plataformas.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "plataformas-pdvsa",
+      "servicio": "instalacion-de-atracaderos",
+      "destacado": true,
+      "titulo": "Plataformas en el Lago",
+      "cliente": "PDVSA",
+      "resumen": "Construcción, reparación e instalación de plataformas y atracaderos en el Lago de Maracaibo.",
+      "portada": {
+        "src": "assets/fotos/plataformas/plataforma-1.webp",
+        "alt": "Plataforma en el Lago"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/plataformas/plataforma-1.webp",
+          "alt": "Plataforma terminada"
+        },
+        {
+          "src": "assets/fotos/plataformas/plataforma-grua.webp",
+          "alt": "Plataforma con grúa"
+        },
+        {
+          "src": "assets/fotos/plataformas/soldador.webp",
+          "alt": "Soldadura sobre el agua"
+        },
+        {
+          "src": "assets/fotos/flota/plataforma-lago.webp",
+          "alt": "Plataforma en el Lago de Maracaibo"
+        }
+      ],
+      "categoria": "Atracaderos y plataformas",
+      "servicio_icon": "ti-anchor",
+      "meta_title": "Plataformas en el Lago — G&T Global Service, C.A.",
+      "meta_description": "Construcción, reparación e instalación de plataformas y atracaderos en el Lago de Maracaibo.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "planta-fertilizantes-ana-maria-campos",
+      "servicio": "tuberias-y-mantenimiento-industrial",
+      "destacado": true,
+      "titulo": "Planta de fertilizantes",
+      "cliente": "Complejo Ana María Campos",
+      "resumen": "Reacondicionamiento del Tren A y Tren B de la planta de fertilizantes.",
+      "portada": {
+        "src": "assets/fotos/petroquimica/tren-a-b.webp",
+        "alt": "Planta de fertilizantes, Tren A y Tren B"
+      },
+      "galeria": [],
+      "categoria": "Tuberías y mantenimiento industrial",
+      "servicio_icon": "ti-tool",
+      "meta_title": "Planta de fertilizantes — G&T Global Service, C.A.",
+      "meta_description": "Reacondicionamiento del Tren A y Tren B de la planta de fertilizantes.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "subestaciones-lago",
+      "servicio": "electricidad-e-instrumentacion",
+      "titulo": "Subestaciones en el Lago",
+      "cliente": null,
+      "resumen": "Reparación y mantenimiento de subestaciones eléctricas en el Lago de Maracaibo.",
+      "portada": {
+        "src": "assets/fotos/electrica/izaje-transformador.webp",
+        "alt": "Izaje de transformador"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/electrica/izaje-transformador.webp",
+          "alt": "Izaje de transformador"
+        },
+        {
+          "src": "assets/fotos/electrica/torre.webp",
+          "alt": "Torre de transmisión"
+        },
+        {
+          "src": "assets/fotos/electrica/torre-liniero.webp",
+          "alt": "Liniero en torre"
+        },
+        {
+          "src": "assets/fotos/electrica/subestacion-lago.webp",
+          "alt": "Subestación en el Lago"
+        }
+      ],
+      "categoria": "Electricidad e instrumentación",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Subestaciones en el Lago — G&T Global Service, C.A.",
+      "meta_description": "Reparación y mantenimiento de subestaciones eléctricas en el Lago de Maracaibo.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "subestacion-115-230kv",
+      "servicio": "electricidad-e-instrumentacion",
+      "titulo": "Subestación 115 y 230 kV",
+      "cliente": null,
+      "resumen": "Rehabilitación y mantenimiento integral de la subestación eléctrica del sector petrolero Patio, de 115 y 230 kV.",
+      "portada": {
+        "src": "assets/fotos/electrica/subestacion-115-230kv.webp",
+        "alt": "Subestación eléctrica 115 y 230 kV"
+      },
+      "galeria": [],
+      "categoria": "Electricidad e instrumentación",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Subestación 115 y 230 kV — G&T Global Service, C.A.",
+      "meta_description": "Rehabilitación y mantenimiento integral de la subestación eléctrica del sector petrolero Patio, de 115 y 230 kV.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "termozulia",
+      "servicio": "electricidad-e-instrumentacion",
+      "titulo": "Planta Termozulia",
+      "cliente": "Termozulia",
+      "resumen": "Obras eléctricas y de instrumentación en la Planta Termozulia.",
+      "portada": {
+        "src": "assets/fotos/electrica/termozulia-1.webp",
+        "alt": "Planta Termozulia"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/electrica/termozulia-1.webp",
+          "alt": "Planta Termozulia"
+        },
+        {
+          "src": "assets/fotos/electrica/termozulia-2.webp",
+          "alt": "Tanques de la planta"
+        },
+        {
+          "src": "assets/fotos/electrica/termozulia-3.webp",
+          "alt": "Patio eléctrico de la planta"
+        }
+      ],
+      "categoria": "Electricidad e instrumentación",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Planta Termozulia — G&T Global Service, C.A.",
+      "meta_description": "Obras eléctricas y de instrumentación en la Planta Termozulia.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "lineas-pdvsa-gas",
+      "servicio": "tuberias-y-mantenimiento-industrial",
+      "titulo": "Líneas e inspección",
+      "cliente": "PDVSA Gas",
+      "resumen": "Tendido de líneas de diferentes diámetros, con fabricación e instalación de facilidades de inspección.",
+      "portada": {
+        "src": "assets/fotos/lineas/tendido.webp",
+        "alt": "Tendido de líneas"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/lineas/tendido.webp",
+          "alt": "Líneas tendidas"
+        },
+        {
+          "src": "assets/fotos/lineas/soldadura.webp",
+          "alt": "Soldadura de tubería"
+        },
+        {
+          "src": "assets/fotos/lineas/inspeccion.webp",
+          "alt": "Facilidades de inspección"
+        }
+      ],
+      "categoria": "Tuberías y mantenimiento industrial",
+      "servicio_icon": "ti-tool",
+      "meta_title": "Líneas e inspección — G&T Global Service, C.A.",
+      "meta_description": "Tendido de líneas de diferentes diámetros, con fabricación e instalación de facilidades de inspección.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "galpon-muelle-pedro-lucas-urribarri",
+      "servicio": "fabricacion-y-construccion",
+      "destacado": true,
+      "titulo": "Galpón en el muelle",
+      "cliente": "Muelle Pedro Lucas Urribarri",
+      "resumen": "Montaje de columnas y cerchas para la estructura de un galpón en el muelle Pedro Lucas Urribarri.",
+      "portada": {
+        "src": "assets/fotos/galpon/estructura.webp",
+        "alt": "Estructura del galpón"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/galpon/columnas.webp",
+          "alt": "Columnas instaladas"
+        },
+        {
+          "src": "assets/fotos/galpon/montaje.webp",
+          "alt": "Montaje con grúa"
+        },
+        {
+          "src": "assets/fotos/galpon/cerchas.webp",
+          "alt": "Cerchas"
+        },
+        {
+          "src": "assets/fotos/galpon/estructura.webp",
+          "alt": "Estructura terminada"
+        }
+      ],
+      "categoria": "Fabricación y construcción",
+      "servicio_icon": "ti-building-factory-2",
+      "meta_title": "Galpón en el muelle — G&T Global Service, C.A.",
+      "meta_description": "Montaje de columnas y cerchas para la estructura de un galpón en el muelle Pedro Lucas Urribarri.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "bases-equipos-tanques",
+      "servicio": "fabricacion-y-construccion",
+      "titulo": "Bases para equipos y tanques",
+      "cliente": null,
+      "resumen": "Fabricación de bases de concreto para equipos y tanques de diferentes usos.",
+      "portada": {
+        "src": "assets/fotos/bases-equipos/cuadrilla.webp",
+        "alt": "Cuadrilla vaciando concreto"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/bases-equipos/armado.webp",
+          "alt": "Armado de acero"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/vaciado.webp",
+          "alt": "Vaciado de concreto"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/cuadrilla.webp",
+          "alt": "Cuadrilla en obra"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/losa.webp",
+          "alt": "Base terminada"
+        }
+      ],
+      "categoria": "Fabricación y construcción",
+      "servicio_icon": "ti-building-factory-2",
+      "meta_title": "Bases para equipos y tanques — G&T Global Service, C.A.",
+      "meta_description": "Fabricación de bases de concreto para equipos y tanques de diferentes usos.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "mg-01-05-lago-v",
+      "servicio": "instalacion-de-atracaderos",
+      "titulo": "M/G 01-05 LAGO V",
+      "cliente": null,
+      "resumen": "Ingeniería a medida, fabricación e instalación de atracadero para pozo petrolero del Lago de Maracaibo.",
+      "portada": null,
+      "galeria": [],
       "specs": [
         "Ángulos estructurales: 3\"x3\"x1/4\"",
         "Lámina: grating G2",
-        "Código de proyecto: M/G 01-05 LAGO V",
         "Estructura final: VLM 1071"
       ],
-      "cita": "Logística, fabricación y mantenimiento: un sólo equipo, todas las soluciones."
+      "categoria": "Atracaderos y plataformas",
+      "servicio_icon": "ti-anchor",
+      "meta_title": "M/G 01-05 LAGO V — G&T Global Service, C.A.",
+      "meta_description": "Ingeniería a medida, fabricación e instalación de atracadero para pozo petrolero del Lago de Maracaibo.",
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
     }
   ]
 }

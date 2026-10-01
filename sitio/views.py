@@ -2,6 +2,7 @@ import base64
 import html
 import logging
 import os
+from datetime import date
 
 import requests
 from django.conf import settings
@@ -10,8 +11,10 @@ from django.shortcuts import redirect, render
 from django.utils import translation
 from django.utils.translation import get_language, get_language_info
 from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy
 
-from .data_loader import get_proyecto, get_servicio, load_flota, load_proyectos, load_servicios
+from .data_loader import (get_alias_servicio, get_proyecto, get_servicio, load_flota, load_proyectos,
+                          load_servicios)
 from .forms import CotizacionForm, TrabajaConNosotrosForm
 
 logger = logging.getLogger(__name__)
@@ -32,6 +35,23 @@ CV_TAMANO_MAXIMO = 8 * 1024 * 1024  # 8 MB
 
 
 RESEND_API_URL = 'https://api.resend.com/emails'
+
+# Cifras del hero de la homepage (número grande + texto debajo).
+# Los años se calculan solos desde la fundación (2014).
+# Proyectos y empresas: cifras confirmadas por la empresa (oct. 2026).
+ANIO_FUNDACION = 2014
+HERO_CIFRAS = {
+    'proyectos': 100,
+    'empresas': 20,
+}
+
+
+def _hero_cifras():
+    return [
+        {'valor': date.today().year - ANIO_FUNDACION, 'sufijo': '', 'texto': gettext_lazy('Años de experiencia')},
+        {'valor': HERO_CIFRAS['proyectos'], 'sufijo': '+', 'texto': gettext_lazy('Proyectos realizados')},
+        {'valor': HERO_CIFRAS['empresas'], 'sufijo': '+', 'texto': gettext_lazy('Empresas atendidas')},
+    ]
 
 _EMAIL_ESTILO_BASE = 'font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #1a1a1a; line-height: 1.6;'
 
@@ -152,7 +172,9 @@ def home(request):
     y cotizacion() más abajo) — ya no procesa ningún formulario aquí."""
     return render(request, 'sitio/homepage.html', {
         'servicios': load_servicios(),
-        'proyectos': load_proyectos(),
+        'proyectos': [p for p in load_proyectos() if p.get('destacado')],
+        'cifras': _hero_cifras(),
+        'flota': load_flota(),
     })
 
 
@@ -317,12 +339,13 @@ def privacidad(request):
     return render(request, 'sitio/privacidad.html')
 
 
+def aviso_legal(request):
+    return render(request, 'sitio/aviso_legal.html')
+
+
 def flota(request):
     data = load_flota()
-    return render(request, 'sitio/flota.html', {
-        'embarcaciones': data['embarcaciones'],
-        'capacidades': data['capacidades'],
-    })
+    return render(request, 'sitio/flota.html', {**data, 'flota': data})
 
 
 def servicios(request):
@@ -334,13 +357,20 @@ def servicios(request):
 def servicio_detalle(request, slug):
     servicio = get_servicio(slug)
     if servicio is None:
+        # Servicios que se reorganizaron (dossier 2026): la URL vieja
+        # redirige a la nueva en vez de dar 404.
+        nuevo = get_alias_servicio(slug)
+        if nuevo:
+            return redirect('sitio:servicio_detalle', slug=nuevo, permanent=True)
         raise Http404(_('Servicio no encontrado'))
-    return render(request, 'sitio/servicio_detalle.html', {'servicio': servicio})
+    proyectos = [p for p in load_proyectos() if p['servicio'] == servicio['slug']]
+    return render(request, 'sitio/servicio_detalle.html', {'servicio': servicio, 'proyectos': proyectos})
 
 
 def proyectos(request):
     return render(request, 'sitio/proyectos.html', {
         'proyectos': load_proyectos(),
+        'servicios': load_servicios(),
     })
 
 
@@ -348,7 +378,10 @@ def proyecto_detalle(request, slug):
     proyecto = get_proyecto(slug)
     if proyecto is None:
         raise Http404(_('Proyecto no encontrado'))
-    return render(request, 'sitio/proyecto_detalle.html', {'proyecto': proyecto})
+    otros = [p for p in load_proyectos() if p['slug'] != slug and p.get('portada')]
+    # Primero los del mismo servicio, luego el resto.
+    otros.sort(key=lambda p: p['servicio'] != proyecto['servicio'])
+    return render(request, 'sitio/proyecto_detalle.html', {'proyecto': proyecto, 'otros': otros[:3]})
 
 
 def cotizacion_gracias(request):

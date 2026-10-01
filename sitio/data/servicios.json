@@ -1,148 +1,475 @@
 {
   "servicios": [
     {
-      "slug": "transporte-de-personal",
-      "icon": "ti-users",
-      "titulo": "Transporte de personal",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "TRANSPORTE DE<br>PERSONAL",
-      "meta_title": "Transporte de Personal — G&T Global Service, C.A.",
-      "meta_description": "Transporte marítimo seguro de personal para operaciones petroleras en el Lago de Maracaibo, con embarcaciones propias y tripulación calificada.",
-      "intro": "Transporte marítimo de personal hacia pozos y plataformas del Lago de Maracaibo, con embarcaciones propias, tripulación calificada y protocolos de seguridad pensados para la operación petrolera.",
-      "imagen_clase": "detalle-img--azul-medio",
-      "imagen_alt": "Embarcación de transporte de personal en el Lago de Maracaibo",
+      "slug": "unidades-lacustres",
+      "icon": "ti-ship",
+      "titulo": "Unidades lacustres y transporte",
+      "frase": "Lanchas, gabarras y remolcadores para operar en todo el Lago.",
+      "intro": "Suministramos y operamos unidades lacustres livianas y pesadas: lanchas de transporte de personal, de conexiones y de buceo, gabarras y remolcadores, desde nuestra base en Ciudad Ojeda.",
       "incluye": [
-        "Embarcaciones propias y certificadas",
-        "Tripulación calificada y protocolos de seguridad",
-        "Rutas y horarios programados según la operación",
-        "Coordinación logística directa con el cliente"
+        "Transporte de personal",
+        "Lanchas de conexiones y buceo",
+        "Gabarras con grúa",
+        "Remolcadores"
       ],
-      "relacionados": [
-        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Diseño y construcción de lanchas"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"},
-        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Logística industrial"}
+      "portada": {
+        "src": "assets/fotos/flota/lanchas-muelle.webp",
+        "alt": "Lanchas de G&T en el muelle"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/flota/remolcador.webp",
+          "alt": "Remolcador en el Lago de Maracaibo"
+        },
+        {
+          "src": "assets/fotos/flota/gabarra-grua.webp",
+          "alt": "Gabarra con grúa"
+        },
+        {
+          "src": "assets/fotos/flota/remolcador-grua.webp",
+          "alt": "Remolcador junto a gabarra con grúa"
+        },
+        {
+          "src": "assets/fotos/flota/lanchas-muelle.webp",
+          "alt": "Lanchas en el muelle"
+        }
       ],
-      "cta_pregunta": "¿Necesitas transporte de personal al Lago?"
-    },
-    {
-      "slug": "ingenieria-a-medida",
-      "icon": "ti-ruler-2",
-      "titulo": "Ingeniería a medida",
+      "proyectos": [
+        {
+          "slug": "recuperacion-flota-petrozamora",
+          "titulo": "Recuperación de la flota lacustre",
+          "portada": {
+            "src": "assets/fotos/petrozamora/pz011-despues.webp",
+            "alt": "Lancha PZ 011 recuperada"
+          }
+        },
+        {
+          "slug": "diseno-unidades-petrozamora",
+          "titulo": "Diseño de unidades lacustres",
+          "portada": {
+            "src": "assets/fotos/diseno/ambulancia.webp",
+            "alt": "Diseño de lancha ambulancia"
+          }
+        }
+      ],
       "tiene_detalle": true,
-      "titulo_detalle_html": "INGENIERÍA<br>A MEDIDA",
-      "meta_title": "Ingeniería a Medida — G&T Global Service, C.A.",
-      "meta_description": "Diseño y fabricación de soluciones de ingeniería a medida para infraestructura petrolera y marítima en el Lago de Maracaibo.",
-      "intro": "Diseño y fabricación de soluciones de ingeniería adaptadas a cada proyecto: estructuras, piezas y sistemas a medida para infraestructura petrolera y marítima del Lago de Maracaibo.",
-      "imagen_clase": "detalle-img--noche",
-      "imagen_alt": "Taller de ingeniería y fabricación a medida",
-      "incluye": [
-        "Diseño técnico adaptado a cada proyecto",
-        "Fabricación de piezas y estructuras a medida",
-        "Asesoría técnica especializada",
-        "Ejecución con equipo y taller propio"
-      ],
+      "meta_title": "Unidades lacustres y transporte — G&T Global Service, C.A.",
+      "meta_description": "Suministramos y operamos unidades lacustres livianas y pesadas: lanchas de transporte de personal, de conexiones y de buceo, gabarras y remolcadores, desde nuestra base en Ciudad Ojeda.",
+      "cta_pregunta": "¿Necesitas unidades para tu operación en el Lago?",
       "relacionados": [
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"},
-        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Mantenimiento de motores marinos"},
-        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Diseño y construcción de lanchas"}
-      ],
-      "cta_pregunta": "¿Tenés un proyecto que necesita ingeniería a medida?"
-    },
-    {
-      "slug": "instalacion-de-atracaderos",
-      "icon": "ti-anchor",
-      "titulo": "Instalación de atracaderos",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "INSTALACIÓN DE<br>ATRACADEROS",
-      "meta_title": "Instalación de Atracaderos — G&T Global Service, C.A.",
-      "meta_description": "Diseño, fabricación e instalación de atracaderos para pozos petroleros e infraestructura del Lago de Maracaibo.",
-      "intro": "Diseño, fabricación e instalación de atracaderos para pozos petroleros e infraestructura del Lago de Maracaibo, con ingeniería propia de principio a fin.",
-      "imagen_clase": "detalle-img--azul-profundo",
-      "imagen_alt": "Instalación de atracadero sobre el Lago de Maracaibo",
-      "incluye": [
-        "Diseño de ingeniería a medida",
-        "Fabricación de estructuras en taller propio",
-        "Instalación con equipo propio",
-        "Mantenimiento posterior a la instalación"
-      ],
-      "relacionados": [
-        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Ingeniería a medida"},
-        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Mantenimiento de motores marinos"},
-        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Logística industrial"}
-      ],
-      "cta_pregunta": "¿Necesitas instalar o reparar un atracadero?"
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Construcción y reparación naval"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Atracaderos y plataformas"
+        },
+        {
+          "slug": "electricidad-e-instrumentacion",
+          "icon": "ti-bolt",
+          "titulo": "Electricidad e instrumentación"
+        }
+      ]
     },
     {
       "slug": "diseno-y-construccion-de-lanchas",
       "icon": "ti-sailboat",
-      "titulo": "Diseño y construcción de lanchas",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "DISEÑO Y CONSTRUCCIÓN<br>DE LANCHAS",
-      "meta_title": "Diseño y Construcción de Lanchas — G&T Global Service, C.A.",
-      "meta_description": "Diseño y construcción de lanchas para operaciones en el Lago de Maracaibo, adaptadas a las necesidades de cada cliente.",
-      "intro": "Diseño y construcción de lanchas adaptadas a las necesidades operativas de cada cliente, pensadas para el trabajo diario en el Lago de Maracaibo.",
-      "imagen_clase": "detalle-img--lima",
-      "imagen_alt": "Construcción de lancha en taller",
+      "titulo": "Construcción y reparación naval",
+      "frase": "Construimos, reparamos y reacondicionamos cascos de acero naval y aluminio.",
+      "intro": "Construcción, mantenimiento, reparación y reacondicionamiento de cascos para lanchas, remolcadores, gabarras y todo lo que flota. Cada material tiene su tratamiento: el acero naval se corroe con la salinidad del Lago y pierde espesor en sus láminas, por lo que requiere limpieza y pintura más frecuentes; el aluminio apenas se corroe y su desgaste viene del uso. Además, diseño e ingeniería de unidades y motores Hyundai y Doosan.",
       "incluye": [
-        "Diseño según la necesidad operativa",
-        "Construcción con materiales certificados",
-        "Pruebas de navegación antes de la entrega",
-        "Mantenimiento y soporte posterior"
+        "Construcción de cascos",
+        "Reacondicionamiento de cascos",
+        "Acero naval y aluminio",
+        "Motores Hyundai y Doosan"
       ],
+      "portada": {
+        "src": "assets/fotos/petrozamora/pz011-despues.webp",
+        "alt": "Lancha PZ 011 recuperada por G&T"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/petrozamora/antes-1.webp",
+          "alt": "Casco antes de la recuperación"
+        },
+        {
+          "src": "assets/fotos/petrozamora/pz008-despues.webp",
+          "alt": "Lancha PZ 008 después de la recuperación"
+        },
+        {
+          "src": "assets/fotos/diseno/ambulancia.webp",
+          "alt": "Diseño de lancha ambulancia"
+        },
+        {
+          "src": "assets/fotos/diseno/buceo.webp",
+          "alt": "Diseño de lancha de buceo"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "recuperacion-flota-petrozamora",
+          "titulo": "Recuperación de la flota lacustre",
+          "portada": {
+            "src": "assets/fotos/petrozamora/pz011-despues.webp",
+            "alt": "Lancha PZ 011 recuperada"
+          }
+        },
+        {
+          "slug": "diseno-unidades-petrozamora",
+          "titulo": "Diseño de unidades lacustres",
+          "portada": {
+            "src": "assets/fotos/diseno/ambulancia.webp",
+            "alt": "Diseño de lancha ambulancia"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Construcción y reparación naval — G&T Global Service, C.A.",
+      "meta_description": "Construcción, mantenimiento, reparación y reacondicionamiento de cascos para lanchas, remolcadores, gabarras y todo lo que flota. Cada material tiene su…",
+      "cta_pregunta": "¿Tu casco necesita mantenimiento o reacondicionamiento?",
       "relacionados": [
-        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Mantenimiento de motores marinos"},
-        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Transporte de personal"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"}
-      ],
-      "cta_pregunta": "¿Necesitas una lancha diseñada para tu operación?"
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Unidades lacustres y transporte"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Atracaderos y plataformas"
+        },
+        {
+          "slug": "electricidad-e-instrumentacion",
+          "icon": "ti-bolt",
+          "titulo": "Electricidad e instrumentación"
+        }
+      ]
     },
     {
-      "slug": "mantenimiento-motores-hyundai",
-      "icon": "ti-engine",
-      "titulo": "Mantenimiento de motores marinos",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "MANTENIMIENTO DE<br>MOTORES HYUNDAI",
-      "meta_title": "Mantenimiento de Motores Hyundai — G&T Global Service, C.A.",
-      "meta_description": "Mantenimiento de motores marinos diésel Hyundai en Maracaibo: diagnóstico técnico, procura de repuestos originales, reparación y mantenimiento preventivo programado.",
-      "intro": "Especialistas en mantenimiento de motores marinos diésel Hyundai: diagnóstico, reparación, repuestos y procura, para mantener cada embarcación operando con seguridad y sin tiempos de parada inesperados.",
-      "imagen_clase": "detalle-img--azul-profundo",
-      "imagen_alt": "Motor marino Hyundai en mantenimiento",
+      "slug": "instalacion-de-atracaderos",
+      "icon": "ti-anchor",
+      "titulo": "Atracaderos y plataformas",
+      "frase": "Construimos y reparamos la infraestructura sobre el agua.",
+      "intro": "Construcción, reparación e instalación de atracaderos y plataformas en pozos, estaciones, muelles y áreas de combustible, con cuadrillas y equipos propios.",
       "incluye": [
-        "Diagnóstico técnico especializado",
-        "Procura de repuestos originales",
-        "Reparación y reemplazo de piezas",
-        "Mantenimiento preventivo programado"
+        "Atracaderos en pozos y estaciones",
+        "Plataformas lacustres",
+        "Áreas de combustible",
+        "Soldadura y estructuras"
       ],
+      "portada": {
+        "src": "assets/fotos/plataformas/plataforma-1.webp",
+        "alt": "Plataforma en el Lago de Maracaibo"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/atracaderos/soldadura.webp",
+          "alt": "Soldadura en atracadero"
+        },
+        {
+          "src": "assets/fotos/plataformas/soldador.webp",
+          "alt": "Soldador trabajando sobre el Lago"
+        },
+        {
+          "src": "assets/fotos/atracaderos/barandas.webp",
+          "alt": "Instalación de barandas en muelle"
+        },
+        {
+          "src": "assets/fotos/plataformas/plataforma-grua.webp",
+          "alt": "Plataforma con grúa"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "atracaderos-pdvsa",
+          "titulo": "Atracaderos y áreas de combustible",
+          "portada": {
+            "src": "assets/fotos/atracaderos/soldadura.webp",
+            "alt": "Soldadura en atracadero"
+          }
+        },
+        {
+          "slug": "plataformas-pdvsa",
+          "titulo": "Plataformas en el Lago",
+          "portada": {
+            "src": "assets/fotos/plataformas/plataforma-1.webp",
+            "alt": "Plataforma en el Lago"
+          }
+        },
+        {
+          "slug": "mg-01-05-lago-v",
+          "titulo": "M/G 01-05 LAGO V",
+          "portada": null
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Atracaderos y plataformas — G&T Global Service, C.A.",
+      "meta_description": "Construcción, reparación e instalación de atracaderos y plataformas en pozos, estaciones, muelles y áreas de combustible, con cuadrillas y equipos propios.",
+      "cta_pregunta": "¿Necesitas construir o reparar un atracadero?",
       "relacionados": [
-        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Diseño y construcción de lanchas"},
-        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Transporte de personal"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"}
-      ],
-      "cta_pregunta": "¿Tu embarcación necesita mantenimiento?"
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Unidades lacustres y transporte"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Construcción y reparación naval"
+        },
+        {
+          "slug": "electricidad-e-instrumentacion",
+          "icon": "ti-bolt",
+          "titulo": "Electricidad e instrumentación"
+        }
+      ]
     },
     {
-      "slug": "logistica-industrial",
-      "icon": "ti-truck",
-      "titulo": "Logística industrial",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "LOGÍSTICA<br>INDUSTRIAL",
-      "meta_title": "Logística Industrial — G&T Global Service, C.A.",
-      "meta_description": "Logística industrial y coordinación de operaciones para la industria petrolera y marítima del Lago de Maracaibo.",
-      "intro": "Coordinación logística de personal, equipos y materiales para operaciones petroleras y marítimas en el Lago de Maracaibo, de punta a punta.",
-      "imagen_clase": "detalle-img--azul-medio",
-      "imagen_alt": "Coordinación logística industrial en el Lago de Maracaibo",
+      "slug": "electricidad-e-instrumentacion",
+      "icon": "ti-bolt",
+      "titulo": "Electricidad e instrumentación",
+      "frase": "Energía confiable en tierra y en el Lago.",
+      "intro": "Instalación, mantenimiento, reparación y modernización eléctrica: subestaciones de 115 y 230 kV, cable submarino, transformadores, pararrayos e iluminación.",
       "incluye": [
-        "Coordinación de personal y equipos",
-        "Transporte de materiales",
-        "Planificación logística por operación",
-        "Seguimiento y reportes al cliente"
+        "Subestaciones eléctricas",
+        "Cable submarino",
+        "Transformadores",
+        "Pararrayos y luminarias"
       ],
+      "portada": {
+        "src": "assets/fotos/cable/tendido.webp",
+        "alt": "Cuadrilla de G&T tendiendo cable submarino"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/electrica/izaje-transformador.webp",
+          "alt": "Izaje de transformador en el Lago"
+        },
+        {
+          "src": "assets/fotos/electrica/subestacion-115-230kv.webp",
+          "alt": "Subestación eléctrica de 115 y 230 kV"
+        },
+        {
+          "src": "assets/fotos/cable/empalme.webp",
+          "alt": "Empalme de cable submarino"
+        },
+        {
+          "src": "assets/fotos/electrica/torre-liniero.webp",
+          "alt": "Liniero trabajando en torre"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "cable-submarino",
+          "titulo": "Cable submarino",
+          "portada": {
+            "src": "assets/fotos/cable/tendido.webp",
+            "alt": "Cuadrilla tendiendo cable submarino"
+          }
+        },
+        {
+          "slug": "subestaciones-lago",
+          "titulo": "Subestaciones en el Lago",
+          "portada": {
+            "src": "assets/fotos/electrica/izaje-transformador.webp",
+            "alt": "Izaje de transformador"
+          }
+        },
+        {
+          "slug": "subestacion-115-230kv",
+          "titulo": "Subestación 115 y 230 kV",
+          "portada": {
+            "src": "assets/fotos/electrica/subestacion-115-230kv.webp",
+            "alt": "Subestación eléctrica 115 y 230 kV"
+          }
+        },
+        {
+          "slug": "termozulia",
+          "titulo": "Planta Termozulia",
+          "portada": {
+            "src": "assets/fotos/electrica/termozulia-1.webp",
+            "alt": "Planta Termozulia"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Electricidad e instrumentación — G&T Global Service, C.A.",
+      "meta_description": "Instalación, mantenimiento, reparación y modernización eléctrica: subestaciones de 115 y 230 kV, cable submarino, transformadores, pararrayos e iluminación.",
+      "cta_pregunta": "¿Tienes un proyecto eléctrico en tierra o en el Lago?",
       "relacionados": [
-        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Transporte de personal"},
-        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Ingeniería a medida"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Instalación de atracaderos"}
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Unidades lacustres y transporte"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Construcción y reparación naval"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Atracaderos y plataformas"
+        }
+      ]
+    },
+    {
+      "slug": "tuberias-y-mantenimiento-industrial",
+      "icon": "ti-tool",
+      "titulo": "Tuberías y mantenimiento industrial",
+      "frase": "De la falla a la puesta en marcha.",
+      "intro": "Fabricación e instalación de spools y líneas, reemplazo de bombas de despacho y balancines, y mantenimiento de equipos de perforación: limpieza, sand blasting, pintura, soldadura y puesta en marcha.",
+      "incluye": [
+        "Spools y líneas",
+        "Bombas de despacho",
+        "Equipos de perforación",
+        "Sand blasting y pintura"
       ],
-      "cta_pregunta": "¿Necesitas coordinar logística para tu operación?"
+      "portada": {
+        "src": "assets/fotos/petroquimica/tren-a-b.webp",
+        "alt": "Planta de fertilizantes del Complejo Ana María Campos"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/lineas/tendido.webp",
+          "alt": "Tendido de líneas"
+        },
+        {
+          "src": "assets/fotos/lineas/soldadura.webp",
+          "alt": "Soldadura de tubería"
+        },
+        {
+          "src": "assets/fotos/atracaderos/tuberias.webp",
+          "alt": "Trabajo en tuberías sobre plataforma"
+        },
+        {
+          "src": "assets/fotos/atracaderos/area-combustible.webp",
+          "alt": "Área de combustible"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "lineas-pdvsa-gas",
+          "titulo": "Líneas e inspección",
+          "portada": {
+            "src": "assets/fotos/lineas/tendido.webp",
+            "alt": "Tendido de líneas"
+          }
+        },
+        {
+          "slug": "planta-fertilizantes-ana-maria-campos",
+          "titulo": "Planta de fertilizantes",
+          "portada": {
+            "src": "assets/fotos/petroquimica/tren-a-b.webp",
+            "alt": "Planta de fertilizantes, Tren A y Tren B"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Tuberías y mantenimiento industrial — G&T Global Service, C.A.",
+      "meta_description": "Fabricación e instalación de spools y líneas, reemplazo de bombas de despacho y balancines, y mantenimiento de equipos de perforación: limpieza, sand blasting, pintura, soldadura y puesta en marcha.",
+      "cta_pregunta": "¿Necesitas mantenimiento o tuberías para tu planta?",
+      "relacionados": [
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Unidades lacustres y transporte"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Construcción y reparación naval"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Atracaderos y plataformas"
+        }
+      ]
+    },
+    {
+      "slug": "fabricacion-y-construccion",
+      "icon": "ti-building-factory-2",
+      "titulo": "Fabricación y construcción",
+      "frase": "3.000 m² de patio para fabricar lo que tu proyecto necesita.",
+      "intro": "En nuestro patio de San Francisco fabricamos y montamos estructuras metálicas, galpones, bases para equipos y tanques. Su cercanía al Puente Rafael Urdaneta facilita llevarlas a cualquier locación.",
+      "incluye": [
+        "Estructuras metálicas",
+        "Galpones",
+        "Bases para equipos",
+        "Tanques"
+      ],
+      "portada": {
+        "src": "assets/fotos/galpon/estructura.webp",
+        "alt": "Montaje de estructura de galpón"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/galpon/cerchas.webp",
+          "alt": "Cerchas de galpón"
+        },
+        {
+          "src": "assets/fotos/galpon/montaje.webp",
+          "alt": "Montaje con grúa"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/armado.webp",
+          "alt": "Armado de acero para base"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/losa.webp",
+          "alt": "Base de concreto terminada"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "galpon-muelle-pedro-lucas-urribarri",
+          "titulo": "Galpón en el muelle",
+          "portada": {
+            "src": "assets/fotos/galpon/estructura.webp",
+            "alt": "Estructura del galpón"
+          }
+        },
+        {
+          "slug": "bases-equipos-tanques",
+          "titulo": "Bases para equipos y tanques",
+          "portada": {
+            "src": "assets/fotos/bases-equipos/cuadrilla.webp",
+            "alt": "Cuadrilla vaciando concreto"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Fabricación y construcción — G&T Global Service, C.A.",
+      "meta_description": "En nuestro patio de San Francisco fabricamos y montamos estructuras metálicas, galpones, bases para equipos y tanques. Su cercanía al Puente Rafael Urdaneta facilita llevarlas a cualquier locación.",
+      "cta_pregunta": "¿Necesitas fabricar una estructura?",
+      "relacionados": [
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Unidades lacustres y transporte"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Construcción y reparación naval"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Atracaderos y plataformas"
+        }
+      ]
     }
-  ]
+  ],
+  "alias": {
+    "transporte-de-personal": "unidades-lacustres",
+    "logistica-industrial": "unidades-lacustres",
+    "mantenimiento-motores-hyundai": "diseno-y-construccion-de-lanchas",
+    "ingenieria-a-medida": "fabricacion-y-construccion"
+  }
 }

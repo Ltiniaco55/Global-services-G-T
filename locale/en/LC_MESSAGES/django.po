@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: G&T Global Service\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-25 05:12-0400\n"
+"POT-Creation-Date: 2026-10-01 06:50-0400\n"
 "PO-Revision-Date: 2026-09-25 12:00+0200\n"
 "Last-Translator: Luciano Tiniaco\n"
 "Language-Team: G&T Global Service\n"
@@ -20,13 +20,13 @@ msgstr ""
 msgid "Ingresa un número de teléfono válido."
 msgstr "Enter a valid phone number."
 
-#: sitio/forms.py:62 sitio/forms.py:116 templates/sitio/contacto.html:34
+#: sitio/forms.py:62 sitio/forms.py:123 templates/sitio/contacto.html:34
 #: templates/sitio/cotizacion.html:34
 msgid "Nombre y apellido"
 msgstr "Full name"
 
-#: sitio/forms.py:65 sitio/forms.py:123 templates/sitio/contacto.html:38
-#: templates/sitio/cotizacion.html:40
+#: sitio/forms.py:65 sitio/forms.py:130 templates/sitio/aviso_legal.html:26
+#: templates/sitio/contacto.html:38 templates/sitio/cotizacion.html:40
 msgid "Correo"
 msgstr "Email"
 
@@ -42,43 +42,44 @@ msgstr "Position of interest (optional)"
 msgid "Cuéntanos brevemente tu experiencia (opcional)"
 msgstr "Briefly tell us about your experience (optional)"
 
-#: sitio/forms.py:120 templates/sitio/cotizacion.html:37
-msgid "Empresa"
-msgstr "Company"
-
-#: sitio/forms.py:127 templates/sitio/cotizacion.html:43
-msgid "Teléfono / WhatsApp"
-msgstr "Phone / WhatsApp"
-
-#: sitio/forms.py:131 templates/sitio/cotizacion.html:46
-msgid "Asunto"
-msgstr "Subject"
-
-#: sitio/forms.py:134 templates/sitio/cotizacion.html:50
-msgid "Servicios de interés"
-msgstr "Services of interest"
-
-#: sitio/forms.py:136 templates/sitio/cotizacion.html:101
-msgid "Selecciona al menos un servicio."
-msgstr "Select at least one service."
-
-#: sitio/forms.py:141 templates/sitio/cotizacion.html:69
-msgid "Cuéntanos más: alcance, ubicación, plazos estimados..."
-msgstr "Tell us more: scope, location, estimated timeline..."
-
-#: sitio/forms.py:146
+#: sitio/forms.py:87 sitio/forms.py:153
 msgid "He leído y acepto la política de privacidad"
 msgstr "I have read and accept the privacy policy"
 
-#: sitio/forms.py:147 templates/includes/mensajes_validacion.html:8
+#: sitio/forms.py:88 sitio/forms.py:154
+#: templates/includes/mensajes_validacion.html:8
 msgid "Debes aceptar la política de privacidad para continuar."
 msgstr "You must accept the privacy policy to continue."
 
-#: sitio/forms.py:159
+#: sitio/forms.py:127 templates/sitio/cotizacion.html:37
+msgid "Empresa"
+msgstr "Company"
+
+#: sitio/forms.py:134 templates/sitio/cotizacion.html:43
+msgid "Teléfono / WhatsApp"
+msgstr "Phone / WhatsApp"
+
+#: sitio/forms.py:138 templates/sitio/cotizacion.html:46
+msgid "Asunto"
+msgstr "Subject"
+
+#: sitio/forms.py:141 templates/sitio/cotizacion.html:50
+msgid "Servicios de interés"
+msgstr "Services of interest"
+
+#: sitio/forms.py:143 templates/sitio/cotizacion.html:101
+msgid "Selecciona al menos un servicio."
+msgstr "Select at least one service."
+
+#: sitio/forms.py:148 templates/sitio/cotizacion.html:69
+msgid "Cuéntanos más: alcance, ubicación, plazos estimados..."
+msgstr "Tell us more: scope, location, estimated timeline..."
+
+#: sitio/forms.py:166
 msgid "Otro / no estoy seguro"
 msgstr "Other / not sure"
 
-#: sitio/forms.py:170
+#: sitio/forms.py:177
 #, python-format
 msgid "El asunto debe tener entre %(min)d y %(max)d palabras."
 msgstr "The subject must be between %(min)d and %(max)d words."
@@ -119,7 +120,23 @@ msgstr "quote/thank-you/"
 msgid "privacidad/"
 msgstr "privacy/"
 
-#: sitio/views.py:116
+#: sitio/urls.py:23
+msgid "aviso-legal/"
+msgstr "legal-notice/"
+
+#: sitio/views.py:51
+msgid "Años de experiencia"
+msgstr "Years of experience"
+
+#: sitio/views.py:52
+msgid "Proyectos realizados"
+msgstr "Completed projects"
+
+#: sitio/views.py:53
+msgid "Empresas atendidas"
+msgstr "Companies served"
+
+#: sitio/views.py:136
 #, python-format
 msgid ""
 "El archivo \"%(nombre)s\" tiene un formato no permitido. Formatos aceptados:"
@@ -128,20 +145,20 @@ msgstr ""
 "The file \"%(nombre)s\" has a format that is not allowed. Accepted formats: "
 "PDF, images (JPG/PNG), Word, Excel and drawings (DWG/DXF)."
 
-#: sitio/views.py:121
+#: sitio/views.py:141
 msgid ""
 "Los archivos adjuntos superan el tamaño máximo permitido (15 MB en total)."
 msgstr "The attached files exceed the maximum allowed size (15 MB in total)."
 
-#: sitio/views.py:134
+#: sitio/views.py:154
 msgid "Adjunta tu currículum para poder enviar tu postulación."
 msgstr "Attach your résumé to submit your application."
 
-#: sitio/views.py:136
+#: sitio/views.py:156
 msgid "Adjunta un solo archivo con tu currículum."
 msgstr "Attach a single file with your résumé."
 
-#: sitio/views.py:141
+#: sitio/views.py:161
 #, python-format
 msgid ""
 "El archivo \"%(nombre)s\" tiene un formato no permitido. Formatos aceptados "
@@ -150,11 +167,11 @@ msgstr ""
 "The file \"%(nombre)s\" has a format that is not allowed. Accepted résumé "
 "formats: PDF or Word (.doc, .docx)."
 
-#: sitio/views.py:145
+#: sitio/views.py:165
 msgid "El currículum supera el tamaño máximo permitido (8 MB)."
 msgstr "The résumé exceeds the maximum allowed size (8 MB)."
 
-#: sitio/views.py:210
+#: sitio/views.py:232
 msgid ""
 "No se pudo enviar tu postulación en este momento. Intenta de nuevo o "
 "escríbenos directamente por WhatsApp."
@@ -162,7 +179,7 @@ msgstr ""
 "We couldn't send your application right now. Please try again or message us "
 "directly on WhatsApp."
 
-#: sitio/views.py:302
+#: sitio/views.py:324
 msgid ""
 "No se pudo enviar tu solicitud en este momento. Intenta de nuevo o "
 "escríbenos directamente por WhatsApp."
@@ -170,11 +187,11 @@ msgstr ""
 "We couldn't send your request right now. Please try again or message us "
 "directly on WhatsApp."
 
-#: sitio/views.py:337
+#: sitio/views.py:365
 msgid "Servicio no encontrado"
 msgstr "Service not found"
 
-#: sitio/views.py:350
+#: sitio/views.py:380
 msgid "Proyecto no encontrado"
 msgstr "Project not found"
 
@@ -208,23 +225,46 @@ msgstr "Engineering and marine services on Lake Maracaibo"
 
 #: templates/base.html:7 templates/sitio/homepage.html:5
 msgid ""
-"Ingeniería y servicios marítimos para la industria petrolera del Lago de "
-"Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y "
-"logística industrial."
+"Ingeniería y servicios en tierra y en el Lago de Maracaibo: unidades "
+"lacustres, reparación naval, atracaderos y plataformas, electricidad, "
+"tuberías y fabricación de estructuras."
 msgstr ""
-"Engineering and marine services for the Lake Maracaibo oil industry: crew "
-"transport, docks, engine maintenance and industrial logistics."
+"Engineering and services on land and on Lake Maracaibo: lake vessels, naval "
+"repair, docks and platforms, electrical work, piping and structural "
+"fabrication."
 
 #: templates/base.html:20
 msgid "Ingeniería y servicios marítimos"
 msgstr "Engineering and marine services"
 
 #: templates/base.html:21 templates/includes/footer.html:7
-#: templates/sitio/homepage.html:21
+#: templates/sitio/homepage.html:44
 msgid ""
-"Ingeniería y servicios marítimos para la industria petrolera del Lago de "
+"Ingeniería, servicios lacustres y proyectos industriales en tierra y en el "
+"Lago de Maracaibo."
+msgstr ""
+"Engineering, lake services and industrial projects on land and on Lake "
 "Maracaibo."
-msgstr "Engineering and marine services for the Lake Maracaibo oil industry."
+
+#: templates/includes/antes_despues.html:12
+msgid "Antes"
+msgstr "Before"
+
+#: templates/includes/antes_despues.html:13
+msgid "Después"
+msgstr "After"
+
+#: templates/includes/antes_despues.html:15
+msgid "Comparar antes y después"
+msgstr "Compare before and after"
+
+#: templates/includes/confianza.html:5
+msgid "Han confiado en nosotros"
+msgstr "They have trusted us"
+
+#: templates/includes/confianza.html:12
+msgid "Aliados y fabricantes"
+msgstr "Partners and manufacturers"
 
 #: templates/includes/cotizacion.html:8
 msgid "¿Tu embarcación necesita mantenimiento?"
@@ -238,22 +278,22 @@ msgstr "Get a quote for this service"
 msgid "Enlaces rápidos"
 msgstr "Quick links"
 
-#: templates/includes/footer.html:14 templates/includes/header.html:8
+#: templates/includes/footer.html:14 templates/includes/header.html:9
 #: templates/includes/menu_burger.html:13
 msgid "Quiénes Somos"
 msgstr "About Us"
 
-#: templates/includes/footer.html:15 templates/includes/header.html:9
+#: templates/includes/footer.html:15 templates/includes/header.html:10
 #: templates/includes/menu_burger.html:14
 msgid "Servicios"
 msgstr "Services"
 
-#: templates/includes/footer.html:16 templates/includes/header.html:10
+#: templates/includes/footer.html:16 templates/includes/header.html:11
 #: templates/includes/menu_burger.html:15
 msgid "Flota"
 msgstr "Fleet"
 
-#: templates/includes/footer.html:17 templates/includes/header.html:11
+#: templates/includes/footer.html:17 templates/includes/header.html:12
 #: templates/includes/menu_burger.html:16
 msgid "Proyectos"
 msgstr "Projects"
@@ -267,24 +307,41 @@ msgstr "Contact"
 msgid "Trabaja con Nosotros"
 msgstr "Careers"
 
-#: templates/includes/footer.html:25
+#: templates/includes/footer.html:26
 msgid "Edo."
 msgstr "State of"
 
-#: templates/includes/footer.html:28
-msgid "Ubicación de G&amp;T Global Service en Maracaibo"
-msgstr "G&amp;T Global Service location in Maracaibo"
+#: templates/includes/footer.html:27
+msgid "Base lacustre: Muelle Pedro Lucas Urribarri, Ciudad Ojeda"
+msgstr "Lake base: Pedro Lucas Urribarri Pier, Ciudad Ojeda"
 
-#: templates/includes/footer.html:36
+#: templates/includes/footer.html:28
+msgid "Patio: San Francisco, Edo. Zulia"
+msgstr "Yard: San Francisco, Zulia State"
+
+#: templates/includes/footer.html:31
+msgid "Cómo llegar"
+msgstr "Get directions"
+
+#: templates/includes/footer.html:35
 msgid "Todos los derechos reservados."
 msgstr "All rights reserved."
 
-#: templates/includes/footer.html:36 templates/sitio/privacidad.html:4
+#: templates/includes/footer.html:36 templates/sitio/aviso_legal.html:4
+#: templates/sitio/aviso_legal.html:12
+msgid "Aviso legal"
+msgstr "Legal notice"
+
+#: templates/includes/footer.html:37 templates/sitio/privacidad.html:4
 #: templates/sitio/privacidad.html:12
 msgid "Política de Privacidad"
 msgstr "Privacy Policy"
 
-#: templates/includes/header.html:12 templates/sitio/contacto.html:16
+#: templates/includes/footer.html:38
+msgid "Cookies"
+msgstr "Cookies"
+
+#: templates/includes/header.html:13 templates/sitio/contacto.html:16
 msgid "Trabaja con nosotros"
 msgstr "Careers"
 
@@ -292,20 +349,20 @@ msgstr "Careers"
 msgid "Abrir menú"
 msgstr "Open menu"
 
-#: templates/includes/header.html:19 templates/includes/menu_burger.html:7
+#: templates/includes/header.html:24 templates/includes/menu_burger.html:7
 msgid "Cotizar"
 msgstr "Get a quote"
 
-#: templates/includes/header.html:23
+#: templates/includes/header.html:29
 msgid "Cerrar mensaje"
 msgstr "Close message"
 
-#: templates/includes/header.html:24
+#: templates/includes/header.html:30
 msgid ""
 "¡Hola! 👋 Estamos a tu disposición para consultas generales. ¡Escríbenos!"
 msgstr "Hi! 👋 We're here to help with any general questions. Message us!"
 
-#: templates/includes/header.html:27 templates/includes/menu_burger.html:25
+#: templates/includes/header.html:33 templates/includes/menu_burger.html:22
 #: templates/sitio/cotizacion_gracias.html:25
 msgid "Escribir por WhatsApp"
 msgstr "Message us on WhatsApp"
@@ -330,6 +387,154 @@ msgstr "The subject must be between {min} and {max} words."
 #: templates/includes/menu_burger.html:8
 msgid "Cerrar menú"
 msgstr "Close menu"
+
+#: templates/includes/selector_idioma.html:13
+msgid "Cambiar idioma"
+msgstr "Change language"
+
+#: templates/sitio/aviso_legal.html:5
+msgid ""
+"Datos identificativos de G&T Global Service, C.A. y condiciones de uso de "
+"este sitio web."
+msgstr ""
+"Company details of G&T Global Service, C.A. and terms of use of this "
+"website."
+
+#: templates/sitio/aviso_legal.html:11 templates/sitio/privacidad.html:11
+msgid "LEGAL"
+msgstr "LEGAL"
+
+#: templates/sitio/aviso_legal.html:13 templates/sitio/privacidad.html:15
+msgid "Última actualización: 1 de octubre de 2026"
+msgstr "Last updated: October 1, 2026"
+
+#: templates/sitio/aviso_legal.html:18
+msgid "1. Datos de la empresa"
+msgstr "1. Company details"
+
+#: templates/sitio/aviso_legal.html:22
+msgid "Razón social"
+msgstr "Legal name"
+
+#: templates/sitio/aviso_legal.html:24
+msgid "Registro Nacional de Contratistas"
+msgstr "National Contractors Registry"
+
+#: templates/sitio/aviso_legal.html:25
+msgid "Domicilio"
+msgstr "Registered address"
+
+#: templates/sitio/aviso_legal.html:25
+msgid "estado"
+msgstr "State of"
+
+#: templates/sitio/aviso_legal.html:27
+msgid "Teléfonos"
+msgstr "Phone numbers"
+
+#: templates/sitio/aviso_legal.html:28
+msgid "Sitio web"
+msgstr "Website"
+
+#: templates/sitio/aviso_legal.html:33
+msgid "2. Objeto de la web"
+msgstr "2. Purpose of this website"
+
+#: templates/sitio/aviso_legal.html:34
+msgid ""
+"Esta web informa sobre los servicios de G&T Global Service, C.A. y permite "
+"solicitar cotizaciones y enviar candidaturas. La información publicada no "
+"constituye una oferta vinculante: el alcance, los plazos y los precios de "
+"cada servicio se fijan en la cotización correspondiente."
+msgstr ""
+"This website provides information about the services of G&T Global Service, "
+"C.A. and lets you request quotes and submit job applications. The "
+"information published is not a binding offer: the scope, timing and price of"
+" each service are set in the corresponding quote."
+
+#: templates/sitio/aviso_legal.html:36
+msgid "3. Condiciones de uso"
+msgstr "3. Terms of use"
+
+#: templates/sitio/aviso_legal.html:37
+msgid ""
+"Al navegar por esta web te comprometes a usarla de forma lícita y a no "
+"realizar acciones que puedan dañarla, sobrecargarla o impedir su uso normal,"
+" ni enviar a través de los formularios contenido falso, ilícito o malicioso."
+msgstr ""
+"By browsing this website you agree to use it lawfully and not to take any "
+"action that could damage it, overload it or prevent its normal use, nor to "
+"send false, unlawful or malicious content through its forms."
+
+#: templates/sitio/aviso_legal.html:39
+msgid "4. Propiedad intelectual"
+msgstr "4. Intellectual property"
+
+#: templates/sitio/aviso_legal.html:40
+msgid ""
+"Los textos, fotografías, diseño y logotipo de esta web pertenecen a G&T "
+"Global Service, C.A. o se usan con autorización de sus titulares. No está "
+"permitido reproducirlos, distribuirlos ni modificarlos sin permiso por "
+"escrito."
+msgstr ""
+"The texts, photographs, design and logo of this website belong to G&T Global"
+" Service, C.A. or are used with their owners’ permission. They may not be "
+"reproduced, distributed or modified without written permission."
+
+#: templates/sitio/aviso_legal.html:41
+msgid ""
+"Los nombres y marcas de otras empresas (clientes, fabricantes y aliados) "
+"pertenecen a sus respectivos titulares. Se mencionan solo para describir "
+"trabajos realizados o alianzas comerciales, y su mención no implica que esas"
+" empresas respalden esta web."
+msgstr ""
+"The names and trademarks of other companies (clients, manufacturers and "
+"partners) belong to their respective owners. They are mentioned only to "
+"describe completed work or business partnerships, and their mention does not"
+" imply that those companies endorse this website."
+
+#: templates/sitio/aviso_legal.html:43
+msgid "5. Responsabilidad"
+msgstr "5. Liability"
+
+#: templates/sitio/aviso_legal.html:44
+msgid ""
+"Procuramos que la información de la web sea correcta y esté actualizada, "
+"pero las descripciones, cifras e imágenes tienen carácter orientativo. No "
+"respondemos de interrupciones temporales del servicio ni del contenido de "
+"sitios externos enlazados desde esta web."
+msgstr ""
+"We strive to keep the information on this website accurate and up to date, "
+"but descriptions, figures and images are for guidance only. We are not "
+"liable for temporary service interruptions or for the content of external "
+"sites linked from this website."
+
+#: templates/sitio/aviso_legal.html:46
+msgid "6. Privacidad y cookies"
+msgstr "6. Privacy and cookies"
+
+#: templates/sitio/aviso_legal.html:48
+#, python-format
+msgid ""
+"El tratamiento de los datos personales y el uso de cookies se explican en la"
+" <a href=\"%(url_privacidad)s\">Política de Privacidad</a>."
+msgstr ""
+"How we handle personal data and use cookies is explained in the <a "
+"href=\"%(url_privacidad)s\">Privacy Policy</a>."
+
+#: templates/sitio/aviso_legal.html:50
+msgid "7. Ley aplicable"
+msgstr "7. Governing law"
+
+#: templates/sitio/aviso_legal.html:51
+msgid ""
+"Este aviso legal se rige por las leyes de la República Bolivariana de "
+"Venezuela. Cualquier controversia se someterá a los tribunales competentes "
+"de la ciudad de Maracaibo, estado Zulia."
+msgstr ""
+"This legal notice is governed by the laws of the Bolivarian Republic of "
+"Venezuela. Any dispute shall be submitted to the competent courts of the "
+"city of Maracaibo, Zulia State."
 
 #: templates/sitio/contacto.html:4
 msgid "Contáctanos"
@@ -376,15 +581,26 @@ msgstr ""
 msgid "Adjuntar currículum (PDF o Word)"
 msgstr "Attach résumé (PDF or Word)"
 
-#: templates/sitio/contacto.html:61 templates/sitio/cotizacion.html:80
+#: templates/sitio/contacto.html:62
+#, python-format
+msgid ""
+"He leído y acepto la <a href=\"%(url_privacidad)s#candidaturas\" "
+"target=\"_blank\" rel=\"noopener\">política de privacidad</a>. Mi currículum"
+" se conservará un máximo de 12 meses."
+msgstr ""
+"I have read and accept the <a href=\"%(url_privacidad)s#candidaturas\" "
+"target=\"_blank\" rel=\"noopener\">privacy policy</a>. My résumé will be "
+"kept for a maximum of 12 months."
+
+#: templates/sitio/contacto.html:68 templates/sitio/cotizacion.html:80
 msgid "No llenar este campo"
 msgstr "Do not fill in this field"
 
-#: templates/sitio/contacto.html:66
+#: templates/sitio/contacto.html:73
 msgid "Enviar postulación"
 msgstr "Submit application"
 
-#: templates/sitio/contacto.html:80
+#: templates/sitio/contacto.html:87
 msgid "Adjunta tu currículum para continuar."
 msgstr "Attach your résumé to continue."
 
@@ -480,71 +696,125 @@ msgstr ""
 "If your inquiry is urgent, you can also message us directly on WhatsApp."
 
 #: templates/sitio/flota.html:4
-msgid "Nuestra Flota"
-msgstr "Our Fleet"
+msgid "Flota y bases"
+msgstr "Fleet and bases"
 
 #: templates/sitio/flota.html:5
 msgid ""
-"Embarcaciones propias de G&T Global Service, registradas y mantenidas para "
-"operar de forma segura en el Lago de Maracaibo."
+"Unidades lacustres, embarcaciones registradas y bases de operación de G&T "
+"Global Service en el Lago de Maracaibo: muelle en Ciudad Ojeda y patio de "
+"fabricación de 3.000 m² en San Francisco."
 msgstr ""
-"G&T Global Service's own vessels, registered and maintained to operate "
-"safely on Lake Maracaibo."
+"Lake vessels, registered boats and operating bases of G&T Global Service on "
+"Lake Maracaibo: a pier in Ciudad Ojeda and a 3,000 m² fabrication yard in "
+"San Francisco."
 
-#: templates/sitio/flota.html:12 templates/sitio/proyectos.html:12
-#: templates/sitio/servicios.html:12
-msgid "PÁGINA INTERNA"
-msgstr "OVERVIEW"
+#: templates/sitio/flota.html:11
+msgid "FLOTA Y BASES"
+msgstr "FLEET AND BASES"
 
-#: templates/sitio/flota.html:13
-msgid "NUESTRA FLOTA"
-msgstr "OUR FLEET"
-
-#: templates/sitio/flota.html:14
+#: templates/sitio/flota.html:12
 msgid ""
-"Embarcaciones propias, registradas y mantenidas para operar de forma segura "
-"en el Lago de Maracaibo."
-msgstr ""
-"Our own vessels, registered and maintained to operate safely on Lake "
-"Maracaibo."
+"Unidades lacustres livianas y pesadas, listas para operar en todo el Lago."
+msgstr "Light and heavy lake vessels, ready to operate across the whole Lake."
 
-#: templates/sitio/flota.html:35
-msgid "+ embarcaciones bajo solicitud"
-msgstr "+ more vessels on request"
+#: templates/sitio/flota.html:18
+msgid "UNIDADES LACUSTRES"
+msgstr "LAKE VESSELS"
 
-#: templates/sitio/flota.html:36
-msgid "flota completa a confirmar con el socio"
-msgstr "full fleet to be confirmed with the partner"
+#: templates/sitio/flota.html:19
+msgid "En el agua"
+msgstr "On the water"
 
-#: templates/sitio/flota.html:43
-msgid "CAPACIDADES ADICIONALES"
-msgstr "ADDITIONAL CAPABILITIES"
+#: templates/sitio/flota.html:47 templates/sitio/homepage.html:164
+msgid "DÓNDE ESTAMOS"
+msgstr "WHERE WE ARE"
 
-#: templates/sitio/flota.html:55
-msgid "¿Necesitas transporte u operaciones en el Lago?"
-msgstr "Need transport or operations on the Lake?"
+#: templates/sitio/flota.html:48 templates/sitio/homepage.html:165
+msgid "Dos costas, un mismo Lago"
+msgstr "Two shores, one Lake"
 
-#: templates/sitio/homepage.html:20
-msgid "SEGURIDAD QUE NAVEGA CONTIGO"
-msgstr "SAFETY THAT SAILS WITH YOU"
+#: templates/sitio/flota.html:74
+msgid "¿Necesitas unidades u operaciones en el Lago?"
+msgstr "Need vessels or operations on the Lake?"
 
 #: templates/sitio/homepage.html:23
+msgid "SEGURIDAD QUE"
+msgstr "SAFETY THAT"
+
+#: templates/sitio/homepage.html:24
+msgid "NAVEGA CONTIGO"
+msgstr "SAILS WITH YOU"
+
+#: templates/sitio/homepage.html:41
 msgid "¡Contáctanos ahora!"
 msgstr "Contact us now!"
 
-#: templates/sitio/homepage.html:24 templates/sitio/servicios.html:4
+#: templates/sitio/homepage.html:42 templates/sitio/servicios.html:4
 msgid "Nuestros Servicios"
 msgstr "Our Services"
 
-#: templates/sitio/homepage.html:31
+#: templates/sitio/homepage.html:53
+msgid "Lancha PZ 011 recuperada por G&T"
+msgstr "PZ 011 boat restored by G&T"
+
+#: templates/sitio/homepage.html:54
+msgid "Cuadrilla de G&T tendiendo cable submarino"
+msgstr "G&T crew laying subsea cable"
+
+#: templates/sitio/homepage.html:55
+msgid "Plataforma en el Lago de Maracaibo"
+msgstr "Platform on Lake Maracaibo"
+
+#: templates/sitio/homepage.html:56
+msgid "Planta de fertilizantes del Complejo Ana María Campos"
+msgstr "Fertilizer plant at the Ana María Campos Complex"
+
+#: templates/sitio/homepage.html:75
+msgid "Cuadrilla de G&T trabajando en el muelle"
+msgstr "G&T crew working on the pier"
+
+#: templates/sitio/homepage.html:76
+msgid "Montaje de estructura con grúa"
+msgstr "Erecting a structure with a crane"
+
+#: templates/sitio/homepage.html:77
+msgid "Lancha PZ 008 recuperada por G&T"
+msgstr "PZ 008 boat restored by G&T"
+
+#: templates/sitio/homepage.html:80
 msgid "QUIÉNES SOMOS"
 msgstr "ABOUT US"
 
-#: templates/sitio/homepage.html:34
+#: templates/sitio/homepage.html:81
+msgid "Un solo equipo, en tierra y en el Lago"
+msgstr "One team, on land and on the Lake"
+
+#: templates/sitio/homepage.html:82
+msgid ""
+"Empresa de capital venezolano que planifica, administra y ejecuta proyectos "
+"para las industrias petrolera, petroquímica, eléctrica y metalmecánica."
+msgstr ""
+"A Venezuelan-owned company that plans, manages and executes projects for the"
+" oil, petrochemical, electrical and metalworking industries."
+
+#: templates/sitio/homepage.html:85
+msgid "Honestidad"
+msgstr "Honesty"
+
+#: templates/sitio/homepage.html:86
+msgid "Seguridad"
+msgstr "Safety"
+
+#: templates/sitio/homepage.html:87
+msgid "Compromiso"
+msgstr "Commitment"
+
+#: templates/sitio/homepage.html:90
 msgid "Misión"
 msgstr "Mission"
 
-#: templates/sitio/homepage.html:35
+#: templates/sitio/homepage.html:90
 msgid ""
 "Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología "
 "y asesoramiento técnico de avanzada, cumpliendo normativas de seguridad, "
@@ -554,11 +824,11 @@ msgstr ""
 "advanced technical consulting, in compliance with health, safety and "
 "environmental regulations."
 
-#: templates/sitio/homepage.html:39
+#: templates/sitio/homepage.html:92
 msgid "Visión"
 msgstr "Vision"
 
-#: templates/sitio/homepage.html:40
+#: templates/sitio/homepage.html:92
 msgid ""
 "Consolidarse como organización líder, competitiva y confiable a nivel "
 "nacional e internacional en ingeniería y asesoría industrial."
@@ -566,122 +836,75 @@ msgstr ""
 "To establish ourselves as a leading, competitive and trusted organization in"
 " engineering and industrial consulting, both nationally and internationally."
 
-#: templates/sitio/homepage.html:48
-msgid "NUESTRO OBJETIVO"
-msgstr "OUR GOAL"
-
-#: templates/sitio/homepage.html:49
-msgid ""
-"Efectuar nuestro trabajo ofreciendo la mayor satisfacción a nuestros "
-"clientes, mientras cumplimos con los parámetros de calidad exigidos por las "
-"normativas nacionales e internacionales."
-msgstr ""
-"To carry out our work with the highest level of customer satisfaction, while"
-" meeting the quality standards required by national and international "
-"regulations."
-
-#: templates/sitio/homepage.html:52
-msgid "Seguridad"
-msgstr "Safety"
-
-#: templates/sitio/homepage.html:53
-msgid "Profesionalismo"
-msgstr "Professionalism"
-
-#: templates/sitio/homepage.html:54
-msgid "Tecnología"
-msgstr "Technology"
-
-#: templates/sitio/homepage.html:60
-msgid "EMPRESAS QUE CONFIARON EN NOSOTROS"
-msgstr "COMPANIES THAT HAVE TRUSTED US"
-
-#: templates/sitio/homepage.html:62 templates/sitio/homepage.html:63
-#: templates/sitio/homepage.html:64 templates/sitio/homepage.html:65
-msgid "logo pendiente"
-msgstr "logo pending"
-
-#: templates/sitio/homepage.html:67
-msgid "a la espera de logos reales con permiso del socio"
-msgstr "awaiting real logos with the partner's permission"
-
-#: templates/sitio/homepage.html:72 templates/sitio/servicios.html:13
+#: templates/sitio/homepage.html:101 templates/sitio/servicios.html:12
 msgid "NUESTROS SERVICIOS"
 msgstr "OUR SERVICES"
 
-#: templates/sitio/homepage.html:79 templates/sitio/servicios.html:25
-msgid "Ver detalle →"
-msgstr "View details →"
+#: templates/sitio/homepage.html:102
+msgid "Lo que hacemos"
+msgstr "What we do"
 
-#: templates/sitio/homepage.html:88
+#: templates/sitio/homepage.html:115
+msgid "ANTES Y DESPUÉS"
+msgstr "BEFORE AND AFTER"
+
+#: templates/sitio/homepage.html:116
+msgid "De casco desarticulado a casco operativo"
+msgstr "From dismantled hull to operational hull"
+
+#: templates/sitio/homepage.html:119
+msgid "Ver el proyecto"
+msgstr "See the project"
+
+#: templates/sitio/homepage.html:129 templates/sitio/proyectos.html:12
+msgid "PROYECTOS REALIZADOS"
+msgstr "COMPLETED PROJECTS"
+
+#: templates/sitio/homepage.html:130
+msgid "Nuestro trabajo, en fotos"
+msgstr "Our work, in photos"
+
+#: templates/sitio/homepage.html:134
+msgid "Ver todos los proyectos"
+msgstr "See all projects"
+
+#: templates/sitio/homepage.html:147
 msgid "SEGURIDAD"
 msgstr "SAFETY"
 
-#: templates/sitio/homepage.html:89
+#: templates/sitio/homepage.html:148
 msgid "la seguridad se construye mediante la prevención"
 msgstr "safety is built through prevention"
 
-#: templates/sitio/homepage.html:91
+#: templates/sitio/homepage.html:150
 msgid "Balsa autoinflable (25 pers.)"
 msgstr "Self-inflating life raft (25 people)"
 
-#: templates/sitio/homepage.html:92
+#: templates/sitio/homepage.html:151
 msgid "Chalecos individuales"
 msgstr "Individual life jackets"
 
-#: templates/sitio/homepage.html:98
-msgid "Cumplimiento INEA"
-msgstr "INEA compliant"
-
-#: templates/sitio/homepage.html:107 templates/sitio/proyectos.html:4
-msgid "Proyectos Realizados"
-msgstr "Completed Projects"
-
-#: templates/sitio/homepage.html:108
-msgid ""
-"Un vistazo a las operaciones reales de ingeniería y logística que hemos "
-"ejecutado en el Lago de Maracaibo."
-msgstr ""
-"A look at the real engineering and logistics operations we have carried out "
-"on Lake Maracaibo."
-
-#: templates/sitio/homepage.html:111 templates/sitio/proyectos.html:24
-msgid "foto real: atracadero deteriorado (antes)"
-msgstr "real photo: deteriorated dock (before)"
-
-#: templates/sitio/homepage.html:112 templates/sitio/proyectos.html:25
-msgid "foto real: fabricación / taller"
-msgstr "real photo: fabrication / workshop"
-
-#: templates/sitio/homepage.html:113 templates/sitio/proyectos.html:26
-msgid "foto real: VLM 1071 (después)"
-msgstr "real photo: VLM 1071 (after)"
-
-#: templates/sitio/homepage.html:117 templates/sitio/proyectos.html:30
-msgid "Ver caso completo →"
-msgstr "View full case →"
-
-#: templates/sitio/homepage.html:125
+#: templates/sitio/homepage.html:181
 msgid "PREGUNTAS FRECUENTES"
 msgstr "FREQUENTLY ASKED QUESTIONS"
 
-#: templates/sitio/homepage.html:128
+#: templates/sitio/homepage.html:184
 msgid "¿En qué zona del Lago operan?"
 msgstr "Which area of the Lake do you operate in?"
 
-#: templates/sitio/homepage.html:129
+#: templates/sitio/homepage.html:185
 msgid ""
-"Operamos en todo el Lago de Maracaibo, dando servicio a la industria "
-"petrolera del Estado Zulia."
+"En todo el Lago de Maracaibo, desde nuestra base en el muelle Pedro Lucas "
+"Urribarri (Ciudad Ojeda), y en tierra en todo el estado Zulia."
 msgstr ""
-"We operate across all of Lake Maracaibo, serving the oil industry in Zulia "
-"State."
+"Across all of Lake Maracaibo, from our base at the Pedro Lucas Urribarri "
+"pier (Ciudad Ojeda), and on land throughout Zulia State."
 
-#: templates/sitio/homepage.html:132
+#: templates/sitio/homepage.html:188
 msgid "¿Tienen embarcaciones propias?"
 msgstr "Do you have your own vessels?"
 
-#: templates/sitio/homepage.html:134
+#: templates/sitio/homepage.html:190
 #, python-format
 msgid ""
 "Sí, contamos con flota propia registrada y mantenida para operar de forma "
@@ -690,11 +913,38 @@ msgstr ""
 "Yes, we have our own registered fleet, maintained to operate safely. See our"
 " <a href=\"%(url_flota)s\">fleet here</a>."
 
-#: templates/sitio/homepage.html:138
+#: templates/sitio/homepage.html:194
+msgid "¿Trabajan solo en el Lago?"
+msgstr "Do you only work on the Lake?"
+
+#: templates/sitio/homepage.html:195
+msgid ""
+"No. También ejecutamos proyectos en tierra: fabricamos estructuras en "
+"nuestro patio de 3.000 m² en San Francisco y trabajamos en plantas "
+"petroquímicas y eléctricas."
+msgstr ""
+"No. We also carry out projects on land: we fabricate structures at our 3,000"
+" m² yard in San Francisco and work at petrochemical and power plants."
+
+#: templates/sitio/homepage.html:198
+msgid "¿Qué certificaciones tienen?"
+msgstr "What certifications do you have?"
+
+#: templates/sitio/homepage.html:199
+msgid ""
+"Somos Compañía Naviera Certificada (INEA-CNSL-0081) y Centro de Producción "
+"Naval (INEA-AF-CPPN-261-140319-0), y estamos inscritos en el Registro "
+"Nacional de Contratistas."
+msgstr ""
+"We are a Certified Shipping Company (INEA-CNSL-0081) and a Naval Production "
+"Center (INEA-AF-CPPN-261-140319-0), and we are registered in the National "
+"Contractors Registry."
+
+#: templates/sitio/homepage.html:202
 msgid "¿Cómo solicito una cotización?"
 msgstr "How do I request a quote?"
 
-#: templates/sitio/homepage.html:140
+#: templates/sitio/homepage.html:204
 #, python-format
 msgid ""
 "Puedes escribirnos por WhatsApp, <a href=\"%(url_cotizacion)s\">solicitar "
@@ -704,15 +954,15 @@ msgstr ""
 "You can message us on WhatsApp, <a href=\"%(url_cotizacion)s\">request a "
 "formal quote</a>, or <a href=\"%(url_contacto)s\">contact us</a> directly."
 
-#: templates/sitio/homepage.html:151
+#: templates/sitio/homepage.html:215
 msgid "ÚNETE AL EQUIPO"
 msgstr "JOIN THE TEAM"
 
-#: templates/sitio/homepage.html:152
+#: templates/sitio/homepage.html:216
 msgid "¿Buscas trabajo con nosotros?"
 msgstr "Looking to work with us?"
 
-#: templates/sitio/homepage.html:153
+#: templates/sitio/homepage.html:217
 msgid ""
 "Envíanos tu currículum y cuéntanos qué puesto te interesa. Revisamos cada "
 "postulación."
@@ -720,133 +970,305 @@ msgstr ""
 "Send us your résumé and tell us which position interests you. We review "
 "every application."
 
-#: templates/sitio/homepage.html:157
+#: templates/sitio/homepage.html:221
 msgid "Postúlate aquí"
 msgstr "Apply here"
 
-#: templates/sitio/homepage.html:170
+#: templates/sitio/homepage.html:234
 msgid "¿PROYECTO EN MENTE?"
 msgstr "PROJECT IN MIND?"
 
-#: templates/sitio/homepage.html:172
+#: templates/sitio/homepage.html:236
 msgid "Estamos para ayudarte"
 msgstr "We're here to help"
 
-#: templates/sitio/homepage.html:173
-msgid "Operando en el lago de Maracaibo desde 1990"
-msgstr "Operating on Lake Maracaibo since 1990"
+#: templates/sitio/homepage.html:237
+msgid "Operando en el lago de Maracaibo desde 2014"
+msgstr "Operating on Lake Maracaibo since 2014"
 
-#: templates/sitio/homepage.html:174
+#: templates/sitio/homepage.html:238
 msgid "¡Comencemos!"
 msgstr "Let's get started!"
 
 #: templates/sitio/privacidad.html:5
 msgid ""
 "Cómo G&T Global Service, C.A. recopila, usa y protege los datos que "
-"compartes a través de nuestros formularios de contacto y cotización."
+"compartes a través de nuestros formularios, y qué cookies usa esta web."
 msgstr ""
 "How G&T Global Service, C.A. collects, uses and protects the data you share "
-"through our contact and quote forms."
-
-#: templates/sitio/privacidad.html:11
-msgid "LEGAL"
-msgstr "LEGAL"
-
-#: templates/sitio/privacidad.html:14
-msgid "Última actualización:"
-msgstr "Last updated:"
-
-#: templates/sitio/privacidad.html:19
-msgid "¿Qué datos recopilamos?"
-msgstr "What data do we collect?"
+"through our forms, and which cookies this website uses."
 
 #: templates/sitio/privacidad.html:20
-msgid ""
-"Cuando completas alguno de nuestros formularios (contacto o solicitud de "
-"cotización) recopilamos los datos que nos proporcionas directamente: nombre,"
-" correo electrónico, teléfono, empresa (si aplica), el contenido de tu "
-"mensaje o solicitud, y los archivos que decidas adjuntar."
-msgstr ""
-"When you fill out one of our forms (contact or quote request), we collect "
-"the data you provide directly: name, email address, phone number, company "
-"(if applicable), the content of your message or request, and any files you "
-"choose to attach."
+msgid "1. Responsable"
+msgstr "1. Data controller"
 
-#: templates/sitio/privacidad.html:22
-msgid "¿Para qué usamos tus datos?"
-msgstr "How do we use your data?"
+#: templates/sitio/privacidad.html:21
+#, python-format
+msgid ""
+"El responsable de los datos que nos envías es %(nombre)s, RIF %(rif)s, con "
+"domicilio en %(direccion)s, Maracaibo, estado Zulia, Venezuela. Puedes "
+"escribirnos sobre cualquier tema de privacidad a %(email)s."
+msgstr ""
+"The controller of the data you send us is %(nombre)s, tax ID (RIF) %(rif)s, "
+"with registered address at %(direccion)s, Maracaibo, Zulia State, Venezuela."
+" You can write to us about any privacy matter at %(email)s."
 
 #: templates/sitio/privacidad.html:23
-msgid ""
-"Usamos esta información únicamente para responder tu solicitud, evaluar el "
-"alcance del servicio que necesitas y contactarte con una propuesta o "
-"cotización. No usamos tus datos con fines publicitarios ni los compartimos "
-"con terceros, salvo cuando sea necesario para ejecutar el servicio que "
-"solicitaste (por ejemplo, coordinar con un proveedor o socio del proyecto), "
-"y siempre con tu conocimiento."
-msgstr ""
-"We use this information solely to respond to your request, assess the scope "
-"of the service you need and contact you with a proposal or quote. We do not "
-"use your data for advertising purposes or share it with third parties, "
-"except when necessary to deliver the service you requested (for example, "
-"coordinating with a supplier or project partner), and always with your "
-"knowledge."
+msgid "2. Qué datos recopilamos"
+msgstr "2. What data we collect"
 
 #: templates/sitio/privacidad.html:25
-msgid "¿Cómo protegemos tus datos?"
-msgstr "How do we protect your data?"
+msgid ""
+"Solicitud de cotización: nombre, correo, teléfono, empresa, servicios de "
+"interés, tu mensaje y los archivos que adjuntes."
+msgstr ""
+"Quote request: name, email, phone, company, services of interest, your "
+"message and any files you attach."
 
 #: templates/sitio/privacidad.html:26
 msgid ""
-"Los datos que envías a través de nuestros formularios llegan directamente al"
-" correo corporativo de G&amp;T Global Service, C.A. y son tratados de forma "
-"confidencial por nuestro equipo. No almacenamos los archivos adjuntos en "
-"ningún servidor más allá del envío del correo."
+"Trabaja con nosotros: nombre, correo, teléfono, puesto de interés, tu "
+"mensaje y tu currículum. Te pedimos no incluir datos que no hagan falta para"
+" valorar tu perfil, como el número de documento de identidad o datos de "
+"salud."
 msgstr ""
-"The data you send through our forms goes directly to the corporate email of "
-"G&amp;T Global Service, C.A. and is handled confidentially by our team. We "
-"do not store attachments on any server beyond sending the email."
+"Careers: name, email, phone, position of interest, your message and your "
+"résumé. Please do not include data that is not needed to assess your "
+"profile, such as your ID number or health information."
 
-#: templates/sitio/privacidad.html:28
-msgid "¿Cuánto tiempo conservamos tus datos?"
-msgstr "How long do we keep your data?"
-
-#: templates/sitio/privacidad.html:29
-#, python-format
+#: templates/sitio/privacidad.html:27
 msgid ""
-"Conservamos la información de tu solicitud el tiempo necesario para darle "
-"seguimiento comercial. Si quieres que eliminemos tus datos antes de eso, "
-"puedes solicitarlo escribiéndonos a %(email)s."
+"Datos técnicos: como cualquier web, el servidor registra temporalmente datos"
+" técnicos (dirección IP, navegador, página visitada y hora) por motivos de "
+"seguridad y funcionamiento."
 msgstr ""
-"We keep the information from your request for as long as needed for "
-"commercial follow-up. If you would like us to delete your data before then, "
-"you can request it by writing to %(email)s."
+"Technical data: like any website, the server temporarily logs technical data"
+" (IP address, browser, page visited and time) for security and operational "
+"purposes."
+
+#: templates/sitio/privacidad.html:30
+msgid "3. Para qué los usamos"
+msgstr "3. How we use it"
 
 #: templates/sitio/privacidad.html:31
-msgid "Tus derechos"
-msgstr "Your rights"
+msgid ""
+"Usamos tus datos solo para responder tu solicitud, preparar una cotización y"
+" dar seguimiento a la relación comercial, o para valorar tu candidatura y "
+"contactarte si encaja en un proceso de selección. Los tratamos porque nos "
+"das tu consentimiento al marcar la casilla del formulario y porque son "
+"necesarios para atender lo que nos pides. No los usamos con fines "
+"publicitarios, no los vendemos y no tomamos decisiones automatizadas con "
+"ellos."
+msgstr ""
+"We use your data only to answer your request, prepare a quote and follow up "
+"on the business relationship, or to assess your application and contact you "
+"if it fits a hiring process. We process it because you give us your consent "
+"by ticking the box on the form and because it is necessary to handle your "
+"request. We do not use it for advertising, we do not sell it and we do not "
+"make automated decisions with it."
 
-#: templates/sitio/privacidad.html:32
+#: templates/sitio/privacidad.html:33
+msgid "4. Con quién los compartimos"
+msgstr "4. Who we share it with"
+
+#: templates/sitio/privacidad.html:34
+msgid ""
+"No cedemos tus datos a terceros. Para que la web y los formularios funcionen"
+" usamos proveedores tecnológicos que tratan los datos por nuestra cuenta y "
+"solo para prestarnos su servicio:"
+msgstr ""
+"We do not share your data with third parties. To run the website and its "
+"forms we use technology providers that process data on our behalf and only "
+"to provide their service to us:"
+
+#: templates/sitio/privacidad.html:36
+msgid "Vercel Inc. (Estados Unidos): alojamiento de la web."
+msgstr "Vercel Inc. (United States): website hosting."
+
+#: templates/sitio/privacidad.html:37
+msgid ""
+"Resend (Estados Unidos): envío de los correos que generan los formularios."
+msgstr ""
+"Resend (United States): delivery of the emails generated by the forms."
+
+#: templates/sitio/privacidad.html:38
+msgid ""
+"Zoho (servidores en la Unión Europea): correo corporativo donde recibimos "
+"tus mensajes."
+msgstr ""
+"Zoho (servers in the European Union): corporate email where we receive your "
+"messages."
+
+#: templates/sitio/privacidad.html:40
+msgid ""
+"Algunos de estos proveedores están fuera de Venezuela. Si nos escribes por "
+"WhatsApp, esa conversación se rige además por la política de privacidad de "
+"WhatsApp."
+msgstr ""
+"Some of these providers are located outside Venezuela. If you contact us on "
+"WhatsApp, that conversation is also subject to WhatsApp’s privacy policy."
+
+#: templates/sitio/privacidad.html:42
+msgid "5. Cuánto tiempo los conservamos"
+msgstr "5. How long we keep it"
+
+#: templates/sitio/privacidad.html:44
+msgid ""
+"Solicitudes y cotizaciones: mientras dure la relación comercial y hasta 24 "
+"meses después del último contacto, salvo que una ley nos obligue a "
+"guardarlos más tiempo."
+msgstr ""
+"Requests and quotes: for as long as the business relationship lasts and up "
+"to 24 months after the last contact, unless a law requires us to keep them "
+"longer."
+
+#: templates/sitio/privacidad.html:45
+msgid "Currículums: un máximo de 12 meses. Después los eliminamos."
+msgstr "Résumés: a maximum of 12 months. After that we delete them."
+
+#: templates/sitio/privacidad.html:46
+msgid ""
+"Registros técnicos del servidor: el tiempo limitado que fije el proveedor de"
+" alojamiento."
+msgstr ""
+"Server technical logs: the limited period set by the hosting provider."
+
+#: templates/sitio/privacidad.html:49
+msgid "6. Tus derechos"
+msgstr "6. Your rights"
+
+#: templates/sitio/privacidad.html:50
 #, python-format
 msgid ""
-"Puedes solicitarnos en cualquier momento acceder, corregir o eliminar los "
-"datos que nos hayas compartido, escribiéndonos a %(email)s o por WhatsApp al"
-" %(telefono)s."
+"Puedes pedirnos en cualquier momento acceder a tus datos, corregirlos, "
+"actualizarlos o eliminarlos, y retirar tu consentimiento, escribiendo a "
+"%(email)s. Te responderemos en un plazo máximo de 30 días. Si vives en la "
+"Unión Europea, también puedes oponerte al tratamiento, pedir la portabilidad"
+" de tus datos y reclamar ante la autoridad de protección de datos de tu "
+"país."
 msgstr ""
-"You may ask us at any time to access, correct or delete the data you have "
-"shared with us by writing to %(email)s or via WhatsApp at %(telefono)s."
+"You can ask us at any time to access, correct, update or delete your data, "
+"and to withdraw your consent, by writing to %(email)s. We will reply within "
+"30 days at most. If you live in the European Union, you may also object to "
+"the processing, request the portability of your data and lodge a complaint "
+"with your country’s data protection authority."
+
+#: templates/sitio/privacidad.html:52
+msgid "7. Seguridad"
+msgstr "7. Security"
+
+#: templates/sitio/privacidad.html:53
+msgid ""
+"La web funciona siempre con conexión cifrada (HTTPS) y solo el personal que "
+"gestiona las solicitudes tiene acceso a los mensajes. Los archivos adjuntos "
+"no se guardan en la web: se envían directamente al correo de la empresa."
+msgstr ""
+"The website always runs over an encrypted connection (HTTPS) and only the "
+"staff who handle requests have access to the messages. Attachments are not "
+"stored on the website: they are sent directly to the company’s email."
+
+#: templates/sitio/privacidad.html:55
+msgid "8. Menores de edad"
+msgstr "8. Minors"
+
+#: templates/sitio/privacidad.html:56
+msgid ""
+"Esta web está dirigida a empresas y profesionales. No recopilamos a "
+"sabiendas datos de menores de 18 años."
+msgstr ""
+"This website is intended for businesses and professionals. We do not "
+"knowingly collect data from anyone under 18."
+
+#: templates/sitio/privacidad.html:58
+msgid "9. Cookies"
+msgstr "9. Cookies"
+
+#: templates/sitio/privacidad.html:59
+msgid "Esta web solo usa una cookie, y es técnica:"
+msgstr "This website uses only one cookie, and it is a technical one:"
+
+#: templates/sitio/privacidad.html:62
+msgid "Cookie"
+msgstr "Cookie"
+
+#: templates/sitio/privacidad.html:62
+msgid "Para qué sirve"
+msgstr "Purpose"
+
+#: templates/sitio/privacidad.html:62
+msgid "Duración"
+msgstr "Duration"
+
+#: templates/sitio/privacidad.html:63
+msgid ""
+"Protege los formularios contra envíos fraudulentos. Es necesaria para que "
+"funcionen."
+msgstr ""
+"Protects the forms against fraudulent submissions. It is required for them "
+"to work."
+
+#: templates/sitio/privacidad.html:63
+msgid "1 año"
+msgstr "1 year"
+
+#: templates/sitio/privacidad.html:66
+msgid ""
+"Al ser imprescindible para el funcionamiento de la web, no necesita tu "
+"consentimiento. No usamos cookies de analítica, de publicidad ni de redes "
+"sociales, y las tipografías e iconos se sirven desde nuestro propio "
+"servidor, sin conectar con servicios de terceros. Los enlaces a Google Maps,"
+" WhatsApp e Instagram solo se abren si haces clic en ellos; a partir de ahí "
+"se aplican las políticas de esos servicios."
+msgstr ""
+"Because it is essential for the website to work, it does not require your "
+"consent. We do not use analytics, advertising or social media cookies, and "
+"fonts and icons are served from our own server without connecting to third-"
+"party services. Links to Google Maps, WhatsApp and Instagram only open if "
+"you click them; from then on, those services’ own policies apply."
+
+#: templates/sitio/privacidad.html:68
+msgid "10. Cambios en esta política"
+msgstr "10. Changes to this policy"
+
+#: templates/sitio/privacidad.html:69
+msgid ""
+"Si cambiamos esta política, publicaremos la nueva versión en esta misma "
+"página con su fecha de actualización."
+msgstr ""
+"If we change this policy, we will publish the new version on this page with "
+"its update date."
 
 #: templates/sitio/proyecto_detalle.html:11
 msgid "Volver a Proyectos"
 msgstr "Back to Projects"
 
-#: templates/sitio/proyecto_detalle.html:30
+#: templates/sitio/proyecto_detalle.html:21
+msgid "Antes y después"
+msgstr "Before and after"
+
+#: templates/sitio/proyecto_detalle.html:22
+msgid "Desliza la barra para comparar."
+msgstr "Drag the bar to compare."
+
+#: templates/sitio/proyecto_detalle.html:38
 msgid "Especificaciones técnicas"
 msgstr "Technical specifications"
 
-#: templates/sitio/proyecto_detalle.html:38
+#: templates/sitio/proyecto_detalle.html:46
+msgid "¿Tienes un proyecto parecido?"
+msgstr "Have a similar project?"
+
+#: templates/sitio/proyecto_detalle.html:47
 msgid "Cotizar un proyecto similar"
 msgstr "Get a quote for a similar project"
+
+#: templates/sitio/proyecto_detalle.html:51
+msgid "Más proyectos"
+msgstr "More projects"
+
+#: templates/sitio/proyectos.html:4
+msgid "Proyectos Realizados"
+msgstr "Completed Projects"
 
 #: templates/sitio/proyectos.html:5
 msgid ""
@@ -857,61 +1279,45 @@ msgstr ""
 "on Lake Maracaibo."
 
 #: templates/sitio/proyectos.html:13
-msgid "PROYECTOS REALIZADOS"
-msgstr "COMPLETED PROJECTS"
+msgid "Trabajos reales, contados con fotos."
+msgstr "Real work, told through photos."
 
-#: templates/sitio/proyectos.html:14
-msgid ""
-"Operaciones reales de ingeniería y logística ejecutadas en el Lago de "
-"Maracaibo."
-msgstr ""
-"Real engineering and logistics operations carried out on Lake Maracaibo."
+#: templates/sitio/proyectos.html:19
+msgid "Filtrar proyectos por servicio"
+msgstr "Filter projects by service"
 
-#: templates/sitio/proyectos.html:35
-msgid "más casos se irán agregando aquí conforme se documenten"
-msgstr "more cases will be added here as they are documented"
+#: templates/sitio/proyectos.html:20
+msgid "Todos"
+msgstr "All"
+
+#: templates/sitio/proyectos.html:29
+msgid "¿Quieres un resultado así en tu operación?"
+msgstr "Want results like these in your operation?"
 
 #: templates/sitio/servicio_detalle.html:11
 msgid "Volver a Servicios"
 msgstr "Back to Services"
 
-#: templates/sitio/servicio_detalle.html:12
-msgid "SERVICIO"
-msgstr "SERVICE"
+#: templates/sitio/servicio_detalle.html:31
+msgid "Proyectos de este servicio"
+msgstr "Projects in this service"
 
-#: templates/sitio/servicio_detalle.html:25
-msgid "¿Qué incluye?"
-msgstr "What's included?"
-
-#: templates/sitio/servicio_detalle.html:32
-msgid "Servicios relacionados"
-msgstr "Related services"
+#: templates/sitio/servicio_detalle.html:37
+msgid "Otros servicios"
+msgstr "Other services"
 
 #: templates/sitio/servicios.html:5
 msgid ""
-"Soluciones de ingeniería, logística y mantenimiento para la industria "
-"marítima del Lago de Maracaibo: transporte de personal, atracaderos, lanchas"
-" y motores."
+"Unidades lacustres, reparación naval, atracaderos y plataformas, "
+"electricidad, tuberías y fabricación de estructuras en el Lago de Maracaibo."
 msgstr ""
-"Engineering, logistics and maintenance solutions for the Lake Maracaibo "
-"maritime industry: crew transport, docks, boats and engines."
+"Lake vessels, naval repair, docks and platforms, electrical work, piping and"
+" structural fabrication on Lake Maracaibo."
 
-#: templates/sitio/servicios.html:14
-msgid ""
-"Soluciones de ingeniería, logística y mantenimiento para la industria "
-"marítima del Lago de Maracaibo."
-msgstr ""
-"Engineering, logistics and maintenance solutions for the Lake Maracaibo "
-"maritime industry."
+#: templates/sitio/servicios.html:13
+msgid "En tierra y en el Lago: seis líneas de trabajo, un solo equipo."
+msgstr "On land and on the Lake: six lines of work, one team."
 
-#: templates/sitio/servicios.html:29
-msgid ""
-"cada tarjeta enlazará a su propia página de detalle (plantilla en "
-"<code>servicio_detalle.html</code>)"
-msgstr ""
-"each card will link to its own detail page (template in "
-"<code>servicio_detalle.html</code>)"
-
-#: templates/includes/selector_idioma.html:14
-msgid "Cambiar idioma"
-msgstr "Change language"
+#: templates/sitio/servicios.html:25
+msgid "¿Tienes un proyecto en tierra o en el Lago?"
+msgstr "Have a project on land or on the Lake?"

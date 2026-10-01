@@ -1,0 +1,14 @@
+{% load static i18n %}{# Tarjeta de proyecto con foto. Uso: {% include 'includes/proyecto_card.html' with p=proyecto %} #}
+<a href="{% url 'sitio:proyecto_detalle' slug=p.slug %}" class="foto-card foto-card--proyecto{% if grande %} foto-card--grande{% endif %}" data-servicio="{{ p.servicio }}">
+  {% if p.portada %}
+  <img src="{% static p.portada.src %}" alt="{{ p.portada.alt }}" loading="lazy" class="foto-card__img{% if p.contain %} foto-card__img--contain{% endif %}">
+  {% else %}
+  <span class="foto-card__vacia" aria-hidden="true"><i class="ti {{ p.servicio_icon }}"></i></span>
+  {% endif %}
+  <span class="foto-card__velo" aria-hidden="true"></span>
+  <span class="foto-card__cuerpo">
+    <span class="foto-card__etiqueta">{{ p.categoria }}</span>
+    <strong class="foto-card__titulo">{{ p.titulo }}</strong>
+    {% if p.cliente and empresa.mostrar_clientes %}<span class="foto-card__frase"><i class="ti ti-building" aria-hidden="true"></i> {{ p.cliente }}</span>{% endif %}
+  </span>
+</a>

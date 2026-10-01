@@ -1,148 +1,475 @@
 {
   "servicios": [
     {
-      "slug": "transporte-de-personal",
-      "icon": "ti-users",
-      "titulo": "Crew transport",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "CREW<br>TRANSPORT",
-      "meta_title": "Crew Transport — G&T Global Service, C.A.",
-      "meta_description": "Safe marine crew transport for oil operations on Lake Maracaibo, with our own vessels and qualified crews.",
-      "intro": "Marine crew transport to wells and platforms on Lake Maracaibo, with our own vessels, qualified crews and safety protocols designed for oil operations.",
-      "imagen_clase": "detalle-img--azul-medio",
-      "imagen_alt": "Crew transport vessel on Lake Maracaibo",
+      "slug": "unidades-lacustres",
+      "icon": "ti-ship",
+      "titulo": "Lake vessels and transport",
+      "frase": "Crew boats, barges and tugs to operate across the whole Lake.",
+      "intro": "We supply and operate light and heavy lake vessels: crew boats, connection and diving boats, barges and tugs, from our base in Ciudad Ojeda.",
       "incluye": [
-        "Our own certified vessels",
-        "Qualified crews and safety protocols",
-        "Routes and schedules planned around your operation",
-        "Direct logistics coordination with the client"
+        "Crew transport",
+        "Connection and diving boats",
+        "Crane barges",
+        "Tugboats"
       ],
-      "relacionados": [
-        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Boat design and construction"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"},
-        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Industrial logistics"}
+      "portada": {
+        "src": "assets/fotos/flota/lanchas-muelle.webp",
+        "alt": "G&T boats at the dock"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/flota/remolcador.webp",
+          "alt": "Tugboat on Lake Maracaibo"
+        },
+        {
+          "src": "assets/fotos/flota/gabarra-grua.webp",
+          "alt": "Crane barge"
+        },
+        {
+          "src": "assets/fotos/flota/remolcador-grua.webp",
+          "alt": "Tug alongside a crane barge"
+        },
+        {
+          "src": "assets/fotos/flota/lanchas-muelle.webp",
+          "alt": "Boats at the dock"
+        }
       ],
-      "cta_pregunta": "Need crew transport on the Lake?"
-    },
-    {
-      "slug": "ingenieria-a-medida",
-      "icon": "ti-ruler-2",
-      "titulo": "Custom engineering",
+      "proyectos": [
+        {
+          "slug": "recuperacion-flota-petrozamora",
+          "titulo": "Lake fleet recovery",
+          "portada": {
+            "src": "assets/fotos/petrozamora/pz011-despues.webp",
+            "alt": "Restored PZ 011 boat"
+          }
+        },
+        {
+          "slug": "diseno-unidades-petrozamora",
+          "titulo": "Lake vessel design",
+          "portada": {
+            "src": "assets/fotos/diseno/ambulancia.webp",
+            "alt": "Ambulance boat design"
+          }
+        }
+      ],
       "tiene_detalle": true,
-      "titulo_detalle_html": "CUSTOM<br>ENGINEERING",
-      "meta_title": "Custom Engineering — G&T Global Service, C.A.",
-      "meta_description": "Design and fabrication of custom engineering solutions for oil and marine infrastructure on Lake Maracaibo.",
-      "intro": "Design and fabrication of engineering solutions tailored to each project: custom structures, parts and systems for oil and marine infrastructure on Lake Maracaibo.",
-      "imagen_clase": "detalle-img--noche",
-      "imagen_alt": "Custom engineering and fabrication workshop",
-      "incluye": [
-        "Technical design tailored to each project",
-        "Fabrication of custom parts and structures",
-        "Specialized technical consulting",
-        "Execution with our own team and workshop"
-      ],
+      "meta_title": "Lake vessels and transport — G&T Global Service, C.A.",
+      "meta_description": "We supply and operate light and heavy lake vessels: crew boats, connection and diving boats, barges and tugs, from our base in Ciudad Ojeda.",
+      "cta_pregunta": "Need vessels for your operation on the Lake?",
       "relacionados": [
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"},
-        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Marine engine maintenance"},
-        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Boat design and construction"}
-      ],
-      "cta_pregunta": "Do you have a project that needs custom engineering?"
-    },
-    {
-      "slug": "instalacion-de-atracaderos",
-      "icon": "ti-anchor",
-      "titulo": "Dock installation",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "DOCK<br>INSTALLATION",
-      "meta_title": "Dock Installation — G&T Global Service, C.A.",
-      "meta_description": "Design, fabrication and installation of docks for oil wells and infrastructure on Lake Maracaibo.",
-      "intro": "Design, fabrication and installation of docks for oil wells and infrastructure on Lake Maracaibo, with in-house engineering from start to finish.",
-      "imagen_clase": "detalle-img--azul-profundo",
-      "imagen_alt": "Dock installation on Lake Maracaibo",
-      "incluye": [
-        "Custom engineering design",
-        "Structure fabrication in our own workshop",
-        "Installation with our own equipment",
-        "Post-installation maintenance"
-      ],
-      "relacionados": [
-        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Custom engineering"},
-        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Marine engine maintenance"},
-        {"slug": "logistica-industrial", "icon": "ti-truck", "titulo": "Industrial logistics"}
-      ],
-      "cta_pregunta": "Need to install or repair a dock?"
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Naval construction and repair"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Docks and platforms"
+        },
+        {
+          "slug": "electricidad-e-instrumentacion",
+          "icon": "ti-bolt",
+          "titulo": "Electrical and instrumentation"
+        }
+      ]
     },
     {
       "slug": "diseno-y-construccion-de-lanchas",
       "icon": "ti-sailboat",
-      "titulo": "Boat design and construction",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "BOAT DESIGN<br>AND CONSTRUCTION",
-      "meta_title": "Boat Design and Construction — G&T Global Service, C.A.",
-      "meta_description": "Design and construction of boats for operations on Lake Maracaibo, built around each client's needs.",
-      "intro": "Design and construction of boats built around each client's operational needs, made for day-to-day work on Lake Maracaibo.",
-      "imagen_clase": "detalle-img--lima",
-      "imagen_alt": "Boat under construction in the workshop",
+      "titulo": "Naval construction and repair",
+      "frase": "We build, repair and refurbish marine-grade steel and aluminum hulls.",
+      "intro": "Construction, maintenance, repair and refurbishment of hulls for crew boats, tugs, barges and anything that floats. Each material needs its own treatment: marine steel corrodes in the Lake’s brackish water and its plates lose thickness, so it needs cleaning and painting more often; aluminum barely corrodes and wears mainly through use. We also handle vessel design and engineering, and Hyundai and Doosan engines.",
       "incluye": [
-        "Design based on your operational needs",
-        "Construction with certified materials",
-        "Sea trials before delivery",
-        "Ongoing maintenance and support"
+        "Hull construction",
+        "Hull refurbishment",
+        "Marine steel and aluminum",
+        "Hyundai and Doosan engines"
       ],
+      "portada": {
+        "src": "assets/fotos/petrozamora/pz011-despues.webp",
+        "alt": "PZ 011 boat restored by G&T"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/petrozamora/antes-1.webp",
+          "alt": "Hull before recovery"
+        },
+        {
+          "src": "assets/fotos/petrozamora/pz008-despues.webp",
+          "alt": "PZ 008 boat after recovery"
+        },
+        {
+          "src": "assets/fotos/diseno/ambulancia.webp",
+          "alt": "Ambulance boat design"
+        },
+        {
+          "src": "assets/fotos/diseno/buceo.webp",
+          "alt": "Diving boat design"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "recuperacion-flota-petrozamora",
+          "titulo": "Lake fleet recovery",
+          "portada": {
+            "src": "assets/fotos/petrozamora/pz011-despues.webp",
+            "alt": "Restored PZ 011 boat"
+          }
+        },
+        {
+          "slug": "diseno-unidades-petrozamora",
+          "titulo": "Lake vessel design",
+          "portada": {
+            "src": "assets/fotos/diseno/ambulancia.webp",
+            "alt": "Ambulance boat design"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Naval construction and repair — G&T Global Service, C.A.",
+      "meta_description": "Construction, maintenance, repair and refurbishment of hulls for crew boats, tugs, barges and anything that floats. Each material needs its own treatment:…",
+      "cta_pregunta": "Does your hull need maintenance or refurbishment?",
       "relacionados": [
-        {"slug": "mantenimiento-motores-hyundai", "icon": "ti-engine", "titulo": "Marine engine maintenance"},
-        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Crew transport"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"}
-      ],
-      "cta_pregunta": "Need a boat designed for your operation?"
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Lake vessels and transport"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Docks and platforms"
+        },
+        {
+          "slug": "electricidad-e-instrumentacion",
+          "icon": "ti-bolt",
+          "titulo": "Electrical and instrumentation"
+        }
+      ]
     },
     {
-      "slug": "mantenimiento-motores-hyundai",
-      "icon": "ti-engine",
-      "titulo": "Marine engine maintenance",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "HYUNDAI ENGINE<br>MAINTENANCE",
-      "meta_title": "Hyundai Engine Maintenance — G&T Global Service, C.A.",
-      "meta_description": "Maintenance of Hyundai marine diesel engines in Maracaibo: technical diagnostics, sourcing of genuine spare parts, repairs and scheduled preventive maintenance.",
-      "intro": "Specialists in Hyundai marine diesel engine maintenance: diagnostics, repairs, spare parts and procurement, to keep every vessel running safely and without unexpected downtime.",
-      "imagen_clase": "detalle-img--azul-profundo",
-      "imagen_alt": "Hyundai marine engine undergoing maintenance",
+      "slug": "instalacion-de-atracaderos",
+      "icon": "ti-anchor",
+      "titulo": "Docks and platforms",
+      "frase": "We build and repair the infrastructure over the water.",
+      "intro": "Construction, repair and installation of docks and platforms at wells, flow stations, piers and fuel areas, with our own crews and equipment.",
       "incluye": [
-        "Specialized technical diagnostics",
-        "Sourcing of genuine spare parts",
-        "Repair and replacement of parts",
-        "Scheduled preventive maintenance"
+        "Well and station docks",
+        "Lake platforms",
+        "Fuel areas",
+        "Welding and structures"
       ],
+      "portada": {
+        "src": "assets/fotos/plataformas/plataforma-1.webp",
+        "alt": "Platform on Lake Maracaibo"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/atracaderos/soldadura.webp",
+          "alt": "Welding on a dock"
+        },
+        {
+          "src": "assets/fotos/plataformas/soldador.webp",
+          "alt": "Welder working over the Lake"
+        },
+        {
+          "src": "assets/fotos/atracaderos/barandas.webp",
+          "alt": "Installing railings on a pier"
+        },
+        {
+          "src": "assets/fotos/plataformas/plataforma-grua.webp",
+          "alt": "Platform with crane"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "atracaderos-pdvsa",
+          "titulo": "Docks and fuel areas",
+          "portada": {
+            "src": "assets/fotos/atracaderos/soldadura.webp",
+            "alt": "Welding on a dock"
+          }
+        },
+        {
+          "slug": "plataformas-pdvsa",
+          "titulo": "Platforms on the Lake",
+          "portada": {
+            "src": "assets/fotos/plataformas/plataforma-1.webp",
+            "alt": "Platform on the Lake"
+          }
+        },
+        {
+          "slug": "mg-01-05-lago-v",
+          "titulo": "M/G 01-05 LAGO V",
+          "portada": null
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Docks and platforms — G&T Global Service, C.A.",
+      "meta_description": "Construction, repair and installation of docks and platforms at wells, flow stations, piers and fuel areas, with our own crews and equipment.",
+      "cta_pregunta": "Need to build or repair a dock?",
       "relacionados": [
-        {"slug": "diseno-y-construccion-de-lanchas", "icon": "ti-sailboat", "titulo": "Boat design and construction"},
-        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Crew transport"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"}
-      ],
-      "cta_pregunta": "Does your vessel need maintenance?"
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Lake vessels and transport"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Naval construction and repair"
+        },
+        {
+          "slug": "electricidad-e-instrumentacion",
+          "icon": "ti-bolt",
+          "titulo": "Electrical and instrumentation"
+        }
+      ]
     },
     {
-      "slug": "logistica-industrial",
-      "icon": "ti-truck",
-      "titulo": "Industrial logistics",
-      "tiene_detalle": true,
-      "titulo_detalle_html": "INDUSTRIAL<br>LOGISTICS",
-      "meta_title": "Industrial Logistics — G&T Global Service, C.A.",
-      "meta_description": "Industrial logistics and operations coordination for the oil and maritime industry on Lake Maracaibo.",
-      "intro": "End-to-end logistics coordination of personnel, equipment and materials for oil and marine operations on Lake Maracaibo.",
-      "imagen_clase": "detalle-img--azul-medio",
-      "imagen_alt": "Industrial logistics coordination on Lake Maracaibo",
+      "slug": "electricidad-e-instrumentacion",
+      "icon": "ti-bolt",
+      "titulo": "Electrical and instrumentation",
+      "frase": "Reliable power on land and on the Lake.",
+      "intro": "Electrical installation, maintenance, repair and upgrades: 115 and 230 kV substations, subsea cable, transformers, lightning protection and lighting.",
       "incluye": [
-        "Coordination of personnel and equipment",
-        "Materials transport",
-        "Logistics planning for each operation",
-        "Tracking and reporting to the client"
+        "Electrical substations",
+        "Subsea cable",
+        "Transformers",
+        "Lightning protection and lighting"
       ],
+      "portada": {
+        "src": "assets/fotos/cable/tendido.webp",
+        "alt": "G&T crew laying subsea cable"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/electrica/izaje-transformador.webp",
+          "alt": "Lifting a transformer on the Lake"
+        },
+        {
+          "src": "assets/fotos/electrica/subestacion-115-230kv.webp",
+          "alt": "115 and 230 kV electrical substation"
+        },
+        {
+          "src": "assets/fotos/cable/empalme.webp",
+          "alt": "Subsea cable splice"
+        },
+        {
+          "src": "assets/fotos/electrica/torre-liniero.webp",
+          "alt": "Lineman working on a tower"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "cable-submarino",
+          "titulo": "Subsea cable",
+          "portada": {
+            "src": "assets/fotos/cable/tendido.webp",
+            "alt": "Crew laying subsea cable"
+          }
+        },
+        {
+          "slug": "subestaciones-lago",
+          "titulo": "Substations on the Lake",
+          "portada": {
+            "src": "assets/fotos/electrica/izaje-transformador.webp",
+            "alt": "Transformer lift"
+          }
+        },
+        {
+          "slug": "subestacion-115-230kv",
+          "titulo": "115 and 230 kV substation",
+          "portada": {
+            "src": "assets/fotos/electrica/subestacion-115-230kv.webp",
+            "alt": "115 and 230 kV electrical substation"
+          }
+        },
+        {
+          "slug": "termozulia",
+          "titulo": "Termozulia Plant",
+          "portada": {
+            "src": "assets/fotos/electrica/termozulia-1.webp",
+            "alt": "Termozulia Plant"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Electrical and instrumentation — G&T Global Service, C.A.",
+      "meta_description": "Electrical installation, maintenance, repair and upgrades: 115 and 230 kV substations, subsea cable, transformers, lightning protection and lighting.",
+      "cta_pregunta": "Have an electrical project on land or on the Lake?",
       "relacionados": [
-        {"slug": "transporte-de-personal", "icon": "ti-users", "titulo": "Crew transport"},
-        {"slug": "ingenieria-a-medida", "icon": "ti-ruler-2", "titulo": "Custom engineering"},
-        {"slug": "instalacion-de-atracaderos", "icon": "ti-anchor", "titulo": "Dock installation"}
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Lake vessels and transport"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Naval construction and repair"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Docks and platforms"
+        }
+      ]
+    },
+    {
+      "slug": "tuberias-y-mantenimiento-industrial",
+      "icon": "ti-tool",
+      "titulo": "Piping and industrial maintenance",
+      "frase": "From failure analysis to start-up.",
+      "intro": "Fabrication and installation of spools and lines, replacement of dispatch pumps and pumpjacks, and drilling equipment maintenance: cleaning, sandblasting, painting, welding and start-up.",
+      "incluye": [
+        "Spools and pipelines",
+        "Dispatch pumps",
+        "Drilling equipment",
+        "Sandblasting and painting"
       ],
-      "cta_pregunta": "Need to coordinate logistics for your operation?"
+      "portada": {
+        "src": "assets/fotos/petroquimica/tren-a-b.webp",
+        "alt": "Fertilizer plant at the Ana María Campos Complex"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/lineas/tendido.webp",
+          "alt": "Pipeline laying"
+        },
+        {
+          "src": "assets/fotos/lineas/soldadura.webp",
+          "alt": "Pipe welding"
+        },
+        {
+          "src": "assets/fotos/atracaderos/tuberias.webp",
+          "alt": "Piping work on a platform"
+        },
+        {
+          "src": "assets/fotos/atracaderos/area-combustible.webp",
+          "alt": "Fuel area"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "lineas-pdvsa-gas",
+          "titulo": "Pipelines and inspection",
+          "portada": {
+            "src": "assets/fotos/lineas/tendido.webp",
+            "alt": "Pipeline laying"
+          }
+        },
+        {
+          "slug": "planta-fertilizantes-ana-maria-campos",
+          "titulo": "Fertilizer plant",
+          "portada": {
+            "src": "assets/fotos/petroquimica/tren-a-b.webp",
+            "alt": "Fertilizer plant, Train A and Train B"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Piping and industrial maintenance — G&T Global Service, C.A.",
+      "meta_description": "Fabrication and installation of spools and lines, replacement of dispatch pumps and pumpjacks, and drilling equipment maintenance: cleaning, sandblasting, painting, welding and start-up.",
+      "cta_pregunta": "Need maintenance or piping for your plant?",
+      "relacionados": [
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Lake vessels and transport"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Naval construction and repair"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Docks and platforms"
+        }
+      ]
+    },
+    {
+      "slug": "fabricacion-y-construccion",
+      "icon": "ti-building-factory-2",
+      "titulo": "Fabrication and construction",
+      "frase": "3,000 m² of yard to fabricate what your project needs.",
+      "intro": "At our San Francisco yard we fabricate and erect steel structures, warehouses, equipment foundations and tanks. Being close to the Rafael Urdaneta Bridge makes it easy to move them to any site.",
+      "incluye": [
+        "Steel structures",
+        "Warehouses",
+        "Equipment foundations",
+        "Tanks"
+      ],
+      "portada": {
+        "src": "assets/fotos/galpon/estructura.webp",
+        "alt": "Warehouse structure erection"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/galpon/cerchas.webp",
+          "alt": "Warehouse trusses"
+        },
+        {
+          "src": "assets/fotos/galpon/montaje.webp",
+          "alt": "Erection with crane"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/armado.webp",
+          "alt": "Rebar for a foundation"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/losa.webp",
+          "alt": "Finished concrete foundation"
+        }
+      ],
+      "proyectos": [
+        {
+          "slug": "galpon-muelle-pedro-lucas-urribarri",
+          "titulo": "Pier warehouse",
+          "portada": {
+            "src": "assets/fotos/galpon/estructura.webp",
+            "alt": "Warehouse structure"
+          }
+        },
+        {
+          "slug": "bases-equipos-tanques",
+          "titulo": "Equipment and tank foundations",
+          "portada": {
+            "src": "assets/fotos/bases-equipos/cuadrilla.webp",
+            "alt": "Crew pouring concrete"
+          }
+        }
+      ],
+      "tiene_detalle": true,
+      "meta_title": "Fabrication and construction — G&T Global Service, C.A.",
+      "meta_description": "At our San Francisco yard we fabricate and erect steel structures, warehouses, equipment foundations and tanks. Being close to the Rafael Urdaneta Bridge makes it easy to move them to any site.",
+      "cta_pregunta": "Need a structure fabricated?",
+      "relacionados": [
+        {
+          "slug": "unidades-lacustres",
+          "icon": "ti-ship",
+          "titulo": "Lake vessels and transport"
+        },
+        {
+          "slug": "diseno-y-construccion-de-lanchas",
+          "icon": "ti-sailboat",
+          "titulo": "Naval construction and repair"
+        },
+        {
+          "slug": "instalacion-de-atracaderos",
+          "icon": "ti-anchor",
+          "titulo": "Docks and platforms"
+        }
+      ]
     }
-  ]
+  ],
+  "alias": {
+    "transporte-de-personal": "unidades-lacustres",
+    "logistica-industrial": "unidades-lacustres",
+    "mantenimiento-motores-hyundai": "diseno-y-construccion-de-lanchas",
+    "ingenieria-a-medida": "fabricacion-y-construccion"
+  }
 }
