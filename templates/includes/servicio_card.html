@@ -1,0 +1,10 @@
+{% load static i18n %}{# Tarjeta de servicio con foto de fondo. Uso: {% include 'includes/servicio_card.html' with s=servicio %} #}
+<a href="{% url 'sitio:servicio_detalle' slug=s.slug %}" class="foto-card foto-card--servicio">
+  <img src="{% static s.portada.src %}" alt="{{ s.portada.alt }}" loading="lazy" class="foto-card__img">
+  <span class="foto-card__velo" aria-hidden="true"></span>
+  <span class="foto-card__cuerpo">
+    <i class="ti {{ s.icon }} foto-card__icono" aria-hidden="true"></i>
+    <strong class="foto-card__titulo">{{ s.titulo }}</strong>
+    <span class="foto-card__frase">{{ s.frase }}</span>
+  </span>
+</a>

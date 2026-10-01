@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% block title %}G&amp;T Global Service, C.A. — {% translate "Ingeniería y servicios marítimos en el Lago de Maracaibo" %}{% endblock %}</title>
-<meta name="description" content="{% block meta_description %}{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y logística industrial." %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% translate "Ingeniería y servicios en tierra y en el Lago de Maracaibo: unidades lacustres, reparación naval, atracaderos y plataformas, electricidad, tuberías y fabricación de estructuras." %}{% endblock %}">
 
 <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
 {# Versiones de esta misma página en cada idioma (SEO multilingüe) #}
@@ -18,15 +18,19 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{% if LANGUAGE_CODE == 'en' %}en_US{% else %}es_VE{% endif %}">
 <meta property="og:title" content="{% block og_title %}{{ empresa.nombre }} — {% translate "Ingeniería y servicios marítimos" %}{% endblock %}">
-<meta property="og:description" content="{% block og_description %}{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo." %}{% endblock %}">
+<meta property="og:description" content="{% block og_description %}{% translate "Ingeniería, servicios lacustres y proyectos industriales en tierra y en el Lago de Maracaibo." %}{% endblock %}">
 <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
-<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-image.png' %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-image.jpg' %}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+{# Fuentes, iconos y librerías se sirven desde la propia web (static/vendor/): sin Google Fonts ni CDNs de terceros, así ningún servicio externo recibe la IP del visitante. #}
+<link rel="preload" href="{% static 'vendor/fonts/anton-latin-400-normal.woff2' %}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{% static 'vendor/fonts/fuentes.css' %}">
+<link rel="stylesheet" href="{% static 'vendor/tabler/tabler-icons.css' %}">
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/fotos.css' %}">
 
 <!-- JSON-LD: negocio local, para posicionamiento en búsquedas de Maracaibo -->
 <script type="application/ld+json">
@@ -34,8 +38,9 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "{{ empresa.nombre }}",
-  "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-image.png' %}",
-  "telephone": "{{ empresa.telefono }}",
+  "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-image.jpg' %}",
+  "telephone": ["{{ empresa.telefono }}", "{{ empresa.telefono_2 }}"],
+  "taxID": "{{ empresa.rif }}",
   "email": "{{ empresa.email }}",
   "address": {
     "@type": "PostalAddress",
@@ -51,12 +56,16 @@
   },
   "url": "{{ request.scheme }}://{{ request.get_host }}/",
   "sameAs": ["{{ empresa.instagram }}"],
-  "areaServed": "Lago de Maracaibo, Zulia, Venezuela"
+  "areaServed": "Lago de Maracaibo, Zulia, Venezuela",
+  "foundingDate": "2014"
 }
 </script>
 {% block extra_head %}{% endblock %}
 </head>
 <body>
+
+{# Barra de progreso de lectura (la llena static/js/animaciones.js) #}
+<div class="barra-progreso" aria-hidden="true"></div>
 
 <div id="layout-header">{% include 'includes/header.html' %}</div>
 <div id="layout-burger">{% include 'includes/menu_burger.html' %}</div>
@@ -67,7 +76,13 @@
 
 <div id="layout-footer">{% include 'includes/footer.html' %}</div>
 
+{# Animaciones de scroll: GSAP + ScrollTrigger (efectos) y Lenis (scroll suave). Ver static/js/animaciones.js #}
+<script src="{% static 'vendor/gsap/gsap.min.js' %}"></script>
+<script src="{% static 'vendor/gsap/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'vendor/lenis/lenis.min.js' %}"></script>
 <script src="{% static 'js/layout.js' %}"></script>
+<script src="{% static 'js/animaciones.js' %}"></script>
+<script src="{% static 'js/fotos.js' %}"></script>
 {% block extra_js %}{% endblock %}
 </body>
 </html>

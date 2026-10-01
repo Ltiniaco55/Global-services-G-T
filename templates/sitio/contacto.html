@@ -5,7 +5,7 @@
 {% block meta_description %}{% translate "Contáctanos: teléfono, correo, WhatsApp y ubicación de G&T Global Service, C.A. en Maracaibo. ¿Ya sabes qué servicio necesitas? Solicita una cotización formal." %}{% endblock %}
 
 {% block extra_head %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/css/intlTelInput.min.css">
+<link rel="stylesheet" href="{% static 'vendor/intl-tel-input/css/intlTelInput.min.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -56,6 +56,13 @@
       <textarea name="{{ form_trabajo.mensaje.name }}" placeholder="{% translate 'Cuéntanos brevemente tu experiencia (opcional)' %}"
         rows="4">{{ form_trabajo.mensaje.value|default_if_none:'' }}</textarea>
 
+      <label class="privacy-check">
+        <input type="checkbox" name="{{ form_trabajo.acepta_privacidad.name }}" {% if form_trabajo.acepta_privacidad.value %}checked{% endif %} required>
+        {% url 'sitio:privacidad' as url_privacidad %}
+        <span>{% blocktranslate trimmed %}He leído y acepto la <a href="{{ url_privacidad }}#candidaturas" target="_blank" rel="noopener">política de privacidad</a>. Mi currículum se conservará un máximo de 12 meses.{% endblocktranslate %}</span>
+      </label>
+      {% if form_trabajo.acepta_privacidad.errors %}<p class="form-error">{{ form_trabajo.acepta_privacidad.errors.0 }}</p>{% endif %}
+
       {# Honeypot anti-spam: oculto para humanos, visible para bots que autorrellenan todo #}
       <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;" tabindex="-1">
         <label for="id_empresa_web_trabajo">{% translate "No llenar este campo" %}</label>
@@ -71,7 +78,7 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/js/intlTelInput.min.js"></script>
+<script src="{% static 'vendor/intl-tel-input/js/intlTelInput.min.js' %}"></script>
 <script src="{% static 'js/form-validacion.js' %}"></script>
 <script>
   initFormValidado(document.getElementById('form-trabajo'), {

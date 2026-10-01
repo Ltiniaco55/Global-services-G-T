@@ -71,6 +71,8 @@ img {
 /* =========================================================
    HEADER — pill flotante, sin línea separadora
    ========================================================= */
+/* Logo + nombre a la izquierda, menú centrado (absoluto, para que quede
+   en el centro exacto de la pantalla) y Cotizar + idioma a la derecha. */
 .site-header {
   position: fixed;
   top: 16px;
@@ -79,14 +81,155 @@ img {
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 12px;
-  padding: 0 16px;
-  transition: opacity 0.3s ease;
+  padding: 0 32px;
+  transition: top 0.35s ease, opacity 0.3s ease;
+}
+
+.site-header .nav-pill {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-logo-img {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.nav-logo-texto {
+  font-family: var(--f-heading);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.header-acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Escritorio: Cotizar y, en la esquina, el idioma */
+.header-acciones .btn-cotizar {
+  order: 1;
+}
+
+.header-acciones .selector-idioma {
+  order: 2;
+}
+
+/* Si no hay sitio para el menú centrado, pasa a ocupar su lugar en fila */
+@media (max-width: 1280px) {
+  .site-header .nav-pill {
+    position: static;
+    transform: none;
+  }
+
+  .site-header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-logo-texto {
+    display: none;
+  }
+
+}
+
+/* Al hacer scroll solo queda el símbolo: sin pastilla de fondo y sin el
+   nombre "G&T Global Service" (se oculta más abajo). */
+.nav-logo {
+  transition: padding 0.3s ease;
+  border-radius: var(--radius-pill);
+}
+
+/* Header sticky (layout.js): al hacer scroll se compacta y, mientras se
+   baja, se atenúa. Al pasar el ratón por encima vuelve al 100%. */
+.site-header {
+  transition: top 0.35s ease, opacity 0.3s ease;
+}
+
+.site-header.header--scrolled {
+  top: 8px;
 }
 
 .site-header.header--dim {
-  opacity: 0.55;
+  opacity: 0.6;
+}
+
+.site-header.header--dim:hover,
+.site-header.header--dim:focus-within {
+  opacity: 1;
+}
+
+.site-header .nav-pill,
+.site-header .nav-logo-img,
+.site-header .btn-cotizar,
+.site-header .selector-idioma__boton {
+  transition: padding 0.35s ease, width 0.35s ease, height 0.35s ease, font-size 0.35s ease;
+}
+
+.site-header.header--scrolled .nav-pill {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.site-header.header--scrolled .btn-cotizar {
+  padding: 9px 18px;
+}
+
+.site-header.header--scrolled .selector-idioma__boton {
+  height: 38px;
+}
+
+.site-header.header--scrolled .nav-logo-texto {
+  display: none;
+}
+
+/* Barra de progreso de lectura (animaciones.js la llena con scaleX) */
+.barra-progreso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1001;
+  background: var(--c-lima);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* Scroll suave (Lenis) — estilos recomendados por la librería. No se
+   incluye su regla que desactiva los iframes, para que el mapa del
+   footer se siga pudiendo mover. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
 }
 
 .nav-pill {
@@ -182,12 +325,21 @@ img {
     order: 1;
   }
 
-  .selector-idioma {
+  .header-acciones {
+    order: 2;
+    gap: 8px;
+  }
+
+  .header-acciones .selector-idioma {
+    order: 1;
+  }
+
+  .header-acciones .btn-cotizar {
     order: 2;
   }
 
-  .site-header .btn-cotizar {
-    order: 3;
+  .site-header {
+    padding: 0 16px;
   }
 
   .nav-pill {
@@ -209,10 +361,7 @@ img {
    banderas y los nombres de los idiomas, con un check en el activo.
    ========================================================= */
 .selector-idioma {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
 }
 
 .selector-idioma__boton {
@@ -286,17 +435,6 @@ img {
   margin-left: auto;
   color: #2e8b57;
   font-size: 18px;
-}
-
-/* Pantallas medianas: el menú centrado ocupa casi todo el ancho y el
-   botón en la esquina lo taparía, así que ahí va justo después de Cotizar. */
-@media (max-width: 1200px) {
-  .selector-idioma {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-  }
 }
 
 /* =========================================================
@@ -519,7 +657,7 @@ img {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   background: var(--c-noche);
   overflow: hidden;
@@ -551,30 +689,242 @@ img {
   background: linear-gradient(180deg, rgba(16, 21, 28, 0.45), rgba(16, 21, 28, 0.7));
 }
 
+/* Contenedor del hero: eslogan gigante arriba y, abajo, cifras + botones
+   a la izquierda y el carrusel de cristal a la derecha. */
 .hero-text {
   position: relative;
   z-index: 10;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 24px;
+  /* Mismo margen lateral que el header, para que todo quede alineado */
+  padding: 120px 32px 48px;
   color: var(--c-blanco);
 }
 
-.hero-text h1 {
-  font-family: var(--f-display);
-  font-size: clamp(32px, 6vw, 64px);
-  letter-spacing: 1px;
-  margin: 0 0 12px;
+/* Eslogan estilo editorial: antetítulo pequeño y muy espaciado encima,
+   titular gigante con degradado (el fondo se intuye a través) y una
+   rayita lima debajo. */
+.hero-titulo {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
 }
 
-.hero-text p {
+.hero-titulo__ante {
+  display: block;
   font-family: var(--f-heading);
-  font-size: clamp(14px, 2vw, 18px);
-  max-width: 560px;
+  font-weight: 400;
+  font-size: clamp(15px, 1.8vw, 34px);
+  letter-spacing: 0.45em;
+  /* compensa el espaciado de la última letra para que quede centrado */
+  margin: 0 -0.45em 6px 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-titulo__principal {
+  display: block;
+  font-family: var(--f-display);
+  font-size: min(11.4vw, 23vh);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #FFFFFF 30%, rgba(255, 255, 255, 0.35) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-titulo::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 4px;
+  background: var(--c-lima);
+}
+
+.hero-inferior {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hero-cifras {
+  display: flex;
+  gap: clamp(28px, 5vw, 72px);
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-cifra {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-cifra__valor {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-cifra__texto {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-acciones {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-lead {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 340px;
   margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Carrusel en tarjeta de cristal (glassmorphism) */
+.hero-carrusel {
+  flex-shrink: 0;
+  width: 300px;
+  /* deja sitio al botón flotante de WhatsApp (abajo a la derecha) */
+  margin-right: 72px;
+  padding: 10px 10px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-carrusel__fotos {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-carrusel__foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-carrusel__foto.is-activa {
+  opacity: 1;
+}
+
+.hero-carrusel__pie {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.hero-carrusel__contador {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-carrusel__barras {
+  flex: 1;
+  display: flex;
+  gap: 6px;
+}
+
+.hero-carrusel__barra {
+  flex: 1;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+/* La barra activa se llena durante el tiempo que dura cada foto */
+.hero-carrusel__barra.is-activa::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background: var(--c-blanco);
+  animation: carrusel-progreso var(--carrusel-intervalo, 4500ms) linear forwards;
+}
+
+.hero-carrusel__barra.is-vista {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes carrusel-progreso {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.hero-carrusel:hover .hero-carrusel__barra.is-activa::after {
+  animation-play-state: paused;
+}
+
+/* Móvil: todo apilado y sin carrusel (para que el hero no sea tan largo) */
+@media (max-width: 768px) {
+  .hero-text {
+    padding: 110px 20px 32px;
+  }
+
+  .hero-titulo__principal {
+    font-size: clamp(52px, 17vw, 96px);
+  }
+
+  .hero-titulo__ante {
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+  }
+
+  .hero-titulo::after {
+    width: 64px;
+    margin-top: 14px;
+  }
+
+  .hero-carrusel {
+    display: none;
+  }
+
+  .hero-cifras {
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .hero-cifra__valor {
+    font-size: 30px;
+  }
+
+  .hero-cifra__texto {
+    font-size: 12px;
+  }
+
+  .hero-acciones {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 
 /* =========================================================
@@ -582,10 +932,8 @@ img {
    ========================================================= */
 .hero-cta-row {
   display: flex;
-  gap: 14px;
-  margin-top: 22px;
+  gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .btn-pill {

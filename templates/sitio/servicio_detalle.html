@@ -6,33 +6,38 @@
 
 {% block content %}
 
-  <section class="detalle-hero">
+  <section class="detalle-hero detalle-hero--foto" style="--hero-foto:url('{% static servicio.portada.src %}')">
     <div class="container">
       <a href="{% url 'sitio:servicios' %}" class="detalle-back"><i class="ti ti-arrow-left"></i> {% translate "Volver a Servicios" %}</a>
-      <p class="section-tag section-tag--lima">{% translate "SERVICIO" %}</p>
       <div class="detalle-hero__row">
         <div class="detalle-icon"><i class="ti {{ servicio.icon }}"></i></div>
-        <h1 class="page-hero__title">{{ servicio.titulo_detalle_html|default:servicio.titulo|safe }}</h1>
+        <h1 class="page-hero__title">{{ servicio.titulo }}</h1>
       </div>
+      <p class="page-hero__lead">{{ servicio.frase }}</p>
     </div>
   </section>
 
   <section class="container section">
-    <p class="detalle-intro">{{ servicio.intro }}</p>
-
-    <div class="detalle-img {{ servicio.imagen_clase }}">{{ servicio.imagen_alt }}</div>
-
-    <h2 class="detalle-subtitle">{% translate "¿Qué incluye?" %}</h2>
-    <div class="detalle-incluye-grid">
-      {% for item in servicio.incluye %}
-      <div class="detalle-incluye-item"><i class="ti ti-square-rounded-check"></i> {{ item }}</div>
-      {% endfor %}
+    <div class="detalle-resumen">
+      <p class="detalle-intro">{{ servicio.intro }}</p>
+      <ul class="chips">
+        {% for item in servicio.incluye %}<li><i class="ti ti-check" aria-hidden="true"></i>{{ item }}</li>{% endfor %}
+      </ul>
     </div>
 
-    <h2 class="detalle-subtitle">{% translate "Servicios relacionados" %}</h2>
+    {% include 'includes/galeria.html' with fotos=servicio.galeria grupo=servicio.slug %}
+
+    {% if proyectos %}
+    <h2 class="detalle-subtitle">{% translate "Proyectos de este servicio" %}</h2>
+    <div class="foto-grid foto-grid--proyectos">
+      {% for p in proyectos %}{% include 'includes/proyecto_card.html' with p=p %}{% endfor %}
+    </div>
+    {% endif %}
+
+    <h2 class="detalle-subtitle">{% translate "Otros servicios" %}</h2>
     <div class="relacionados-grid">
       {% for r in servicio.relacionados %}
-      <a href="{% url 'sitio:servicios' %}#{{ r.slug }}" class="relacionado-card"><i class="ti {{ r.icon }}"></i><span>{{ r.titulo }}</span></a>
+      <a href="{% url 'sitio:servicio_detalle' slug=r.slug %}" class="relacionado-card"><i class="ti {{ r.icon }}"></i><span>{{ r.titulo }}</span></a>
       {% endfor %}
     </div>
 

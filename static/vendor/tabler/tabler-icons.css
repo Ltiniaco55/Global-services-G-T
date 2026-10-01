@@ -1,0 +1,42 @@
+/* Tabler Icons 3.48.0 (MIT) — solo los iconos que usa la web.
+   Para añadir uno nuevo hay que regenerar el subconjunto. */
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;src:url('tabler-icons-sub.woff2') format('woff2')}
+.ti{font-family:"tabler-icons" !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.ti-anchor:before{content:"\eb76"}
+.ti-arrow-left:before{content:"\ea19"}
+.ti-arrows-horizontal:before{content:"\eb59"}
+.ti-bolt:before{content:"\ea38"}
+.ti-brand-instagram:before{content:"\ec20"}
+.ti-brand-whatsapp:before{content:"\ec74"}
+.ti-briefcase:before{content:"\ea46"}
+.ti-broadcast:before{content:"\f1e9"}
+.ti-building:before{content:"\ea4f"}
+.ti-building-factory-2:before{content:"\f082"}
+.ti-certificate:before{content:"\ed76"}
+.ti-check:before{content:"\ea5e"}
+.ti-chevron-down:before{content:"\ea5f"}
+.ti-chevron-left:before{content:"\ea60"}
+.ti-chevron-right:before{content:"\ea61"}
+.ti-clipboard-list:before{content:"\ea6d"}
+.ti-cookie:before{content:"\fdb1"}
+.ti-external-link:before{content:"\ea99"}
+.ti-file-text:before{content:"\eaa2"}
+.ti-heart-handshake:before{content:"\f0f3"}
+.ti-lifebuoy:before{content:"\eadd"}
+.ti-mail:before{content:"\eae5"}
+.ti-map-pin:before{content:"\eae8"}
+.ti-menu-2:before{content:"\ec42"}
+.ti-paperclip:before{content:"\eb02"}
+.ti-phone:before{content:"\eb09"}
+.ti-radio:before{content:"\ef2d"}
+.ti-sailboat:before{content:"\ec83"}
+.ti-scale:before{content:"\ebc2"}
+.ti-shield-check:before{content:"\eb22"}
+.ti-ship:before{content:"\ec84"}
+.ti-target-arrow:before{content:"\f51a"}
+.ti-tool:before{content:"\eb40"}
+.ti-user-shield:before{content:"\f7d0"}
+.ti-x:before{content:"\eb55"}
+@font-face{font-family:"tabler-icons-filled";font-style:normal;font-weight:400;src:url('tabler-icons-filled-sub.woff2') format('woff2')}
+.ti.ti-caret-down-filled{font-family:"tabler-icons-filled" !important}
+.ti-caret-down-filled:before{content:"\fb2a"}

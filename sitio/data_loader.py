@@ -50,6 +50,12 @@ def load_flota():
     return _load('flota', _idioma())
 
 
+def get_alias_servicio(slug):
+    """Slug nuevo de un servicio que cambió de nombre (para redirigir 301
+    las URLs antiguas), o None."""
+    return _load('servicios', _idioma()).get('alias', {}).get(slug)
+
+
 def get_servicio(slug):
     return next((s for s in load_servicios() if s['slug'] == slug and s.get('tiene_detalle')), None)
 

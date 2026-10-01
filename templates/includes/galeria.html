@@ -1,0 +1,8 @@
+{% load static %}{# Galería de fotos con visor a pantalla completa (static/js/fotos.js). Uso: {% include 'includes/galeria.html' with fotos=lista %} #}
+<div class="galeria galeria--{{ fotos|length }}{% if contain %} galeria--contain{% endif %}">
+  {% for f in fotos %}
+  <a href="{% static f.src %}" class="galeria__item" data-visor="{{ grupo|default:'galeria' }}" data-titulo="{{ f.alt }}">
+    <img src="{% static f.src %}" alt="{{ f.alt }}" loading="lazy">
+  </a>
+  {% endfor %}
+</div>

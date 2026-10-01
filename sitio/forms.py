@@ -81,6 +81,13 @@ class TrabajaConNosotrosForm(TelefonoValidadoMixin, forms.Form):
         }),
     )
 
+    # El currículum trae muchos datos personales: se pide aceptar la
+    # política de privacidad (sección "Candidaturas") igual que en cotización.
+    acepta_privacidad = forms.BooleanField(
+        label=_('He leído y acepto la política de privacidad'),
+        error_messages={'required': _('Debes aceptar la política de privacidad para continuar.')},
+    )
+
     # --- Honeypot anti-spam ---------------------------------------------
     empresa_web = forms.CharField(required=False, widget=forms.HiddenInput())
 

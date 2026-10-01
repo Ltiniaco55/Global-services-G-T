@@ -28,13 +28,17 @@ class PaginasEstaticasSitemap(SitemapBilingue):
             'sitio:servicios',
             'sitio:flota',
             'sitio:proyectos',
+            'sitio:privacidad',
+            'sitio:aviso_legal',
         ]
 
     def location(self, item):
         return reverse(item)
 
     def priority(self, item):
-        return 1.0 if item == 'sitio:home' else 0.8
+        if item == 'sitio:home':
+            return 1.0
+        return 0.3 if item in ('sitio:privacidad', 'sitio:aviso_legal') else 0.8
 
 
 class ServiciosDetalleSitemap(SitemapBilingue):

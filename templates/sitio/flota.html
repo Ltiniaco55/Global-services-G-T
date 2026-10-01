@@ -1,59 +1,78 @@
 {% extends "base.html" %}
 {% load static i18n %}
 
-{% block title %}{% translate "Nuestra Flota" %} — G&amp;T Global Service, C.A.{% endblock %}
-{% block meta_description %}{% translate "Embarcaciones propias de G&T Global Service, registradas y mantenidas para operar de forma segura en el Lago de Maracaibo." %}{% endblock %}
+{% block title %}{% translate "Flota y bases" %} — G&amp;T Global Service, C.A.{% endblock %}
+{% block meta_description %}{% translate "Unidades lacustres, embarcaciones registradas y bases de operación de G&T Global Service en el Lago de Maracaibo: muelle en Ciudad Ojeda y patio de fabricación de 3.000 m² en San Francisco." %}{% endblock %}
 
 {% block content %}
 
-  <!-- Hero corto -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--foto" style="--hero-foto:url('{% static 'assets/fotos/flota/lanchas-muelle.webp' %}')">
     <div class="container">
-      <p class="section-tag section-tag--lima">{% translate "PÁGINA INTERNA" %}</p>
-      <h1 class="page-hero__title">{% translate "NUESTRA FLOTA" %}</h1>
-      <p class="page-hero__lead">{% translate "Embarcaciones propias, registradas y mantenidas para operar de forma segura en el Lago de Maracaibo." %}</p>
+      <h1 class="page-hero__title">{% translate "FLOTA Y BASES" %}</h1>
+      <p class="page-hero__lead">{% translate "Unidades lacustres livianas y pesadas, listas para operar en todo el Lago." %}</p>
     </div>
   </section>
 
-  <!-- Grid de embarcaciones -->
+  <!-- Unidades lacustres: fotos -->
   <section class="container section">
-    <div class="flota-grid">
+    <p class="section-tag center">{% translate "UNIDADES LACUSTRES" %}</p>
+    <h2 class="section-title center">{% translate "En el agua" %}</h2>
+    <div class="foto-grid foto-grid--unidades">
+      {% for u in unidades %}
+      <a href="{% static u.foto.src %}" class="foto-card foto-card--unidad" data-visor="unidades" data-titulo="{{ u.foto.alt }}">
+        <img src="{% static u.foto.src %}" alt="{{ u.foto.alt }}" loading="lazy" class="foto-card__img">
+        <span class="foto-card__velo" aria-hidden="true"></span>
+        <span class="foto-card__cuerpo"><strong class="foto-card__titulo">{{ u.nombre }}</strong></span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="embarcaciones">
       {% for b in embarcaciones %}
-      <div class="flota-card">
-        <div class="flota-card__img {{ b.imagen_clase }}">{{ b.imagen_alt }}</div>
-        <div class="flota-card__body">
+      <div class="embarcacion">
+        <i class="ti ti-ship" aria-hidden="true"></i>
+        <div>
           <h3>{{ b.nombre }}</h3>
           <p>{{ b.descripcion }}</p>
-          <div class="badge-row">
-            {% for badge in b.badges %}<span class="badge-outline">{{ badge }}</span>{% endfor %}
-          </div>
+          {% if b.badges %}<div class="badge-row">{% for badge in b.badges %}<span class="badge-outline">{{ badge }}</span>{% endfor %}</div>{% endif %}
         </div>
       </div>
       {% endfor %}
-      <div class="flota-card flota-card--placeholder">
-        <i class="ti ti-anchor"></i>
-        <h3>{% translate "+ embarcaciones bajo solicitud" %}</h3>
-        <p>{% translate "flota completa a confirmar con el socio" %}</p>
+    </div>
+  </section>
+
+  <!-- Bases de operación -->
+  <section class="section section--muted">
+    <div class="container">
+      <p class="section-tag center">{% translate "DÓNDE ESTAMOS" %}</p>
+      <h2 class="section-title center">{% translate "Dos costas, un mismo Lago" %}</h2>
+      <div class="bases-lista">
+        {% for b in bases %}
+        <article class="base-fila{% cycle '' ' base-fila--inversa' %}">
+          <div class="base-fila__fotos">
+            <a href="{% static b.foto.src %}" data-visor="bases" data-titulo="{{ b.foto.alt }}"><img src="{% static b.foto.src %}" alt="{{ b.foto.alt }}" loading="lazy"></a>
+            {% if b.foto2 %}<a href="{% static b.foto2.src %}" data-visor="bases" data-titulo="{{ b.foto2.alt }}"><img src="{% static b.foto2.src %}" alt="{{ b.foto2.alt }}" loading="lazy"></a>{% endif %}
+          </div>
+          <div class="base-fila__texto">
+            {% if b.metrica %}<p class="base-fila__metrica">{{ b.metrica }}</p>{% endif %}
+            <h3><i class="ti {{ b.icon }}" aria-hidden="true"></i> {{ b.titulo }}</h3>
+            <p class="base-card__lugar">{{ b.lugar }}</p>
+            <p>{{ b.texto }}</p>
+          </div>
+        </article>
+        {% endfor %}
       </div>
     </div>
   </section>
 
-  <!-- Capacidades adicionales -->
-  <section class="container section section--muted">
-    <p class="section-tag center">{% translate "CAPACIDADES ADICIONALES" %}</p>
-    <div class="capacidades-grid">
-      {% for c in capacidades %}
-      <div class="flota-card">
-        <div class="flota-card__img {{ c.imagen_clase }}">{{ c.imagen_alt }}</div>
-        <div class="flota-card__body"><h3>{{ c.titulo }}</h3></div>
-      </div>
-      {% endfor %}
-    </div>
+  <!-- Clientes, aliados y certificaciones -->
+  <section class="container section">
+    {% include 'includes/confianza.html' with datos=flota %}
   </section>
 
   <section class="container">
-    {% translate "¿Necesitas transporte u operaciones en el Lago?" as pregunta_flota %}
-    {% include 'includes/cotizacion.html' with pregunta=pregunta_flota %}
+    {% translate "¿Necesitas unidades u operaciones en el Lago?" as pregunta_flota %}
+    {% include 'includes/cotizacion.html' with pregunta=pregunta_flota servicio_slug="unidades-lacustres" %}
   </section>
 {% endblock %}
 

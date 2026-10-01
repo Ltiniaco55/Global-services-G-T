@@ -2,35 +2,28 @@
 {% load static i18n %}
 
 {% block title %}{% translate "Nuestros Servicios" %} — G&amp;T Global Service, C.A.{% endblock %}
-{% block meta_description %}{% translate "Soluciones de ingeniería, logística y mantenimiento para la industria marítima del Lago de Maracaibo: transporte de personal, atracaderos, lanchas y motores." %}{% endblock %}
+{% block meta_description %}{% translate "Unidades lacustres, reparación naval, atracaderos y plataformas, electricidad, tuberías y fabricación de estructuras en el Lago de Maracaibo." %}{% endblock %}
 
 {% block content %}
 
   <!-- Hero corto -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--foto" style="--hero-foto:url('{% static 'assets/fotos/atracaderos/soldadura.webp' %}')">
     <div class="container">
-      <p class="section-tag section-tag--lima">{% translate "PÁGINA INTERNA" %}</p>
       <h1 class="page-hero__title">{% translate "NUESTROS SERVICIOS" %}</h1>
-      <p class="page-hero__lead">{% translate "Soluciones de ingeniería, logística y mantenimiento para la industria marítima del Lago de Maracaibo." %}</p>
+      <p class="page-hero__lead">{% translate "En tierra y en el Lago: seis líneas de trabajo, un solo equipo." %}</p>
     </div>
   </section>
 
   <!-- Listado de servicios -->
   <section class="container section">
-    <div class="servicios-grid">
-      {% for s in servicios %}
-      <a href="{% if s.tiene_detalle %}{% url 'sitio:servicio_detalle' slug=s.slug %}{% else %}#{{ s.slug }}{% endif %}" {% if not s.tiene_detalle %}id="{{ s.slug }}"{% endif %} class="servicio-card">
-        <i class="ti {{ s.icon }}"></i>
-        <h3>{{ s.titulo }}</h3>
-        <span>{% translate "Ver detalle →" %}</span>
-      </a>
-      {% endfor %}
+    <div class="foto-grid foto-grid--servicios">
+      {% for s in servicios %}{% include 'includes/servicio_card.html' with s=s %}{% endfor %}
     </div>
-    <p class="section-note center">{% translate "cada tarjeta enlazará a su propia página de detalle (plantilla en <code>servicio_detalle.html</code>)" %}</p>
   </section>
 
   <section class="container">
-    {% include 'includes/cotizacion.html' %}
+    {% translate "¿Tienes un proyecto en tierra o en el Lago?" as pregunta_servicios %}
+    {% include 'includes/cotizacion.html' with pregunta=pregunta_servicios %}
   </section>
 {% endblock %}
 

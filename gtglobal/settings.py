@@ -128,7 +128,7 @@ RESEND_API_KEY = config('RESEND_API_KEY', default='')
 RESEND_FROM_EMAIL = config('RESEND_FROM_EMAIL', default='onboarding@resend.dev')
 
 # A dónde llegan los leads de los formularios (cotización y postulaciones).
-CONTACTO_EMAIL_DESTINO = config('CONTACTO_EMAIL_DESTINO', default='gtglobalservice2014@gmail.com')
+CONTACTO_EMAIL_DESTINO = config('CONTACTO_EMAIL_DESTINO', default='gytglobalservice@gytglobalservice.com')
 
 # --- Ajustes de seguridad para producción -----------------------------------
 # Se activan solos cuando DEBUG=False (o sea, en producción). En local con
@@ -152,17 +152,28 @@ if not DEBUG:
 # --- Datos de la empresa (usados en el JSON-LD LocalBusiness, footer, etc.) -
 EMPRESA = {
     'nombre': 'G&T Global Service, C.A.',
-    'telefono': '0261-4189710',
-    'telefono_whatsapp': '+34637054468',
-    'email': 'tiniacoluciano05@gmail.com',
-    'direccion': 'Av. 4 Bella Vista, Edificio Ferley, Piso PB, Local 1',
+    # Datos del dossier corporativo 2026.
+    'telefono': '+58 412 226 8492',
+    'telefono_2': '+58 414 674 9504',
+    'telefono_whatsapp': '+13055608889',
+    'telefono_whatsapp_texto': '+1 (305) 560 8889',
+    'email': 'gytglobalservice@gytglobalservice.com',
+    'direccion': 'Av. 04 Bella Vista, Edf. Ferley, Planta Baja',
     'ciudad': 'Maracaibo',
     'estado': 'Zulia',
     'pais': 'VE',
-    'instagram': 'https://instagram.com/gytglobalservice',
+    'rif': 'J-40429428-7',
+    'rnc': '2026090222602000210',
+    'instagram': 'https://www.instagram.com/gytglobalservice/',
     'instagram_handle': '@gytglobalservice',
     # Coordenadas aproximadas de Bella Vista, Maracaibo — ajusta a la
     # ubicación exacta de la sede cuando la tengas georreferenciada.
     'lat': '10.6666',
     'lng': '-71.6125',
+    # Enlace "Cómo llegar" del footer (en lugar del mapa incrustado de
+    # Google, que instalaba cookies de terceros en todas las páginas).
+    'maps_url': 'https://www.google.com/maps/search/?api=1&query=Edificio+Ferley%2C+Avenida+4+Bella+Vista%2C+Maracaibo',
+    # Nombres de clientes (PDVSA, Petrozamora...) en la web. Pon False si
+    # algún contrato no permite nombrarlos: se ocultan en todas las páginas.
+    'mostrar_clientes': True,
 }

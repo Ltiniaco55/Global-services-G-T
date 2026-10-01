@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block title %}G&amp;T Global Service, C.A. — {% translate "Ingeniería y servicios marítimos en el Lago de Maracaibo" %}{% endblock %}
-{% block meta_description %}{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo: transporte de personal, atracaderos, mantenimiento de motores y logística industrial." %}{% endblock %}
+{% block meta_description %}{% translate "Ingeniería y servicios en tierra y en el Lago de Maracaibo: unidades lacustres, reparación naval, atracaderos y plataformas, electricidad, tuberías y fabricación de estructuras." %}{% endblock %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/cta-titulo.css' %}">
@@ -16,69 +16,127 @@
   </div>
   <div class="hero-bg hero-bg--dia" style="background-image:url('{% static 'assets/hero/02-puente-dia.webp' %}')"></div>
   <div class="hero-overlay"></div>
+  {# .hero-text: homepage.js lo mueve con el scroll en móvil (no renombrar) #}
   <div class="hero-text">
-    <h1>{% translate "SEGURIDAD QUE NAVEGA CONTIGO" %}</h1>
-    <p>{% translate "Ingeniería y servicios marítimos para la industria petrolera del Lago de Maracaibo." %}</p>
-    <div class="hero-cta-row">
-      <a href="{% url 'sitio:cotizacion' %}" class="btn-pill btn-pill--lima">{% translate "¡Contáctanos ahora!" %}</a>
-      <a href="#servicios" class="btn-pill btn-pill--outline">{% translate "Nuestros Servicios" %}</a>
+    {# Estilo editorial: antetítulo + titular gigante con degradado y rayita lima (ver .hero-titulo en main.css) #}
+    <h1 class="hero-titulo">
+      <span class="hero-titulo__ante">{% translate "SEGURIDAD QUE" %}</span>
+      <span class="hero-titulo__principal">{% translate "NAVEGA CONTIGO" %}</span>
+    </h1>
+
+    <div class="hero-inferior">
+      <div class="hero-izq">
+        {# Cifras: se definen en sitio/views.py (HERO_CIFRAS) #}
+        <ul class="hero-cifras">
+          {% for cifra in cifras %}
+          <li class="hero-cifra">
+            <strong class="hero-cifra__valor"><span data-contador="{{ cifra.valor }}">{{ cifra.valor }}</span>{{ cifra.sufijo }}</strong>
+            <span class="hero-cifra__texto">{{ cifra.texto }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="hero-acciones">
+          <div class="hero-cta-row">
+            <a href="{% url 'sitio:cotizacion' %}" class="btn-pill btn-pill--lima">{% translate "¡Contáctanos ahora!" %}</a>
+            <a href="#servicios" class="btn-pill btn-pill--outline">{% translate "Nuestros Servicios" %}</a>
+          </div>
+          <p class="hero-lead">{% translate "Ingeniería, servicios lacustres y proyectos industriales en tierra y en el Lago de Maracaibo." %}</p>
+        </div>
+      </div>
+
+      {% comment %}Carrusel de fotos reales en tarjeta de cristal (solo escritorio).
+         Para cambiar las fotos, edita la lista de abajo; homepage.js lo anima.{% endcomment %}
+      <div class="hero-carrusel" data-carrusel data-intervalo="4500">
+        <div class="hero-carrusel__fotos">
+          <img src="{% static 'assets/fotos/petrozamora/pz011-despues.webp' %}" alt="{% translate 'Lancha PZ 011 recuperada por G&T' %}" class="hero-carrusel__foto is-activa">
+          <img src="{% static 'assets/fotos/cable/tendido.webp' %}" alt="{% translate 'Cuadrilla de G&T tendiendo cable submarino' %}" class="hero-carrusel__foto" loading="lazy">
+          <img src="{% static 'assets/fotos/flota/plataforma-lago.webp' %}" alt="{% translate 'Plataforma en el Lago de Maracaibo' %}" class="hero-carrusel__foto" loading="lazy">
+          <img src="{% static 'assets/fotos/petroquimica/tren-a-b.webp' %}" alt="{% translate 'Planta de fertilizantes del Complejo Ana María Campos' %}" class="hero-carrusel__foto" loading="lazy">
+        </div>
+        <div class="hero-carrusel__pie">
+          <span class="hero-carrusel__contador" aria-live="polite"><span data-carrusel-actual>01</span>/<span data-carrusel-total>04</span></span>
+          <div class="hero-carrusel__barras" aria-hidden="true">
+            <span class="hero-carrusel__barra is-activa"></span>
+            <span class="hero-carrusel__barra"></span>
+            <span class="hero-carrusel__barra"></span>
+            <span class="hero-carrusel__barra"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- QUIÉNES SOMOS -->
-<section id="quienes-somos" class="container section">
-  <p class="section-tag center">{% translate "QUIÉNES SOMOS" %}</p>
-  <div class="mv-grid">
-    <div class="mv-card mv-card--lima">
-      <h3>{% translate "Misión" %}</h3>
-      <p>{% blocktranslate trimmed %}Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología y asesoramiento técnico de
-        avanzada, cumpliendo normativas de seguridad, higiene y ambiente.{% endblocktranslate %}</p>
+<!-- QUIÉNES SOMOS — foto primero, texto justo -->
+<section id="quienes-somos" class="container section historia">
+  <div class="historia__fotos">
+    <img src="{% static 'assets/fotos/cable/cuadrilla-muelle.webp' %}" alt="{% translate 'Cuadrilla de G&T trabajando en el muelle' %}" class="historia__foto historia__foto--a" loading="lazy">
+    <img src="{% static 'assets/fotos/galpon/montaje.webp' %}" alt="{% translate 'Montaje de estructura con grúa' %}" class="historia__foto historia__foto--b" loading="lazy">
+    <img src="{% static 'assets/fotos/petrozamora/pz008-despues.webp' %}" alt="{% translate 'Lancha PZ 008 recuperada por G&T' %}" class="historia__foto historia__foto--c" loading="lazy">
+  </div>
+  <div class="historia__texto">
+    <p class="section-tag">{% translate "QUIÉNES SOMOS" %}</p>
+    <h2 class="section-title">{% translate "Un solo equipo, en tierra y en el Lago" %}</h2>
+    <p class="historia__lead">{% blocktranslate trimmed %}Empresa de capital venezolano que planifica, administra y ejecuta proyectos para las industrias
+      petrolera, petroquímica, eléctrica y metalmecánica.{% endblocktranslate %}</p>
+    <ul class="valores">
+      <li><i class="ti ti-heart-handshake" aria-hidden="true"></i>{% translate "Honestidad" %}</li>
+      <li><i class="ti ti-shield-check" aria-hidden="true"></i>{% translate "Seguridad" %}</li>
+      <li><i class="ti ti-target-arrow" aria-hidden="true"></i>{% translate "Compromiso" %}</li>
+    </ul>
+    <dl class="mv-mini">
+      <div><dt>{% translate "Misión" %}</dt><dd>{% blocktranslate trimmed %}Prestar y ejecutar proyectos de ingeniería con servicios de alta tecnología y asesoramiento técnico de
+        avanzada, cumpliendo normativas de seguridad, higiene y ambiente.{% endblocktranslate %}</dd></div>
+      <div><dt>{% translate "Visión" %}</dt><dd>{% blocktranslate trimmed %}Consolidarse como organización líder, competitiva y confiable a nivel nacional e internacional en ingeniería y
+        asesoría industrial.{% endblocktranslate %}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- NUESTROS SERVICIOS — tarjetas con foto -->
+<section id="servicios" class="section section--muted">
+  <div class="container">
+    <p class="section-tag center">{% translate "NUESTROS SERVICIOS" %}</p>
+    <h2 class="section-title center">{% translate "Lo que hacemos" %}</h2>
+    <div class="foto-grid foto-grid--servicios">
+      {% for s in servicios %}{% include 'includes/servicio_card.html' with s=s %}{% endfor %}
     </div>
-    <div class="mv-card mv-card--azul">
-      <h3>{% translate "Visión" %}</h3>
-      <p>{% blocktranslate trimmed %}Consolidarse como organización líder, competitiva y confiable a nivel nacional e internacional en ingeniería y
-        asesoría industrial.{% endblocktranslate %}</p>
+  </div>
+</section>
+
+<!-- HISTORIA DESTACADA: antes / después -->
+{% with destacado=proyectos.0 %}
+{% if destacado.antes_despues %}
+<section id="antes-despues" class="section section--dark destacado">
+  <div class="container destacado__inner">
+    <div class="destacado__texto">
+      <p class="section-tag section-tag--lima">{% translate "ANTES Y DESPUÉS" %}</p>
+      <h2 class="destacado__titulo">{% translate "De casco desarticulado a casco operativo" %}</h2>
+      <p class="destacado__lead">{{ destacado.resumen }}</p>
+      {% if empresa.mostrar_clientes %}<p class="destacado__cliente"><i class="ti ti-building" aria-hidden="true"></i> {{ destacado.cliente }}</p>{% endif %}
+      <a href="{% url 'sitio:proyecto_detalle' slug=destacado.slug %}" class="btn-pill btn-pill--lima">{% translate "Ver el proyecto" %}</a>
     </div>
+    {% include 'includes/antes_despues.html' with par=destacado.antes_despues.0 %}
   </div>
 </section>
+{% endif %}
+{% endwith %}
 
-<!-- NUESTRO OBJETIVO -->
-<section id="objetivo" class="container section section--muted">
-  <p class="section-tag center">{% translate "NUESTRO OBJETIVO" %}</p>
-  <p class="section-lead center">{% blocktranslate trimmed %}Efectuar nuestro trabajo ofreciendo la mayor satisfacción a nuestros clientes, mientras
-    cumplimos con los parámetros de calidad exigidos por las normativas nacionales e internacionales.{% endblocktranslate %}</p>
-  <div class="pill-grid">
-    <div class="pill-card"><i class="ti ti-shield-check"></i><span>{% translate "Seguridad" %}</span></div>
-    <div class="pill-card"><i class="ti ti-briefcase"></i><span>{% translate "Profesionalismo" %}</span></div>
-    <div class="pill-card"><i class="ti ti-cpu"></i><span>{% translate "Tecnología" %}</span></div>
+<!-- PROYECTOS — mosaico de fotos -->
+<section id="proyectos" class="container section">
+  <p class="section-tag center">{% translate "PROYECTOS REALIZADOS" %}</p>
+  <h2 class="section-title center">{% translate "Nuestro trabajo, en fotos" %}</h2>
+  <div class="foto-grid foto-grid--mosaico">
+    {% for p in proyectos %}{% include 'includes/proyecto_card.html' with p=p grande=forloop.first %}{% endfor %}
   </div>
+  <p class="center" style="margin-top:28px;"><a href="{% url 'sitio:proyectos' %}" class="btn-pill btn-pill--azul">{% translate "Ver todos los proyectos" %}</a></p>
 </section>
 
-<!-- EMPRESAS QUE CONFIARON EN NOSOTROS -->
-<section id="empresas" class="container section">
-  <p class="section-tag center">{% translate "EMPRESAS QUE CONFIARON EN NOSOTROS" %}</p>
-  <div class="logos-grid">
-    <div class="logo-slot">{% translate "logo pendiente" %}</div>
-    <div class="logo-slot">{% translate "logo pendiente" %}</div>
-    <div class="logo-slot">{% translate "logo pendiente" %}</div>
-    <div class="logo-slot">{% translate "logo pendiente" %}</div>
-  </div>
-  <p class="section-note center">{% translate "a la espera de logos reales con permiso del socio" %}</p>
-</section>
-
-<!-- NUESTROS SERVICIOS -->
-<section id="servicios" class="container section section--muted">
-  <p class="section-tag center">{% translate "NUESTROS SERVICIOS" %}</p>
-  <div class="servicios-grid">
-    {% for s in servicios %}
-    <a href="{% if s.tiene_detalle %}{% url 'sitio:servicio_detalle' slug=s.slug %}{% else %}{% url 'sitio:servicios' %}#{{ s.slug }}{% endif %}"
-      class="servicio-card">
-      <i class="ti {{ s.icon }}"></i>
-      <h3>{{ s.titulo }}</h3>
-      <span>{% translate "Ver detalle →" %}</span>
-    </a>
-    {% endfor %}
+<!-- CONFIANZA: clientes, aliados y certificaciones -->
+<section id="empresas" class="section section--muted">
+  <div class="container">
+    {% include 'includes/confianza.html' with datos=flota %}
   </div>
 </section>
 
@@ -88,37 +146,34 @@
     <p class="section-tag section-tag--lima center">{% translate "SEGURIDAD" %}</p>
     <p class="section-lead section-lead--light center">{% translate "la seguridad se construye mediante la prevención" %}</p>
     <div class="seguridad-grid">
-      <div class="seguridad-item">{% translate "Balsa autoinflable (25 pers.)" %}</div>
-      <div class="seguridad-item">{% translate "Chalecos individuales" %}</div>
+      <div class="seguridad-item"><i class="ti ti-lifebuoy"></i><span>{% translate "Balsa autoinflable (25 pers.)" %}</span></div>
+      <div class="seguridad-item"><i class="ti ti-user-shield"></i><span>{% translate "Chalecos individuales" %}</span></div>
       <div class="seguridad-item"><i class="ti ti-radio"></i><span>EPIRB</span></div>
       <div class="seguridad-item"><i class="ti ti-broadcast"></i><span>AIS</span></div>
     </div>
     <div class="seguridad-badges">
       <span class="badge-outline">RACDA G-24-2017-3386</span>
-      <span class="badge-outline">{% translate "Cumplimiento INEA" %}</span>
+      <span class="badge-outline">INEA-CNSL-0081</span>
     </div>
   </div>
 </section>
 
-<!-- PROYECTOS REALIZADOS -->
-{% with proyecto=proyectos.0 %}
-{% if proyecto %}
-<section id="proyectos" class="container section">
-  <h2 class="section-title center">{% translate "Proyectos Realizados" %}</h2>
-  <p class="section-lead center">{% blocktranslate trimmed %}Un vistazo a las operaciones reales de ingeniería y logística que hemos ejecutado en el
-    Lago de Maracaibo.{% endblocktranslate %}</p>
-  <div class="proyectos-grid">
-    <div class="proyecto-img proyecto-img--noche">{% translate "foto real: atracadero deteriorado (antes)" %}</div>
-    <div class="proyecto-img proyecto-img--azul">{% translate "foto real: fabricación / taller" %}</div>
-    <div class="proyecto-img proyecto-img--lima">{% translate "foto real: VLM 1071 (después)" %}</div>
+<!-- BASES DE OPERACIÓN -->
+<section id="bases" class="container section">
+  <p class="section-tag center">{% translate "DÓNDE ESTAMOS" %}</p>
+  <h2 class="section-title center">{% translate "Dos costas, un mismo Lago" %}</h2>
+  <div class="foto-grid foto-grid--bases">
+    {% for b in flota.bases %}
+    <article class="base-card">
+      <div class="base-card__foto"><img src="{% static b.foto.src %}" alt="{{ b.foto.alt }}" loading="lazy">{% if b.metrica %}<span class="base-card__metrica">{{ b.metrica }}</span>{% endif %}</div>
+      <div class="base-card__cuerpo">
+        <h3><i class="ti {{ b.icon }}" aria-hidden="true"></i> {{ b.titulo }}</h3>
+        <p class="base-card__lugar">{{ b.lugar }}</p>
+      </div>
+    </article>
+    {% endfor %}
   </div>
-  <p class="proyecto-caption center">
-    <strong>{{ proyecto.titulo }}</strong>
-    <a href="{% url 'sitio:proyecto_detalle' slug=proyecto.slug %}">{% translate "Ver caso completo →" %}</a>
-  </p>
 </section>
-{% endif %}
-{% endwith %}
 
 <!-- PREGUNTAS FRECUENTES -->
 <section id="faq" class="container section section--muted">
@@ -126,13 +181,21 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary>{% translate "¿En qué zona del Lago operan?" %} <i class="ti ti-chevron-down"></i></summary>
-      <p>{% translate "Operamos en todo el Lago de Maracaibo, dando servicio a la industria petrolera del Estado Zulia." %}</p>
+      <p>{% translate "En todo el Lago de Maracaibo, desde nuestra base en el muelle Pedro Lucas Urribarri (Ciudad Ojeda), y en tierra en todo el estado Zulia." %}</p>
     </details>
     <details class="faq-item">
       <summary>{% translate "¿Tienen embarcaciones propias?" %} <i class="ti ti-chevron-down"></i></summary>
       {% url 'sitio:flota' as url_flota %}
       <p>{% blocktranslate trimmed %}Sí, contamos con flota propia registrada y mantenida para operar de forma segura. Conoce nuestra <a
           href="{{ url_flota }}">flota aquí</a>.{% endblocktranslate %}</p>
+    </details>
+    <details class="faq-item">
+      <summary>{% translate "¿Trabajan solo en el Lago?" %} <i class="ti ti-chevron-down"></i></summary>
+      <p>{% translate "No. También ejecutamos proyectos en tierra: fabricamos estructuras en nuestro patio de 3.000 m² en San Francisco y trabajamos en plantas petroquímicas y eléctricas." %}</p>
+    </details>
+    <details class="faq-item">
+      <summary>{% translate "¿Qué certificaciones tienen?" %} <i class="ti ti-chevron-down"></i></summary>
+      <p>{% translate "Somos Compañía Naviera Certificada (INEA-CNSL-0081) y Centro de Producción Naval (INEA-AF-CPPN-261-140319-0), y estamos inscritos en el Registro Nacional de Contratistas." %}</p>
     </details>
     <details class="faq-item">
       <summary>{% translate "¿Cómo solicito una cotización?" %} <i class="ti ti-chevron-down"></i></summary>
@@ -170,7 +233,7 @@
     <h2 class="cta-titulo-personalizado">{% translate "¿PROYECTO EN MENTE?" %}</h2>
     <div class="cta-final__accion">
       <p class="cta-final__texto">{% translate "Estamos para ayudarte" %}</p>
-      <p class="cta-final__subtexto">{% translate "Operando en el lago de Maracaibo desde 1990" %}</p>
+      <p class="cta-final__subtexto">{% translate "Operando en el lago de Maracaibo desde 2014" %}</p>
       <a href="{% url 'sitio:cotizacion' %}" class="btn-cotizar btn-cotizar--lg">{% translate "¡Comencemos!" %}</a>
     </div>
   </div>
@@ -179,7 +242,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="{% static 'js/homepage.js' %}"></script>
 {% endblock %}

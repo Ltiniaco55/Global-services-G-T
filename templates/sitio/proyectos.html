@@ -7,36 +7,27 @@
 {% block content %}
 
   <!-- Hero corto -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--foto" style="--hero-foto:url('{% static 'assets/fotos/plataformas/plataforma-1.webp' %}')">
     <div class="container">
-      <p class="section-tag section-tag--lima">{% translate "PÁGINA INTERNA" %}</p>
       <h1 class="page-hero__title">{% translate "PROYECTOS REALIZADOS" %}</h1>
-      <p class="page-hero__lead">{% translate "Operaciones reales de ingeniería y logística ejecutadas en el Lago de Maracaibo." %}</p>
+      <p class="page-hero__lead">{% translate "Trabajos reales, contados con fotos." %}</p>
     </div>
   </section>
 
-  <!-- Listado de proyectos -->
+  <!-- Listado de proyectos, con filtro por servicio (static/js/fotos.js) -->
   <section class="container section">
-    <div class="proyectos-list">
-      {% for p in proyectos %}
-      <a href="{% url 'sitio:proyecto_detalle' slug=p.slug %}" class="proyecto-row">
-        <div class="proyectos-grid proyectos-grid--row">
-          <div class="proyecto-img proyecto-img--noche">{% translate "foto real: atracadero deteriorado (antes)" %}</div>
-          <div class="proyecto-img proyecto-img--azul">{% translate "foto real: fabricación / taller" %}</div>
-          <div class="proyecto-img proyecto-img--lima">{% translate "foto real: VLM 1071 (después)" %}</div>
-        </div>
-        <p class="proyecto-caption">
-          <strong>{{ p.titulo }}</strong>
-          <span>{% translate "Ver caso completo →" %}</span>
-        </p>
-      </a>
-      {% endfor %}
+    <div class="filtros" role="group" aria-label="{% translate 'Filtrar proyectos por servicio' %}" data-filtros>
+      <button type="button" class="filtro is-activo" data-filtro="">{% translate "Todos" %}</button>
+      {% for s in servicios %}<button type="button" class="filtro" data-filtro="{{ s.slug }}">{{ s.titulo }}</button>{% endfor %}
     </div>
-    <p class="section-note center">{% translate "más casos se irán agregando aquí conforme se documenten" %}</p>
+    <div class="foto-grid foto-grid--proyectos" data-filtrable>
+      {% for p in proyectos %}{% include 'includes/proyecto_card.html' with p=p %}{% endfor %}
+    </div>
   </section>
 
   <section class="container">
-    {% include 'includes/cotizacion.html' %}
+    {% translate "¿Quieres un resultado así en tu operación?" as pregunta_proyectos %}
+    {% include 'includes/cotizacion.html' with pregunta=pregunta_proyectos %}
   </section>
 {% endblock %}
 

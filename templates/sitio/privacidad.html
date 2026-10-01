@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block title %}{% translate "Política de Privacidad" %} — G&amp;T Global Service, C.A.{% endblock %}
-{% block meta_description %}{% translate "Cómo G&T Global Service, C.A. recopila, usa y protege los datos que compartes a través de nuestros formularios de contacto y cotización." %}{% endblock %}
+{% block meta_description %}{% translate "Cómo G&T Global Service, C.A. recopila, usa y protege los datos que compartes a través de nuestros formularios, y qué cookies usa esta web." %}{% endblock %}
 
 {% block content %}
 
@@ -10,26 +10,62 @@
     <div class="container">
       <p class="section-tag section-tag--lima">{% translate "LEGAL" %}</p>
       <h1 class="page-hero__title">{% translate "Política de Privacidad" %}</h1>
-      {# DATE_FORMAT: "25 de septiembre de 2026" en español, "Sept. 25, 2026" en inglés #}
-      <p class="page-hero__lead">{% translate "Última actualización:" %} {% now "DATE_FORMAT" %}</p>
+      {% comment %}Fecha fija: cámbiala a mano solo cuando modifiques el contenido de esta página.{% endcomment %}
+      <p class="page-hero__lead">{% translate "Última actualización: 1 de octubre de 2026" %}</p>
     </div>
   </section>
 
-  <section class="container section" style="max-width:760px;">
-    <h2 class="detalle-subtitle">{% translate "¿Qué datos recopilamos?" %}</h2>
-    <p>{% translate "Cuando completas alguno de nuestros formularios (contacto o solicitud de cotización) recopilamos los datos que nos proporcionas directamente: nombre, correo electrónico, teléfono, empresa (si aplica), el contenido de tu mensaje o solicitud, y los archivos que decidas adjuntar." %}</p>
+  <section class="container section texto-legal">
+    <h2 class="detalle-subtitle">{% translate "1. Responsable" %}</h2>
+    <p>{% blocktranslate trimmed with nombre=empresa.nombre rif=empresa.rif direccion=empresa.direccion email=empresa.email %}El responsable de los datos que nos envías es {{ nombre }}, RIF {{ rif }}, con domicilio en {{ direccion }}, Maracaibo, estado Zulia, Venezuela. Puedes escribirnos sobre cualquier tema de privacidad a {{ email }}.{% endblocktranslate %}</p>
 
-    <h2 class="detalle-subtitle">{% translate "¿Para qué usamos tus datos?" %}</h2>
-    <p>{% translate "Usamos esta información únicamente para responder tu solicitud, evaluar el alcance del servicio que necesitas y contactarte con una propuesta o cotización. No usamos tus datos con fines publicitarios ni los compartimos con terceros, salvo cuando sea necesario para ejecutar el servicio que solicitaste (por ejemplo, coordinar con un proveedor o socio del proyecto), y siempre con tu conocimiento." %}</p>
+    <h2 class="detalle-subtitle">{% translate "2. Qué datos recopilamos" %}</h2>
+    <ul>
+      <li>{% translate "Solicitud de cotización: nombre, correo, teléfono, empresa, servicios de interés, tu mensaje y los archivos que adjuntes." %}</li>
+      <li id="candidaturas">{% translate "Trabaja con nosotros: nombre, correo, teléfono, puesto de interés, tu mensaje y tu currículum. Te pedimos no incluir datos que no hagan falta para valorar tu perfil, como el número de documento de identidad o datos de salud." %}</li>
+      <li>{% translate "Datos técnicos: como cualquier web, el servidor registra temporalmente datos técnicos (dirección IP, navegador, página visitada y hora) por motivos de seguridad y funcionamiento." %}</li>
+    </ul>
 
-    <h2 class="detalle-subtitle">{% translate "¿Cómo protegemos tus datos?" %}</h2>
-    <p>{% translate "Los datos que envías a través de nuestros formularios llegan directamente al correo corporativo de G&amp;T Global Service, C.A. y son tratados de forma confidencial por nuestro equipo. No almacenamos los archivos adjuntos en ningún servidor más allá del envío del correo." %}</p>
+    <h2 class="detalle-subtitle">{% translate "3. Para qué los usamos" %}</h2>
+    <p>{% translate "Usamos tus datos solo para responder tu solicitud, preparar una cotización y dar seguimiento a la relación comercial, o para valorar tu candidatura y contactarte si encaja en un proceso de selección. Los tratamos porque nos das tu consentimiento al marcar la casilla del formulario y porque son necesarios para atender lo que nos pides. No los usamos con fines publicitarios, no los vendemos y no tomamos decisiones automatizadas con ellos." %}</p>
 
-    <h2 class="detalle-subtitle">{% translate "¿Cuánto tiempo conservamos tus datos?" %}</h2>
-    <p>{% blocktranslate trimmed with email=empresa.email %}Conservamos la información de tu solicitud el tiempo necesario para darle seguimiento comercial. Si quieres que eliminemos tus datos antes de eso, puedes solicitarlo escribiéndonos a {{ email }}.{% endblocktranslate %}</p>
+    <h2 class="detalle-subtitle">{% translate "4. Con quién los compartimos" %}</h2>
+    <p>{% translate "No cedemos tus datos a terceros. Para que la web y los formularios funcionen usamos proveedores tecnológicos que tratan los datos por nuestra cuenta y solo para prestarnos su servicio:" %}</p>
+    <ul>
+      <li>{% translate "Vercel Inc. (Estados Unidos): alojamiento de la web." %}</li>
+      <li>{% translate "Resend (Estados Unidos): envío de los correos que generan los formularios." %}</li>
+      <li>{% translate "Zoho (servidores en la Unión Europea): correo corporativo donde recibimos tus mensajes." %}</li>
+    </ul>
+    <p>{% translate "Algunos de estos proveedores están fuera de Venezuela. Si nos escribes por WhatsApp, esa conversación se rige además por la política de privacidad de WhatsApp." %}</p>
 
-    <h2 class="detalle-subtitle">{% translate "Tus derechos" %}</h2>
-    <p>{% blocktranslate trimmed with email=empresa.email telefono=empresa.telefono %}Puedes solicitarnos en cualquier momento acceder, corregir o eliminar los datos que nos hayas compartido, escribiéndonos a {{ email }} o por WhatsApp al {{ telefono }}.{% endblocktranslate %}</p>
+    <h2 class="detalle-subtitle">{% translate "5. Cuánto tiempo los conservamos" %}</h2>
+    <ul>
+      <li>{% translate "Solicitudes y cotizaciones: mientras dure la relación comercial y hasta 24 meses después del último contacto, salvo que una ley nos obligue a guardarlos más tiempo." %}</li>
+      <li>{% translate "Currículums: un máximo de 12 meses. Después los eliminamos." %}</li>
+      <li>{% translate "Registros técnicos del servidor: el tiempo limitado que fije el proveedor de alojamiento." %}</li>
+    </ul>
+
+    <h2 class="detalle-subtitle">{% translate "6. Tus derechos" %}</h2>
+    <p>{% blocktranslate trimmed with email=empresa.email %}Puedes pedirnos en cualquier momento acceder a tus datos, corregirlos, actualizarlos o eliminarlos, y retirar tu consentimiento, escribiendo a {{ email }}. Te responderemos en un plazo máximo de 30 días. Si vives en la Unión Europea, también puedes oponerte al tratamiento, pedir la portabilidad de tus datos y reclamar ante la autoridad de protección de datos de tu país.{% endblocktranslate %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "7. Seguridad" %}</h2>
+    <p>{% translate "La web funciona siempre con conexión cifrada (HTTPS) y solo el personal que gestiona las solicitudes tiene acceso a los mensajes. Los archivos adjuntos no se guardan en la web: se envían directamente al correo de la empresa." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "8. Menores de edad" %}</h2>
+    <p>{% translate "Esta web está dirigida a empresas y profesionales. No recopilamos a sabiendas datos de menores de 18 años." %}</p>
+
+    <h2 class="detalle-subtitle" id="cookies">{% translate "9. Cookies" %}</h2>
+    <p>{% translate "Esta web solo usa una cookie, y es técnica:" %}</p>
+    <div class="tabla-legal">
+      <table>
+        <thead><tr><th>{% translate "Cookie" %}</th><th>{% translate "Para qué sirve" %}</th><th>{% translate "Duración" %}</th></tr></thead>
+        <tbody><tr><td><code>csrftoken</code></td><td>{% translate "Protege los formularios contra envíos fraudulentos. Es necesaria para que funcionen." %}</td><td>{% translate "1 año" %}</td></tr></tbody>
+      </table>
+    </div>
+    <p>{% translate "Al ser imprescindible para el funcionamiento de la web, no necesita tu consentimiento. No usamos cookies de analítica, de publicidad ni de redes sociales, y las tipografías e iconos se sirven desde nuestro propio servidor, sin conectar con servicios de terceros. Los enlaces a Google Maps, WhatsApp e Instagram solo se abren si haces clic en ellos; a partir de ahí se aplican las políticas de esos servicios." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "10. Cambios en esta política" %}</h2>
+    <p>{% translate "Si cambiamos esta política, publicaremos la nueva versión en esta misma página con su fecha de actualización." %}</p>
   </section>
 
 {% endblock %}

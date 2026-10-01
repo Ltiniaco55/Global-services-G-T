@@ -5,7 +5,7 @@
 {% block meta_description %}{% translate "Solicita una cotización formal de ingeniería y servicios marítimos en el Lago de Maracaibo: cuéntanos qué servicios necesitas y te contactamos con una propuesta." %}{% endblock %}
 
 {% block extra_head %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/css/intlTelInput.min.css">
+<link rel="stylesheet" href="{% static 'vendor/intl-tel-input/css/intlTelInput.min.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -89,7 +89,7 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.3/build/js/intlTelInput.min.js"></script>
+<script src="{% static 'vendor/intl-tel-input/js/intlTelInput.min.js' %}"></script>
 <script src="{% static 'js/form-validacion.js' %}"></script>
 <script>
   initFormValidado(document.getElementById('form-cotizacion'), {

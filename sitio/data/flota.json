@@ -1,42 +1,139 @@
 {
+  "unidades": [
+    {
+      "foto": {
+        "src": "assets/fotos/flota/remolcador.webp",
+        "alt": "Remolcador"
+      },
+      "nombre": "Remolcadores"
+    },
+    {
+      "foto": {
+        "src": "assets/fotos/flota/gabarra-grua.webp",
+        "alt": "Gabarra con grúa"
+      },
+      "nombre": "Gabarras con grúa"
+    },
+    {
+      "foto": {
+        "src": "assets/fotos/flota/lanchas-muelle.webp",
+        "alt": "Lanchas de transporte"
+      },
+      "nombre": "Lanchas de transporte"
+    },
+    {
+      "foto": {
+        "src": "assets/fotos/flota/remolcador-grua.webp",
+        "alt": "Remolcador y gabarra"
+      },
+      "nombre": "Apoyo a operaciones"
+    }
+  ],
   "embarcaciones": [
     {
       "nombre": "BETTY MARACAIBO",
-      "imagen_clase": "flota-card__img--azul-profundo",
-      "imagen_alt": "Embarcación Betty Maracaibo",
       "descripcion": "Transporte de personal a áreas operacionales del Lago.",
-      "badges": ["RACDA G-24-2017-3386", "RIF J-404294287"]
+      "badges": [
+        "RACDA G-24-2017-3386"
+      ]
     },
     {
       "nombre": "BETTY · M/ARCI",
-      "imagen_clase": "flota-card__img--azul-medio",
-      "imagen_alt": "Embarcación Betty, clase M/Arci",
       "descripcion": "Cumple con todos los requerimientos de seguridad del INEA.",
-      "badges": ["Cumplimiento INEA"]
+      "badges": [
+        "Cumplimiento INEA"
+      ]
     },
     {
       "nombre": "MERCEDES V",
-      "imagen_clase": "flota-card__img--noche",
-      "imagen_alt": "Embarcación Mercedes V",
-      "descripcion": "Embarcación propia en operación activa en el Lago.",
-      "badges": ["specs: pendiente"]
+      "descripcion": "Embarcación en operación activa en el Lago.",
+      "badges": []
     }
   ],
-  "capacidades": [
+  "bases": [
     {
-      "titulo": "Diseño y construcción de lanchas",
-      "imagen_clase": "flota-card__img--azul-profundo",
-      "imagen_alt": "Lancha en dique seco durante construcción"
+      "icon": "ti-anchor",
+      "titulo": "Base de operaciones lacustres",
+      "lugar": "Muelle Pedro Lucas Urribarri (CAMINPEG), Ciudad Ojeda",
+      "texto": "Costa oriental del Lago. Desde aquí salen las operaciones lacustres para todo el Lago de Maracaibo.",
+      "foto": {
+        "src": "assets/fotos/bases/base-lacustre.webp",
+        "alt": "Base de operaciones en el muelle"
+      },
+      "foto2": {
+        "src": "assets/fotos/bases/muelle-caminpeg.webp",
+        "alt": "Vista aérea del muelle CAMINPEG"
+      }
     },
     {
-      "titulo": "Mantenimiento de motores Hyundai",
-      "imagen_clase": "flota-card__img--azul-medio",
-      "imagen_alt": "Motor Hyundai en mantenimiento"
+      "icon": "ti-building-factory-2",
+      "titulo": "Patio de fabricación",
+      "lugar": "Calle 18B, San Francisco, estado Zulia",
+      "texto": "Costa occidental. Cerca de 3.000 m² para fabricar estructuras, junto al Puente Rafael Urdaneta.",
+      "foto": {
+        "src": "assets/fotos/bases/patio-san-francisco.webp",
+        "alt": "Vista aérea del patio en San Francisco"
+      },
+      "foto2": null,
+      "metrica": "3.000 m²"
     },
     {
-      "titulo": "Mantenimiento e izaje propio",
-      "imagen_clase": "flota-card__img--noche",
-      "imagen_alt": "Izaje de embarcación con grúa propia"
+      "icon": "ti-building",
+      "titulo": "Oficina principal",
+      "lugar": "Av. 04 Bella Vista, Edf. Ferley, PB, Maracaibo",
+      "texto": "Planificación, administración y atención a clientes.",
+      "foto": {
+        "src": "assets/fotos/bases/mapa-lago.webp",
+        "alt": "Mapa del Lago de Maracaibo"
+      },
+      "foto2": null
+    }
+  ],
+  "aliados": [
+    {
+      "nombre": "Hyundai En-Tech",
+      "logo": "assets/fotos/aliados/hyundai-en-tech.webp"
+    },
+    {
+      "nombre": "Hyundai Infracore",
+      "logo": "assets/fotos/aliados/hyundai-infracore.webp"
+    },
+    {
+      "nombre": "Doosan",
+      "logo": null
+    },
+    {
+      "nombre": "SNV",
+      "logo": "assets/fotos/aliados/snv.webp"
+    },
+    {
+      "nombre": "TECNESP",
+      "logo": "assets/fotos/aliados/tecnesp.webp"
+    }
+  ],
+  "clientes": [
+    "PDVSA",
+    "PDVSA Gas",
+    "E.M. Petrozamora",
+    "Termozulia",
+    "Complejo Ana María Campos"
+  ],
+  "certificaciones": [
+    {
+      "titulo": "Compañía Naviera Certificada",
+      "codigo": "INEA-CNSL-0081"
+    },
+    {
+      "titulo": "Centro de Producción Naval",
+      "codigo": "INEA-AF-CPPN-261-140319-0"
+    },
+    {
+      "titulo": "Registro Nacional de Contratistas",
+      "codigo": "RNC 2026090222602000210"
+    },
+    {
+      "titulo": "RIF",
+      "codigo": "J-40429428-7"
     }
   ]
 }

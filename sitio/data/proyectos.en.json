@@ -1,45 +1,431 @@
 {
   "proyectos": [
     {
-      "slug": "mg-01-05-lago-v",
-      "titulo": "M/G 01-05 LAGO V",
-      "categoria": "PROJECT · DOCK ENGINEERING",
-      "resumen": "From design to reality: custom engineering, fabrication and installation of a dock for an oil well on Lake Maracaibo.",
-      "meta_title": "M/G 01-05 LAGO V — G&T Global Service, C.A.",
-      "meta_description": "Case study: engineering, fabrication and installation of the M/G 01-05 LAGO V dock for an oil well on Lake Maracaibo, delivered by G&T Global Service.",
-      "proceso": [
+      "slug": "recuperacion-flota-petrozamora",
+      "servicio": "diseno-y-construccion-de-lanchas",
+      "destacado": true,
+      "titulo": "Lake fleet recovery",
+      "cliente": "E.M. Petrozamora",
+      "resumen": "Recovery, repair and maintenance of an entire fleet of lake vessels.",
+      "portada": {
+        "src": "assets/fotos/petrozamora/pz011-despues.webp",
+        "alt": "Restored PZ 011 boat"
+      },
+      "antes_despues": [
         {
-          "paso": "01 · THE CHALLENGE",
-          "imagen_clase": "detalle-img--azul-profundo",
-          "imagen_alt": "Deteriorated dock before the intervention",
-          "texto": "Infrastructure worn down by time on an active oil well on the Lake."
+          "antes": {
+            "src": "assets/fotos/petrozamora/antes-1.webp",
+            "alt": "Deteriorated hull before recovery"
+          },
+          "despues": {
+            "src": "assets/fotos/petrozamora/pz011-despues.webp",
+            "alt": "PZ 011 boat after recovery"
+          }
         },
         {
-          "paso": "02 · CUSTOM ENGINEERING",
-          "imagen_clase": "detalle-img--azul-medio",
-          "imagen_alt": "Workshop fabricating custom parts",
-          "texto": "Design and fabrication of parts tailored to the specific needs of the well."
-        },
-        {
-          "paso": "03 · PRECISE EXECUTION",
-          "imagen_clase": "detalle-img--noche",
-          "imagen_alt": "Dock installation on Lake Maracaibo",
-          "texto": "Dock installed directly on the Lake, using our own equipment."
-        },
-        {
-          "paso": "04 · OPTIMAL RESULTS",
-          "imagen_clase": "detalle-img--lima",
-          "imagen_alt": "Finished and operational VLM 1071 structure",
-          "texto": "Structure completed, operational and handed over to the client."
+          "antes": {
+            "src": "assets/fotos/petrozamora/antes-2.webp",
+            "alt": "Hull on dry dock before recovery"
+          },
+          "despues": {
+            "src": "assets/fotos/petrozamora/pz008-despues.webp",
+            "alt": "PZ 008 boat after recovery"
+          }
         }
       ],
+      "galeria": [],
+      "categoria": "Naval construction and repair",
+      "servicio_icon": "ti-sailboat",
+      "meta_title": "Lake fleet recovery — G&T Global Service, C.A.",
+      "meta_description": "Recovery, repair and maintenance of an entire fleet of lake vessels.",
+      "specs": [],
+      "contain": false
+    },
+    {
+      "slug": "diseno-unidades-petrozamora",
+      "servicio": "diseno-y-construccion-de-lanchas",
+      "titulo": "Lake vessel design",
+      "cliente": "E.M. Petrozamora",
+      "resumen": "Design and engineering to modify lake vessels: ambulance, diving, connections and management and rescue.",
+      "portada": {
+        "src": "assets/fotos/diseno/ambulancia.webp",
+        "alt": "Ambulance boat design"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/diseno/ambulancia.webp",
+          "alt": "Ambulance boat"
+        },
+        {
+          "src": "assets/fotos/diseno/buceo.webp",
+          "alt": "Diving boat"
+        },
+        {
+          "src": "assets/fotos/diseno/conexiones.webp",
+          "alt": "Connection boat"
+        },
+        {
+          "src": "assets/fotos/diseno/rescate.webp",
+          "alt": "Management and rescue boat"
+        }
+      ],
+      "contain": true,
+      "categoria": "Naval construction and repair",
+      "servicio_icon": "ti-sailboat",
+      "meta_title": "Lake vessel design — G&T Global Service, C.A.",
+      "meta_description": "Design and engineering to modify lake vessels: ambulance, diving, connections and management and rescue.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false
+    },
+    {
+      "slug": "cable-submarino",
+      "servicio": "electricidad-e-instrumentacion",
+      "destacado": true,
+      "titulo": "Subsea cable",
+      "cliente": null,
+      "resumen": "Laying, repair and recovery of subsea cable on Lake Maracaibo.",
+      "portada": {
+        "src": "assets/fotos/cable/tendido.webp",
+        "alt": "Crew laying subsea cable"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/cable/cuadrilla-muelle.webp",
+          "alt": "Crew on the pier"
+        },
+        {
+          "src": "assets/fotos/cable/empalme.webp",
+          "alt": "Cable splice"
+        },
+        {
+          "src": "assets/fotos/cable/carrete.webp",
+          "alt": "Subsea cable ready"
+        },
+        {
+          "src": "assets/fotos/cable/tendido.webp",
+          "alt": "Cable laying"
+        }
+      ],
+      "categoria": "Electrical and instrumentation",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Subsea cable — G&T Global Service, C.A.",
+      "meta_description": "Laying, repair and recovery of subsea cable on Lake Maracaibo.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "atracaderos-pdvsa",
+      "servicio": "instalacion-de-atracaderos",
+      "destacado": true,
+      "titulo": "Docks and fuel areas",
+      "cliente": "PDVSA",
+      "resumen": "Repair of docks at piers, fuel areas and platform improvements.",
+      "portada": {
+        "src": "assets/fotos/atracaderos/soldadura.webp",
+        "alt": "Welding on a dock"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/atracaderos/soldadura.webp",
+          "alt": "Welding on a dock"
+        },
+        {
+          "src": "assets/fotos/atracaderos/barandas.webp",
+          "alt": "New railings on the pier"
+        },
+        {
+          "src": "assets/fotos/atracaderos/area-combustible.webp",
+          "alt": "Fuel area"
+        },
+        {
+          "src": "assets/fotos/atracaderos/tuberias.webp",
+          "alt": "Platform piping"
+        }
+      ],
+      "categoria": "Docks and platforms",
+      "servicio_icon": "ti-anchor",
+      "meta_title": "Docks and fuel areas — G&T Global Service, C.A.",
+      "meta_description": "Repair of docks at piers, fuel areas and platform improvements.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "plataformas-pdvsa",
+      "servicio": "instalacion-de-atracaderos",
+      "destacado": true,
+      "titulo": "Platforms on the Lake",
+      "cliente": "PDVSA",
+      "resumen": "Construction, repair and installation of platforms and docks on Lake Maracaibo.",
+      "portada": {
+        "src": "assets/fotos/plataformas/plataforma-1.webp",
+        "alt": "Platform on the Lake"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/plataformas/plataforma-1.webp",
+          "alt": "Finished platform"
+        },
+        {
+          "src": "assets/fotos/plataformas/plataforma-grua.webp",
+          "alt": "Platform with crane"
+        },
+        {
+          "src": "assets/fotos/plataformas/soldador.webp",
+          "alt": "Welding over the water"
+        },
+        {
+          "src": "assets/fotos/flota/plataforma-lago.webp",
+          "alt": "Platform on Lake Maracaibo"
+        }
+      ],
+      "categoria": "Docks and platforms",
+      "servicio_icon": "ti-anchor",
+      "meta_title": "Platforms on the Lake — G&T Global Service, C.A.",
+      "meta_description": "Construction, repair and installation of platforms and docks on Lake Maracaibo.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "planta-fertilizantes-ana-maria-campos",
+      "servicio": "tuberias-y-mantenimiento-industrial",
+      "destacado": true,
+      "titulo": "Fertilizer plant",
+      "cliente": "Ana María Campos Complex",
+      "resumen": "Overhaul of Train A and Train B of the fertilizer plant.",
+      "portada": {
+        "src": "assets/fotos/petroquimica/tren-a-b.webp",
+        "alt": "Fertilizer plant, Train A and Train B"
+      },
+      "galeria": [],
+      "categoria": "Piping and industrial maintenance",
+      "servicio_icon": "ti-tool",
+      "meta_title": "Fertilizer plant — G&T Global Service, C.A.",
+      "meta_description": "Overhaul of Train A and Train B of the fertilizer plant.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "subestaciones-lago",
+      "servicio": "electricidad-e-instrumentacion",
+      "titulo": "Substations on the Lake",
+      "cliente": null,
+      "resumen": "Repair and maintenance of electrical substations on Lake Maracaibo.",
+      "portada": {
+        "src": "assets/fotos/electrica/izaje-transformador.webp",
+        "alt": "Transformer lift"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/electrica/izaje-transformador.webp",
+          "alt": "Transformer lift"
+        },
+        {
+          "src": "assets/fotos/electrica/torre.webp",
+          "alt": "Transmission tower"
+        },
+        {
+          "src": "assets/fotos/electrica/torre-liniero.webp",
+          "alt": "Lineman on a tower"
+        },
+        {
+          "src": "assets/fotos/electrica/subestacion-lago.webp",
+          "alt": "Substation on the Lake"
+        }
+      ],
+      "categoria": "Electrical and instrumentation",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Substations on the Lake — G&T Global Service, C.A.",
+      "meta_description": "Repair and maintenance of electrical substations on Lake Maracaibo.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "subestacion-115-230kv",
+      "servicio": "electricidad-e-instrumentacion",
+      "titulo": "115 and 230 kV substation",
+      "cliente": null,
+      "resumen": "Full rehabilitation and maintenance of the 115 and 230 kV Patio oil-sector electrical substation.",
+      "portada": {
+        "src": "assets/fotos/electrica/subestacion-115-230kv.webp",
+        "alt": "115 and 230 kV electrical substation"
+      },
+      "galeria": [],
+      "categoria": "Electrical and instrumentation",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "115 and 230 kV substation — G&T Global Service, C.A.",
+      "meta_description": "Full rehabilitation and maintenance of the 115 and 230 kV Patio oil-sector electrical substation.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "termozulia",
+      "servicio": "electricidad-e-instrumentacion",
+      "titulo": "Termozulia Plant",
+      "cliente": "Termozulia",
+      "resumen": "Electrical and instrumentation works at the Termozulia Plant.",
+      "portada": {
+        "src": "assets/fotos/electrica/termozulia-1.webp",
+        "alt": "Termozulia Plant"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/electrica/termozulia-1.webp",
+          "alt": "Termozulia Plant"
+        },
+        {
+          "src": "assets/fotos/electrica/termozulia-2.webp",
+          "alt": "Plant tanks"
+        },
+        {
+          "src": "assets/fotos/electrica/termozulia-3.webp",
+          "alt": "Plant switchyard"
+        }
+      ],
+      "categoria": "Electrical and instrumentation",
+      "servicio_icon": "ti-bolt",
+      "meta_title": "Termozulia Plant — G&T Global Service, C.A.",
+      "meta_description": "Electrical and instrumentation works at the Termozulia Plant.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "lineas-pdvsa-gas",
+      "servicio": "tuberias-y-mantenimiento-industrial",
+      "titulo": "Pipelines and inspection",
+      "cliente": "PDVSA Gas",
+      "resumen": "Laying of pipelines of different diameters, with fabrication and installation of inspection facilities.",
+      "portada": {
+        "src": "assets/fotos/lineas/tendido.webp",
+        "alt": "Pipeline laying"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/lineas/tendido.webp",
+          "alt": "Laid pipelines"
+        },
+        {
+          "src": "assets/fotos/lineas/soldadura.webp",
+          "alt": "Pipe welding"
+        },
+        {
+          "src": "assets/fotos/lineas/inspeccion.webp",
+          "alt": "Inspection facilities"
+        }
+      ],
+      "categoria": "Piping and industrial maintenance",
+      "servicio_icon": "ti-tool",
+      "meta_title": "Pipelines and inspection — G&T Global Service, C.A.",
+      "meta_description": "Laying of pipelines of different diameters, with fabrication and installation of inspection facilities.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "galpon-muelle-pedro-lucas-urribarri",
+      "servicio": "fabricacion-y-construccion",
+      "destacado": true,
+      "titulo": "Pier warehouse",
+      "cliente": "Pedro Lucas Urribarri Pier",
+      "resumen": "Erection of columns and trusses for a warehouse structure at the Pedro Lucas Urribarri pier.",
+      "portada": {
+        "src": "assets/fotos/galpon/estructura.webp",
+        "alt": "Warehouse structure"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/galpon/columnas.webp",
+          "alt": "Columns in place"
+        },
+        {
+          "src": "assets/fotos/galpon/montaje.webp",
+          "alt": "Erection with crane"
+        },
+        {
+          "src": "assets/fotos/galpon/cerchas.webp",
+          "alt": "Trusses"
+        },
+        {
+          "src": "assets/fotos/galpon/estructura.webp",
+          "alt": "Finished structure"
+        }
+      ],
+      "categoria": "Fabrication and construction",
+      "servicio_icon": "ti-building-factory-2",
+      "meta_title": "Pier warehouse — G&T Global Service, C.A.",
+      "meta_description": "Erection of columns and trusses for a warehouse structure at the Pedro Lucas Urribarri pier.",
+      "specs": [],
+      "antes_despues": [],
+      "contain": false
+    },
+    {
+      "slug": "bases-equipos-tanques",
+      "servicio": "fabricacion-y-construccion",
+      "titulo": "Equipment and tank foundations",
+      "cliente": null,
+      "resumen": "Construction of concrete foundations for equipment and tanks of different uses.",
+      "portada": {
+        "src": "assets/fotos/bases-equipos/cuadrilla.webp",
+        "alt": "Crew pouring concrete"
+      },
+      "galeria": [
+        {
+          "src": "assets/fotos/bases-equipos/armado.webp",
+          "alt": "Rebar"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/vaciado.webp",
+          "alt": "Concrete pour"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/cuadrilla.webp",
+          "alt": "Crew on site"
+        },
+        {
+          "src": "assets/fotos/bases-equipos/losa.webp",
+          "alt": "Finished foundation"
+        }
+      ],
+      "categoria": "Fabrication and construction",
+      "servicio_icon": "ti-building-factory-2",
+      "meta_title": "Equipment and tank foundations — G&T Global Service, C.A.",
+      "meta_description": "Construction of concrete foundations for equipment and tanks of different uses.",
+      "specs": [],
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
+    },
+    {
+      "slug": "mg-01-05-lago-v",
+      "servicio": "instalacion-de-atracaderos",
+      "titulo": "M/G 01-05 LAGO V",
+      "cliente": null,
+      "resumen": "Custom engineering, fabrication and installation of a dock for an oil well on Lake Maracaibo.",
+      "portada": null,
+      "galeria": [],
       "specs": [
         "Structural angles: 3\"x3\"x1/4\"",
-        "Decking: G2 grating",
-        "Project code: M/G 01-05 LAGO V",
+        "Plate: G2 grating",
         "Final structure: VLM 1071"
       ],
-      "cita": "Logistics, fabrication and maintenance: one team, every solution."
+      "categoria": "Docks and platforms",
+      "servicio_icon": "ti-anchor",
+      "meta_title": "M/G 01-05 LAGO V — G&T Global Service, C.A.",
+      "meta_description": "Custom engineering, fabrication and installation of a dock for an oil well on Lake Maracaibo.",
+      "antes_despues": [],
+      "destacado": false,
+      "contain": false
     }
   ]
 }
