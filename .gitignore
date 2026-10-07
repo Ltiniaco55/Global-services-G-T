@@ -5,3 +5,9 @@ __pycache__/
 db.sqlite3
 staticfiles/
 .DS_Store
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+.codebase-memory/
