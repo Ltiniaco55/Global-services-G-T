@@ -16,6 +16,7 @@ from django.utils.translation import gettext_lazy
 from .data_loader import (get_alias_servicio, get_proyecto, get_servicio, load_flota, load_proyectos,
                           load_servicios)
 from .forms import CotizacionForm, TrabajaConNosotrosForm
+from .respaldo import guardar_lead
 
 logger = logging.getLogger(__name__)
 
@@ -117,6 +118,20 @@ def _enviar_notificacion(asunto, cuerpo, adjuntos=None, cuerpo_html=None):
     except Exception:
         logger.exception('Fallo al enviar el correo de notificación')
         return False
+
+
+def _entregar_lead(tipo, asunto, cuerpo, datos, adjuntos=None, cuerpo_html=None):
+    """Hace llegar un lead al equipo: por correo y, solo si el correo
+    falla, guardándolo en el respaldo (ver sitio/respaldo.py).
+
+    "datos" son los campos del formulario ya validados; se guardan en el
+    respaldo para poder responderle al cliente sin tener el correo.
+    Devuelve True si el lead quedó en alguno de los dos sitios.
+    """
+    if _enviar_notificacion(asunto, cuerpo, adjuntos, cuerpo_html=cuerpo_html):
+        return True
+    datos = {k: v for k, v in datos.items() if k != 'empresa_web'}
+    return guardar_lead(tipo, asunto, cuerpo, datos, adjuntos)
 
 
 def _validar_adjuntos(archivos):
@@ -224,7 +239,8 @@ def contacto(request):
                 + f'<p style="margin:0; white-space:pre-line;">{html.escape(mensaje)}</p>'
                 + '</div>'
             )
-            if _enviar_notificacion(f"Nueva postulación de empleo — {cd['nombre']}", cuerpo, cv, cuerpo_html=cuerpo_html):
+            asunto_correo = f"Nueva postulación de empleo — {cd['nombre']}"
+            if _entregar_lead('postulacion', asunto_correo, cuerpo, cd, cv, cuerpo_html=cuerpo_html):
                 return redirect('sitio:cotizacion_gracias')
             form_trabajo.add_error(
                 None,
@@ -316,7 +332,7 @@ def cotizacion(request):
             cuerpo_html = ''.join(partes_html)
 
             asunto_correo = f"{cd['nombre']} — {cd['empresa']}"
-            if _enviar_notificacion(asunto_correo, cuerpo, adjuntos, cuerpo_html=cuerpo_html):
+            if _entregar_lead('cotizacion', asunto_correo, cuerpo, cd, adjuntos, cuerpo_html=cuerpo_html):
                 return redirect('sitio:cotizacion_gracias')
             form.add_error(
                 None,

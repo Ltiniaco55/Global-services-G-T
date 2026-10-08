@@ -130,6 +130,13 @@ RESEND_FROM_EMAIL = config('RESEND_FROM_EMAIL', default='onboarding@resend.dev')
 # A dónde llegan los leads de los formularios (cotización y postulaciones).
 CONTACTO_EMAIL_DESTINO = config('CONTACTO_EMAIL_DESTINO', default='gytglobalservice@gytglobalservice.com')
 
+# --- Respaldo de leads (Vercel Blob) ---------------------------------------
+# Token de lectura/escritura de un store PRIVADO de Vercel Blob. Si Resend
+# falla, el lead se guarda ahí en vez de perderse (ver sitio/respaldo.py).
+# Vercel añade la variable sola al conectar el store al proyecto. Vacío =
+# sin respaldo (el formulario muestra el error de siempre).
+BLOB_READ_WRITE_TOKEN = config('BLOB_READ_WRITE_TOKEN', default='')
+
 # --- Ajustes de seguridad para producción -----------------------------------
 # Se activan solos cuando DEBUG=False (o sea, en producción). En local con
 # DEBUG=True no molestan (HTTPS no existe en localhost).
