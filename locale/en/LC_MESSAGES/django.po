@@ -408,6 +408,10 @@ msgstr "LEGAL"
 msgid "Última actualización: 1 de octubre de 2026"
 msgstr "Last updated: October 1, 2026"
 
+#: templates/sitio/privacidad.html:14
+msgid "Última actualización: 8 de octubre de 2026"
+msgstr "Last updated: October 8, 2026"
+
 #: templates/sitio/aviso_legal.html:18
 msgid "1. Datos de la empresa"
 msgstr "1. Company details"
@@ -1017,24 +1021,42 @@ msgstr ""
 msgid "2. Qué datos recopilamos"
 msgstr "2. What data we collect"
 
+#: templates/sitio/privacidad.html:21
+#, python-format
+msgid ""
+"También puedes llamarnos al %(telefono)s o al %(telefono_2)s, o escribirnos "
+"por correo postal a la dirección anterior."
+msgstr ""
+"You can also call us on %(telefono)s or %(telefono_2)s, or write to us by "
+"post at the address above."
+
 #: templates/sitio/privacidad.html:25
 msgid ""
-"Solicitud de cotización: nombre, correo, teléfono, empresa, servicios de "
-"interés, tu mensaje y los archivos que adjuntes."
+"Solicitud de cotización: nombre, empresa, correo, teléfono, asunto, "
+"servicios de interés, tu descripción y los archivos que adjuntes (planos, "
+"fotos o documentos)."
 msgstr ""
-"Quote request: name, email, phone, company, services of interest, your "
-"message and any files you attach."
+"Quote request: name, company, email, phone, subject, services of interest, "
+"your description and any files you attach (drawings, photos or documents)."
 
 #: templates/sitio/privacidad.html:26
 msgid ""
 "Trabaja con nosotros: nombre, correo, teléfono, puesto de interés, tu "
-"mensaje y tu currículum. Te pedimos no incluir datos que no hagan falta para"
-" valorar tu perfil, como el número de documento de identidad o datos de "
-"salud."
+"mensaje y tu currículum (en PDF o Word). Te pedimos no incluir datos que no "
+"hagan falta para valorar tu perfil, como el número de documento de identidad"
+" o datos de salud."
 msgstr ""
 "Careers: name, email, phone, position of interest, your message and your "
-"résumé. Please do not include data that is not needed to assess your "
-"profile, such as your ID number or health information."
+"résumé (PDF or Word). Please do not include data that is not needed to "
+"assess your profile, such as your ID number or health information."
+
+#: templates/sitio/privacidad.html:27
+msgid ""
+"En los dos formularios anotamos también el idioma en que lo rellenaste "
+"(español o inglés), para poder responderte en ese idioma."
+msgstr ""
+"On both forms we also note the language you filled it in (Spanish or "
+"English), so that we can reply to you in that language."
 
 #: templates/sitio/privacidad.html:27
 msgid ""
@@ -1067,9 +1089,25 @@ msgstr ""
 "request. We do not use it for advertising, we do not sell it and we do not "
 "make automated decisions with it."
 
-#: templates/sitio/privacidad.html:33
-msgid "4. Con quién los compartimos"
-msgstr "4. Who we share it with"
+#: templates/sitio/privacidad.html:34
+msgid "4. Cómo se envían y con quién los compartimos"
+msgstr "4. How your data is sent and who we share it with"
+
+#: templates/sitio/privacidad.html:35
+msgid ""
+"Cuando envías un formulario, la web lo remite por correo electrónico a "
+"nuestro buzón corporativo a través de Resend, un servicio de envío de "
+"correo. Solo si ese envío falla, guardamos una copia de respaldo de tus "
+"datos y de los archivos adjuntos en Vercel Blob, un almacenamiento privado "
+"al que no se puede acceder desde internet, para no perder tu solicitud. Si "
+"el correo sale bien, no se guarda ninguna copia en la web."
+msgstr ""
+"When you submit a form, the website forwards it by email to our corporate "
+"mailbox through Resend, an email delivery service. Only if that delivery "
+"fails do we keep a backup copy of your data and attached files in Vercel "
+"Blob, a private storage that cannot be accessed from the internet, so that "
+"your request is not lost. If the email is sent successfully, no copy is kept"
+" on the website."
 
 #: templates/sitio/privacidad.html:34
 msgid ""
@@ -1081,9 +1119,13 @@ msgstr ""
 "forms we use technology providers that process data on our behalf and only "
 "to provide their service to us:"
 
-#: templates/sitio/privacidad.html:36
-msgid "Vercel Inc. (Estados Unidos): alojamiento de la web."
-msgstr "Vercel Inc. (United States): website hosting."
+#: templates/sitio/privacidad.html:38
+msgid ""
+"Vercel Inc. (Estados Unidos): alojamiento de la web y almacenamiento privado"
+" de las copias de respaldo (Vercel Blob)."
+msgstr ""
+"Vercel Inc. (United States): website hosting and private storage of the "
+"backup copies (Vercel Blob)."
 
 #: templates/sitio/privacidad.html:37
 msgid ""
@@ -1126,6 +1168,14 @@ msgstr ""
 msgid "Currículums: un máximo de 12 meses. Después los eliminamos."
 msgstr "Résumés: a maximum of 12 months. After that we delete them."
 
+#: templates/sitio/privacidad.html:48
+msgid ""
+"Copias de respaldo en Vercel Blob: las eliminamos en cuanto hemos atendido "
+"la solicitud y, como máximo, a los 90 días de recibirla."
+msgstr ""
+"Backup copies in Vercel Blob: we delete them as soon as we have dealt with "
+"the request and, at the latest, 90 days after receiving it."
+
 #: templates/sitio/privacidad.html:46
 msgid ""
 "Registros técnicos del servidor: el tiempo limitado que fije el proveedor de"
@@ -1157,15 +1207,31 @@ msgstr ""
 msgid "7. Seguridad"
 msgstr "7. Security"
 
-#: templates/sitio/privacidad.html:53
+#: templates/sitio/privacidad.html:54
+msgid ""
+"Para que podamos localizar tus datos, indícanos el nombre y el correo con "
+"los que nos escribiste. La solicitud es gratuita. Si nos pides eliminarlos, "
+"borraremos también los archivos que nos enviaste, tu currículum y cualquier "
+"copia de respaldo."
+msgstr ""
+"So that we can find your data, tell us the name and email you used when you "
+"wrote to us. The request is free of charge. If you ask us to delete your "
+"data, we will also delete the files you sent us, your résumé and any backup "
+"copy."
+
+#: templates/sitio/privacidad.html:57
 msgid ""
 "La web funciona siempre con conexión cifrada (HTTPS) y solo el personal que "
 "gestiona las solicitudes tiene acceso a los mensajes. Los archivos adjuntos "
-"no se guardan en la web: se envían directamente al correo de la empresa."
+"se envían al correo de la empresa; solo si ese envío falla se guarda una "
+"copia de respaldo en un almacenamiento privado, sin acceso público, que "
+"únicamente puede consultar el personal autorizado."
 msgstr ""
 "The website always runs over an encrypted connection (HTTPS) and only the "
-"staff who handle requests have access to the messages. Attachments are not "
-"stored on the website: they are sent directly to the company’s email."
+"staff who handle requests have access to the messages. Attached files are "
+"sent to the company's email; only if that delivery fails is a backup copy "
+"kept in private storage, with no public access, which only authorized staff "
+"can consult."
 
 #: templates/sitio/privacidad.html:55
 msgid "8. Menores de edad"
@@ -1226,9 +1292,40 @@ msgstr ""
 "party services. Links to Google Maps, WhatsApp and Instagram only open if "
 "you click them; from then on, those services’ own policies apply."
 
-#: templates/sitio/privacidad.html:68
-msgid "10. Cambios en esta política"
-msgstr "10. Changes to this policy"
+#: templates/sitio/privacidad.html:82
+msgid "11. Cambios en esta política"
+msgstr "11. Changes to this policy"
+
+#: templates/sitio/privacidad.html:72
+msgid "10. Legislación aplicable"
+msgstr "10. Applicable law"
+
+#: templates/sitio/privacidad.html:73
+#, python-format
+msgid ""
+"%(nombre)s está establecida en Venezuela y trata tus datos conforme a la "
+"Constitución de la República Bolivariana de Venezuela, que reconoce el "
+"derecho de toda persona a acceder a los datos que consten sobre ella, a "
+"conocer para qué se usan y a pedir que se corrijan o eliminen (artículo 28),"
+" y protege su vida privada (artículo 60)."
+msgstr ""
+"%(nombre)s is established in Venezuela and handles your data in accordance "
+"with the Constitution of the Bolivarian Republic of Venezuela, which "
+"recognizes every person's right to access the data held about them, to know "
+"what it is used for and to ask for it to be corrected or deleted (article "
+"28), and protects their private life (article 60)."
+
+#: templates/sitio/privacidad.html:74
+msgid ""
+"Esta web está disponible en español e inglés y puede recibir solicitudes "
+"desde otros países. Si vives en la Unión Europea y el Reglamento General de "
+"Protección de Datos (RGPD) resulta aplicable a tu caso, puedes ejercer "
+"además los derechos indicados en el apartado 6."
+msgstr ""
+"This website is available in Spanish and English and may receive requests "
+"from other countries. If you live in the European Union and the General Data"
+" Protection Regulation (GDPR) applies to your case, you can also exercise "
+"the rights listed in section 6."
 
 #: templates/sitio/privacidad.html:69
 msgid ""

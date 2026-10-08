@@ -338,3 +338,64 @@ class FormulariosTests(SitioTestCase):
             respuesta = Client(enforce_csrf_checks=True).post(url, self.datos('cotizacion'), secure=True)
         self.assertEqual(respuesta.status_code, 403)
         self.resend.assert_not_called()
+
+
+class PrivacidadTests(SitioTestCase):
+    """La política de privacidad tiene que existir en los dos idiomas, estar
+    enlazada desde el footer y contar lo que la web hace de verdad con los
+    datos (correo por Resend y respaldo en Vercel Blob)."""
+
+    # Lo que debe decir la política en cada idioma.
+    CONTENIDO = {
+        'es': ('Política de Privacidad', 'currículum', 'Resend', 'Vercel Blob', 'almacenamiento privado',
+               '90 días', 'Legislación aplicable'),
+        'en': ('Privacy Policy', 'résumé', 'Resend', 'Vercel Blob', 'private storage',
+               '90 days', 'Applicable law'),
+    }
+
+    def url_privacidad(self, idioma):
+        with translation.override(idioma):
+            return reverse('sitio:privacidad')
+
+    def test_responde_200_en_los_dos_idiomas(self):
+        self.assertEqual(self.url_privacidad('es'), '/privacidad/')
+        self.assertEqual(self.url_privacidad('en'), '/en/privacy/')
+        for idioma in IDIOMAS:
+            with self.subTest(idioma=idioma):
+                respuesta = self.get(self.url_privacidad(idioma))
+                self.assertEqual(respuesta.status_code, 200)
+                self.assertTemplateUsed(respuesta, 'sitio/privacidad.html')
+                self.assertContains(respuesta, f'lang="{idioma}"')
+
+    def test_explica_que_se_hace_con_los_datos(self):
+        for idioma, textos in self.CONTENIDO.items():
+            respuesta = self.get(self.url_privacidad(idioma))
+            for texto in textos:
+                with self.subTest(idioma=idioma, texto=texto):
+                    self.assertContains(respuesta, texto)
+
+    def test_muestra_responsable_y_contacto(self):
+        for idioma in IDIOMAS:
+            with self.subTest(idioma=idioma):
+                respuesta = self.get(self.url_privacidad(idioma))
+                for dato in ('rif', 'direccion', 'email', 'telefono'):
+                    self.assertContains(respuesta, settings.EMPRESA[dato])
+
+    def test_la_version_en_ingles_esta_traducida_entera(self):
+        """Las dos versiones tienen los mismos apartados y ninguno se queda en español."""
+        es = self.get(self.url_privacidad('es'))
+        en = self.get(self.url_privacidad('en'))
+        self.assertEqual(es.content.count(b'<h2'), en.content.count(b'<h2'))
+        self.assertEqual(es.content.count(b'<li>'), en.content.count(b'<li>'))
+        for texto in ('Responsable', 'Qué datos', 'Cuánto tiempo', 'Tus derechos', 'Legislación'):
+            with self.subTest(texto=texto):
+                self.assertNotContains(en, texto)
+
+    def test_el_footer_enlaza_a_la_politica_en_todas_las_paginas(self):
+        for idioma in IDIOMAS:
+            enlace = f'<a href="{self.url_privacidad(idioma)}">{self.CONTENIDO[idioma][0]}</a>'
+            for url in _urls(idioma):
+                with self.subTest(idioma=idioma, url=url):
+                    html_pagina = self.get(url).content.decode()
+                    footer = html_pagina[html_pagina.index('<footer'):html_pagina.index('</footer>')]
+                    self.assertIn(enlace, footer)

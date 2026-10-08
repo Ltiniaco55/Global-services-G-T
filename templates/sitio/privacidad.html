@@ -11,28 +11,31 @@
       <p class="section-tag section-tag--lima">{% translate "LEGAL" %}</p>
       <h1 class="page-hero__title">{% translate "Política de Privacidad" %}</h1>
       {% comment %}Fecha fija: cámbiala a mano solo cuando modifiques el contenido de esta página.{% endcomment %}
-      <p class="page-hero__lead">{% translate "Última actualización: 1 de octubre de 2026" %}</p>
+      <p class="page-hero__lead">{% translate "Última actualización: 8 de octubre de 2026" %}</p>
     </div>
   </section>
 
   <section class="container section texto-legal">
     <h2 class="detalle-subtitle">{% translate "1. Responsable" %}</h2>
     <p>{% blocktranslate trimmed with nombre=empresa.nombre rif=empresa.rif direccion=empresa.direccion email=empresa.email %}El responsable de los datos que nos envías es {{ nombre }}, RIF {{ rif }}, con domicilio en {{ direccion }}, Maracaibo, estado Zulia, Venezuela. Puedes escribirnos sobre cualquier tema de privacidad a {{ email }}.{% endblocktranslate %}</p>
+    <p>{% blocktranslate trimmed with telefono=empresa.telefono telefono_2=empresa.telefono_2 %}También puedes llamarnos al {{ telefono }} o al {{ telefono_2 }}, o escribirnos por correo postal a la dirección anterior.{% endblocktranslate %}</p>
 
     <h2 class="detalle-subtitle">{% translate "2. Qué datos recopilamos" %}</h2>
     <ul>
-      <li>{% translate "Solicitud de cotización: nombre, correo, teléfono, empresa, servicios de interés, tu mensaje y los archivos que adjuntes." %}</li>
-      <li id="candidaturas">{% translate "Trabaja con nosotros: nombre, correo, teléfono, puesto de interés, tu mensaje y tu currículum. Te pedimos no incluir datos que no hagan falta para valorar tu perfil, como el número de documento de identidad o datos de salud." %}</li>
+      <li>{% translate "Solicitud de cotización: nombre, empresa, correo, teléfono, asunto, servicios de interés, tu descripción y los archivos que adjuntes (planos, fotos o documentos)." %}</li>
+      <li id="candidaturas">{% translate "Trabaja con nosotros: nombre, correo, teléfono, puesto de interés, tu mensaje y tu currículum (en PDF o Word). Te pedimos no incluir datos que no hagan falta para valorar tu perfil, como el número de documento de identidad o datos de salud." %}</li>
+      <li>{% translate "En los dos formularios anotamos también el idioma en que lo rellenaste (español o inglés), para poder responderte en ese idioma." %}</li>
       <li>{% translate "Datos técnicos: como cualquier web, el servidor registra temporalmente datos técnicos (dirección IP, navegador, página visitada y hora) por motivos de seguridad y funcionamiento." %}</li>
     </ul>
 
     <h2 class="detalle-subtitle">{% translate "3. Para qué los usamos" %}</h2>
     <p>{% translate "Usamos tus datos solo para responder tu solicitud, preparar una cotización y dar seguimiento a la relación comercial, o para valorar tu candidatura y contactarte si encaja en un proceso de selección. Los tratamos porque nos das tu consentimiento al marcar la casilla del formulario y porque son necesarios para atender lo que nos pides. No los usamos con fines publicitarios, no los vendemos y no tomamos decisiones automatizadas con ellos." %}</p>
 
-    <h2 class="detalle-subtitle">{% translate "4. Con quién los compartimos" %}</h2>
+    <h2 class="detalle-subtitle" id="envio">{% translate "4. Cómo se envían y con quién los compartimos" %}</h2>
+    <p>{% translate "Cuando envías un formulario, la web lo remite por correo electrónico a nuestro buzón corporativo a través de Resend, un servicio de envío de correo. Solo si ese envío falla, guardamos una copia de respaldo de tus datos y de los archivos adjuntos en Vercel Blob, un almacenamiento privado al que no se puede acceder desde internet, para no perder tu solicitud. Si el correo sale bien, no se guarda ninguna copia en la web." %}</p>
     <p>{% translate "No cedemos tus datos a terceros. Para que la web y los formularios funcionen usamos proveedores tecnológicos que tratan los datos por nuestra cuenta y solo para prestarnos su servicio:" %}</p>
     <ul>
-      <li>{% translate "Vercel Inc. (Estados Unidos): alojamiento de la web." %}</li>
+      <li>{% translate "Vercel Inc. (Estados Unidos): alojamiento de la web y almacenamiento privado de las copias de respaldo (Vercel Blob)." %}</li>
       <li>{% translate "Resend (Estados Unidos): envío de los correos que generan los formularios." %}</li>
       <li>{% translate "Zoho (servidores en la Unión Europea): correo corporativo donde recibimos tus mensajes." %}</li>
     </ul>
@@ -42,14 +45,16 @@
     <ul>
       <li>{% translate "Solicitudes y cotizaciones: mientras dure la relación comercial y hasta 24 meses después del último contacto, salvo que una ley nos obligue a guardarlos más tiempo." %}</li>
       <li>{% translate "Currículums: un máximo de 12 meses. Después los eliminamos." %}</li>
+      <li>{% translate "Copias de respaldo en Vercel Blob: las eliminamos en cuanto hemos atendido la solicitud y, como máximo, a los 90 días de recibirla." %}</li>
       <li>{% translate "Registros técnicos del servidor: el tiempo limitado que fije el proveedor de alojamiento." %}</li>
     </ul>
 
     <h2 class="detalle-subtitle">{% translate "6. Tus derechos" %}</h2>
     <p>{% blocktranslate trimmed with email=empresa.email %}Puedes pedirnos en cualquier momento acceder a tus datos, corregirlos, actualizarlos o eliminarlos, y retirar tu consentimiento, escribiendo a {{ email }}. Te responderemos en un plazo máximo de 30 días. Si vives en la Unión Europea, también puedes oponerte al tratamiento, pedir la portabilidad de tus datos y reclamar ante la autoridad de protección de datos de tu país.{% endblocktranslate %}</p>
+    <p>{% translate "Para que podamos localizar tus datos, indícanos el nombre y el correo con los que nos escribiste. La solicitud es gratuita. Si nos pides eliminarlos, borraremos también los archivos que nos enviaste, tu currículum y cualquier copia de respaldo." %}</p>
 
     <h2 class="detalle-subtitle">{% translate "7. Seguridad" %}</h2>
-    <p>{% translate "La web funciona siempre con conexión cifrada (HTTPS) y solo el personal que gestiona las solicitudes tiene acceso a los mensajes. Los archivos adjuntos no se guardan en la web: se envían directamente al correo de la empresa." %}</p>
+    <p>{% translate "La web funciona siempre con conexión cifrada (HTTPS) y solo el personal que gestiona las solicitudes tiene acceso a los mensajes. Los archivos adjuntos se envían al correo de la empresa; solo si ese envío falla se guarda una copia de respaldo en un almacenamiento privado, sin acceso público, que únicamente puede consultar el personal autorizado." %}</p>
 
     <h2 class="detalle-subtitle">{% translate "8. Menores de edad" %}</h2>
     <p>{% translate "Esta web está dirigida a empresas y profesionales. No recopilamos a sabiendas datos de menores de 18 años." %}</p>
@@ -64,7 +69,11 @@
     </div>
     <p>{% translate "Al ser imprescindible para el funcionamiento de la web, no necesita tu consentimiento. No usamos cookies de analítica, de publicidad ni de redes sociales, y las tipografías e iconos se sirven desde nuestro propio servidor, sin conectar con servicios de terceros. Los enlaces a Google Maps, WhatsApp e Instagram solo se abren si haces clic en ellos; a partir de ahí se aplican las políticas de esos servicios." %}</p>
 
-    <h2 class="detalle-subtitle">{% translate "10. Cambios en esta política" %}</h2>
+    <h2 class="detalle-subtitle" id="legislacion">{% translate "10. Legislación aplicable" %}</h2>
+    <p>{% blocktranslate trimmed with nombre=empresa.nombre %}{{ nombre }} está establecida en Venezuela y trata tus datos conforme a la Constitución de la República Bolivariana de Venezuela, que reconoce el derecho de toda persona a acceder a los datos que consten sobre ella, a conocer para qué se usan y a pedir que se corrijan o eliminen (artículo 28), y protege su vida privada (artículo 60).{% endblocktranslate %}</p>
+    <p>{% translate "Esta web está disponible en español e inglés y puede recibir solicitudes desde otros países. Si vives en la Unión Europea y el Reglamento General de Protección de Datos (RGPD) resulta aplicable a tu caso, puedes ejercer además los derechos indicados en el apartado 6." %}</p>
+
+    <h2 class="detalle-subtitle">{% translate "11. Cambios en esta política" %}</h2>
     <p>{% translate "Si cambiamos esta política, publicaremos la nueva versión en esta misma página con su fecha de actualización." %}</p>
   </section>
 
